@@ -73,7 +73,7 @@
 
         /* ========== HERO SECTION ========== */
         .hero {
-            min-height: 100vh;
+            /* min-height: 100vh; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,19 +86,38 @@
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 110%;
-            max-width: 1400px;
+            width: 100%;
+            min-height: 100%;
+            max-width: none;
+            object-fit: cover;
             pointer-events: none;
             z-index: 0;
+            image-rendering: auto;
         }
 
         [data-theme="light"] .hero-bg-img {
-            opacity: 0.12;
-            filter: grayscale(100%);
+            opacity: 0.18;
+            filter: grayscale(62%);
         }
         [data-theme="dark"] .hero-bg-img {
-            opacity: 0.08;
-            filter: grayscale(100%) invert(1);
+            opacity: 0.10;
+            filter: contrast(200%) hue-rotate(120deg);
+        }
+
+        /* Radial gradient fade over the hero background */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: var(--accent);
+            opacity: 0.25;
+            /* background: radial-gradient(
+                ellipse 70% 60% at 50% 50%,
+                transparent 50%,
+                color-mix(in oklab, var(--accent) 25%, var(--bg-page)) 100%
+            ); */
+            pointer-events: none;
         }
 
         .hero-content {
@@ -115,7 +134,7 @@
             font-size: 14px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--accent-text);
+            color: var(--primary-text);
             margin-bottom: 32px;
             display: block;
         }
@@ -124,6 +143,8 @@
            .hero-sub from components.css provides subtitle */
         .hero-sub {
             margin-bottom: 48px;
+            color: var(--primary-text);
+            font-weight: 600;
         }
 
         /* ========== SERVICES SECTION ========== */
@@ -772,7 +793,7 @@
 <body>
     <!-- Navigation -->
     <nav id="nav">
-        <div class="nav-brand" onclick="scrollToTop()">BLDGTYP</div>
+        <div class="nav-brand" onclick="scrollToTop()">BLDGTYP | Brooklyn, NY</div>
         <div class="nav-right">
             <div class="nav-links">
                 <a href="#services" class="type-mono-nav">Services</a>
@@ -801,59 +822,22 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <img src="assets/hero-drafting.png" alt="" class="hero-bg-img" aria-hidden="true">
+        <img src="assets/hero-city.png" alt="" class="hero-bg-img" aria-hidden="true">
 
         <div class="hero-content">
-            <span class="hero-label">BLDGTYP · PASSIVE HOUSE DESIGN & CONSULTING</span>
             <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
-            <p class="hero-sub">Passive House design and consulting for architects, developers, and builders. We model the answers so you can build with confidence.</p>
+            <p class="hero-sub">
+                // Passive House design and consulting for architects, developers, and builders.</br>
+                // We find the answers so you can build with confidence.
+            </p>
             <button class="btn-primary" onclick="handleCTA()">Reach out today: info@bldgtyp.com</button>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services graph-paper graph-paper--fine" id="services">
-        <div class="services-inner">
-            <span class="section-label">WHAT WE DO</span>
-
-            <div class="services-grid">
-                <!-- Service Card 1: Energy Modeling -->
-                <div class="service-card">
-                    <h3 class="service-card__title">ENERGY MODELING</h3>
-                    <h4 class="service-card__subtitle">Know before you build</h4>
-                    <p class="service-card__body">We model your building's energy performance so you can make design decisions with real data — not assumptions. From envelope to mechanicals, every system is accounted for.</p>
-                    <div class="service-card__img-strip">
-                        <img src="assets/energy-model.png" alt="" aria-hidden="true">
-                    </div>
-                </div>
-
-                <!-- Service Card 2: Thermal Bridges -->
-                <div class="service-card">
-                    <h3 class="service-card__title">THERMAL BRIDGES</h3>
-                    <h4 class="service-card__subtitle">Find your hidden losses</h4>
-                    <p class="service-card__body">2D and 3D finite-element thermal bridge modeling identifies where your envelope is bleeding performance — before construction begins. Every junction, every connection, verified.</p>
-                    <div class="service-card__img-strip">
-                        <img src="assets/thermal-bridge.png" alt="" aria-hidden="true">
-                    </div>
-                </div>
-
-                <!-- Service Card 3: Certification -->
-                <div class="service-card">
-                    <h3 class="service-card__title">CERTIFICATION</h3>
-                    <h4 class="service-card__subtitle">Cross the finish line</h4>
-                    <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification management from schematic design through final verification. We handle the modeling, the documentation, and the review process - so you don't have to.</p>
-                    <div class="service-card__img-strip">
-                        <img src="assets/certification.png" alt="" aria-hidden="true">
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Who We Work With Section -->
     <section class="who-section" id="who">
         <div class="who-inner">
-            <span class="section-label">WHO WE WORK WITH</span>
+            <span class="section-label">WHO DO WE WORK WITH?</span>
 
             <div class="who-grid">
                 <!-- Architects Column -->
@@ -892,10 +876,49 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="services graph-paper graph-paper--fine" id="services">
+        <div class="services-inner">
+            <span class="section-label">WHAT DO WE DO?</span>
+
+            <div class="services-grid">
+                <!-- Service Card 1: Energy Modeling -->
+                <div class="service-card">
+                    <h3 class="service-card__title">ENERGY MODELING</h3>
+                    <h4 class="service-card__subtitle">Know before you build</h4>
+                    <p class="service-card__body">We model your building's energy performance so you can make design decisions with real data — not assumptions. From envelope to mechanicals, every system is accounted for.</p>
+                    <div class="service-card__img-strip">
+                        <img src="assets/energy-model.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+
+                <!-- Service Card 2: Thermal Bridges -->
+                <div class="service-card">
+                    <h3 class="service-card__title">THERMAL BRIDGES</h3>
+                    <h4 class="service-card__subtitle">Find your hidden losses</h4>
+                    <p class="service-card__body">2D and 3D finite-element thermal bridge modeling identifies where your envelope is bleeding performance — before construction begins. Every junction, every connection, verified.</p>
+                    <div class="service-card__img-strip">
+                        <img src="assets/thermal-bridge.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+
+                <!-- Service Card 3: Certification -->
+                <div class="service-card">
+                    <h3 class="service-card__title">CERTIFICATION</h3>
+                    <h4 class="service-card__subtitle">Cross the finish line</h4>
+                    <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification management from schematic design through final verification. We handle the modeling, the documentation, and the review process - so you don't have to.</p>
+                    <div class="service-card__img-strip">
+                        <img src="assets/certification.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Process Section -->
     <section class="process" id="process">
         <div class="process-inner">
-            <span class="section-label">HOW IT WORKS</span>
+            <span class="section-label">HOW DOES IT WORK?</span>
 
             <div class="process-timeline">
                 <div class="process-step">
