@@ -118,30 +118,16 @@
             font-size: 14px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: var(--accent-text);
             margin-bottom: 32px;
             display: block;
         }
 
-        /* .type-hero from components.css provides the base typography;
-           page-specific overrides below */
-        .hero-title {
-            margin-bottom: 28px;
-            color: var(--text-primary);
-        }
-
-        .hero-subtitle {
-            font-family: var(--font-primary);
-            font-weight: 300;
-            font-size: 22px;
-            line-height: 1.6;
-            color: var(--text-secondary);
+        /* .hero-title from components.css provides base typography;
+           .hero-sub from components.css provides subtitle */
+        .hero-sub {
             margin-bottom: 48px;
-            max-width: 650px;
         }
-
-        /* .btn-primary from components.css provides base button styles;
-           .hero-cta adds no additional overrides currently */
 
         /* ========== SERVICES SECTION ========== */
         .services {
@@ -257,6 +243,7 @@
             height: 100%;
         }
 
+        /* .who-title: page-specific heading (uppercase variant not in DS) */
         .who-title {
             font-family: var(--font-primary);
             font-weight: 600;
@@ -271,26 +258,13 @@
             font-family: var(--font-primary);
             font-weight: 300;
             font-size: 16px;
-            color: var(--accent);
+            color: var(--accent-text);
             margin-bottom: 20px;
         }
 
+        /* who-body & who-detail: layout spacing only; typography via DS classes */
         .who-body {
-            font-family: var(--font-primary);
-            font-weight: 300;
-            font-size: 17px;
-            line-height: 1.8;
-            color: var(--text-secondary);
             margin-bottom: 32px;
-        }
-
-        .who-detail {
-            font-family: var(--font-mono);
-            font-weight: 300;
-            font-size: 13px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-muted);
         }
 
         /* ========== PROCESS SECTION ========== */
@@ -310,10 +284,10 @@
             z-index: 0;
         }
         [data-theme="dark"] .process::before {
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='rgba(122,148,36,0.06)' stroke-width='0.5' fill='none'%3E%3Cline x1='0' y1='0' x2='40' y2='0'/%3E%3Cline x1='0' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='rgba(62,147,174,0.06)' stroke-width='0.5' fill='none'%3E%3Cline x1='0' y1='0' x2='40' y2='0'/%3E%3Cline x1='0' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
         }
         [data-theme="light"] .process::before {
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='rgba(122,148,36,0.08)' stroke-width='0.5' fill='none'%3E%3Cline x1='0' y1='0' x2='40' y2='0'/%3E%3Cline x1='0' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='rgba(62,147,174,0.08)' stroke-width='0.5' fill='none'%3E%3Cline x1='0' y1='0' x2='40' y2='0'/%3E%3Cline x1='0' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
         }
 
         .process-inner {
@@ -554,12 +528,8 @@
             color: var(--text-primary);
         }
 
+        /* deliverable-intro: layout spacing; typography via .type-body-lg */
         .deliverable-intro {
-            font-family: var(--font-primary);
-            font-weight: 300;
-            font-size: 17px;
-            line-height: 1.8;
-            color: var(--text-secondary);
             margin-bottom: 32px;
         }
 
@@ -592,7 +562,7 @@
             font-weight: 300;
             font-size: 14px;
             letter-spacing: 0.05em;
-            color: var(--accent);
+            color: var(--accent-text);
         }
 
         /* ========== OPEN SOURCE CREDIBILITY STRIP ========== */
@@ -619,13 +589,8 @@
             }
         }
 
+        /* oss-label: layout only; typography via .type-mono-label */
         .oss-label {
-            font-family: var(--font-mono);
-            font-weight: 300;
-            font-size: 12px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--accent);
             white-space: nowrap;
             flex-shrink: 0;
         }
@@ -641,13 +606,7 @@
             .oss-divider { display: none; }
         }
 
-        .oss-text {
-            font-family: var(--font-primary);
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
+        /* oss-text: typography via .type-body in HTML */
 
         /* .oss-text a styled via .link from components.css */
 
@@ -672,27 +631,15 @@
 
         .stat { text-align: left; }
 
-        /* stat numbers use responsive clamp instead of component fixed 48px */
-        .stat-number {
-            font-family: var(--font-primary);
-            font-weight: 600;
+        /* .type-stat-number / .type-stat-label from components.css;
+           page override: responsive sizing via clamp */
+        .stat .type-stat-number {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1;
             margin-bottom: 12px;
-            color: var(--accent);
         }
 
-        .stat:nth-child(3) .stat-number {
+        .stat:nth-child(3) .type-stat-number {
             color: var(--highlight);
-        }
-
-        .stat-label {
-            font-family: var(--font-mono);
-            font-weight: 300;
-            font-size: 13px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
         }
 
         /* ========== CTA SECTION ========== */
@@ -853,8 +800,8 @@
 
         <div class="hero-content">
             <span class="hero-label">BLDGTYP · PASSIVE HOUSE DESIGN & CONSULTING</span>
-            <h1 class="type-hero hero-title">Your Passive House questions.<br>Answered.</h1>
-            <p class="hero-subtitle">Passive House design and consulting for architects, developers, and builders. We model the answers so you can build with confidence.</p>
+            <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
+            <p class="hero-sub">Passive House design and consulting for architects, developers, and builders. We model the answers so you can build with confidence.</p>
             <button class="btn-primary" onclick="handleCTA()">Reach out today: info@bldgtyp.com</button>
         </div>
     </section>
@@ -933,8 +880,8 @@
                     </div>
                     <h3 class="who-title">ARCHITECTS</h3>
                     <p class="who-subtitle">Designing high-performance luxury homes</p>
-                    <p class="who-body">You care about craft, comfort, and precision. We bring the energy science to match your design ambition — without compromising your architecture.</p>
-                    <p class="who-detail">Single-family · Townhouse · Brownstone renovation</p>
+                    <p class="who-body type-body-lg">You care about craft, comfort, and precision. We bring the energy science to match your design ambition — without compromising your architecture.</p>
+                    <p class="type-mono-label">Single-family · Townhouse · Brownstone renovation</p>
                 </div>
 
                 <!-- Developers Column -->
@@ -971,8 +918,8 @@
                     </div>
                     <h3 class="who-title">DEVELOPERS</h3>
                     <p class="who-subtitle">Building affordable multifamily at scale</p>
-                    <p class="who-body">You need certification, incentives, and energy performance that pencils out. We model efficiently and deliver documentation your review team will accept.</p>
-                    <p class="who-detail">Affordable housing · Mixed-use · Multifamily</p>
+                    <p class="who-body type-body-lg">You need certification, incentives, and energy performance that pencils out. We model efficiently and deliver documentation your review team will accept.</p>
+                    <p class="type-mono-label">Affordable housing · Mixed-use · Multifamily</p>
                 </div>
 
                 <!-- Builders Column -->
@@ -1012,8 +959,8 @@
                     </div>
                     <h3 class="who-title">BUILDERS</h3>
                     <p class="who-subtitle">Getting high-performance details right</p>
-                    <p class="who-body">You're building it — and you need to know the assemblies will perform. Our standard assessment gives you clear, actionable guidance on envelope details, airtightness, and mechanical sizing.</p>
-                    <p class="who-detail">Single-family homes · Custom builds · Renovations</p>
+                    <p class="who-body type-body-lg">You're building it — and you need to know the assemblies will perform. Our standard assessment gives you clear, actionable guidance on envelope details, airtightness, and mechanical sizing.</p>
+                    <p class="type-mono-label">Single-family homes · Custom builds · Renovations</p>
                 </div>
             </div>
         </div>
@@ -1103,7 +1050,7 @@
                 <!-- Design-Phase Assessment Content -->
                 <div class="deliverable-content">
                     <h3>Understand your building's performance, before you build.</h3>
-                    <p class="deliverable-intro">Every project receives a detailed design-phase report covering:</p>
+                    <p class="deliverable-intro type-body-lg">Every project receives a detailed design-phase report covering:</p>
 
                     <ul class="deliverable-list">
                         <li>Annual heating and cooling demand</li>
@@ -1123,9 +1070,9 @@
     <!-- Open Source Credibility Strip -->
     <section class="oss-strip">
         <div class="oss-inner">
-            <span class="oss-label">OPEN SOURCE</span>
+            <span class="oss-label type-mono-label">OPEN SOURCE</span>
             <div class="oss-divider"></div>
-            <p class="oss-text"><strong>BLDGTYP</strong> also builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" class="link">Passive House Tools</a> — the open-source toolkit used by Passive House practitioners worldwide. The same rigor we put into our software goes into every building we work on.</p>
+            <p class="type-body"><strong>BLDGTYP</strong> also builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" class="link">Passive House Tools</a> — the open-source toolkit used by Passive House practitioners worldwide. The same rigor we put into our software goes into every building we work on.</p>
         </div>
     </section>
 
@@ -1136,23 +1083,23 @@
 
             <div class="stats-grid">
                 <div class="stat">
-                    <div class="stat-number">9,000</div>
-                    <div class="stat-label">Certified units in North America</div>
+                    <div class="type-stat-number">9,000</div>
+                    <div class="type-stat-label">Certified units in North America</div>
                 </div>
 
                 <div class="stat">
-                    <div class="stat-number">90%</div>
-                    <div class="stat-label">Reduction in heating & cooling energy</div>
+                    <div class="type-stat-number">90%</div>
+                    <div class="type-stat-label">Reduction in heating & cooling energy</div>
                 </div>
 
                 <div class="stat">
-                    <div class="stat-number">60</div>
-                    <div class="stat-label">Years of proven building science</div>
+                    <div class="type-stat-number">60</div>
+                    <div class="type-stat-label">Years of proven building science</div>
                 </div>
 
                 <div class="stat">
-                    <div class="stat-number">#1</div>
-                    <div class="stat-label">Fastest-growing standard in the US</div>
+                    <div class="type-stat-number">#1</div>
+                    <div class="type-stat-label">Fastest-growing standard in the US</div>
                 </div>
             </div>
         </div>
