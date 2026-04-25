@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLDGTYP · Passive House Consulting · Brooklyn</title>
+    <title>BLDGTYP · Passive House Consulting · New York · Massachusetts</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="https://bldgtyp.github.io/branding/tokens/tokens.css">
@@ -56,6 +56,20 @@
             transition: color var(--transition-base);
         }
         .nav-brand:hover { color: var(--accent); }
+
+        .nav-brand-locs {
+            font-family: var(--font-mono);
+            font-weight: 300;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            color: var(--text-muted);
+            margin-left: 12px;
+            padding-left: 12px;
+            border-left: 1px solid var(--border-subtle);
+        }
+        @media (max-width: 768px) {
+            .nav-brand-locs { display: none; }
+        }
 
         .nav-right {
             display: flex;
@@ -630,6 +644,116 @@
 
         /* .oss-text a styled via .link from components.css */
 
+        /* ========== MASSACHUSETTS SECTION ========== */
+        .ma-section {
+            padding: 120px 40px;
+            background-color: var(--bg-page);
+            position: relative;
+        }
+
+        .ma-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ma-heading {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-top: 12px;
+            margin-bottom: 24px;
+            max-width: 760px;
+        }
+
+        .ma-intro {
+            max-width: 760px;
+            margin-bottom: 56px;
+            color: var(--text-secondary);
+        }
+
+        .ma-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .ma-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        .ma-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ma-card__tag {
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .ma-card__title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .ma-card__body {
+            font-family: var(--font-primary);
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .ma-card__cite {
+            font-family: var(--font-mono);
+            font-weight: 300;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 14px;
+            margin-top: auto;
+        }
+
+        .ma-card__cite a {
+            display: block;
+            color: var(--text-muted);
+            margin-top: 4px;
+            word-break: break-word;
+        }
+
+        .ma-card__cite a:hover {
+            color: var(--accent);
+        }
+
+        .ma-disclaimer {
+            margin-top: 32px;
+            font-family: var(--font-mono);
+            font-weight: 300;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+
+        @media (max-width: 768px) {
+            .ma-section { padding: 80px 20px; }
+        }
+
         /* ========== STATS SECTION ========== */
         .stats {
             padding: 120px 40px;
@@ -793,11 +917,12 @@
 <body>
     <!-- Navigation -->
     <nav id="nav">
-        <div class="nav-brand" onclick="scrollToTop()">BLDGTYP | Brooklyn, NY</div>
+        <div class="nav-brand" onclick="scrollToTop()">BLDGTYP <span class="nav-brand-locs">New York · Massachusetts</span></div>
         <div class="nav-right">
             <div class="nav-links">
                 <a href="#services" class="type-mono-nav">Services</a>
                 <a href="#process" class="type-mono-nav">Process</a>
+                <a href="#massachusetts" class="type-mono-nav">MA</a>
                 <a href="#contact" class="type-mono-nav">Contact</a>
             </div>
             <div class="nav-icons">
@@ -1025,6 +1150,62 @@
         </div>
     </section>
 
+    <!-- Massachusetts Section -->
+    <section class="ma-section graph-paper graph-paper--medium" id="massachusetts">
+        <div class="ma-inner">
+            <span class="section-label">WORKING IN MASSACHUSETTS?</span>
+            <h2 class="ma-heading">Code-driven Passive House consulting specifically for MA multifamily.</h2>
+            <p class="ma-intro type-body-lg">
+                Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction, and the <strong>Mass Save</strong> Passive House Incentive Program funds the work — from feasibility study through certification. We support MA architects and developers across both phases, from our new Massachusetts office.
+            </p>
+
+            <div class="ma-grid">
+                <!-- Card 1: The Code -->
+                <div class="ma-card">
+                    <span class="type-mono-label ma-card__tag">01 · CODE PATHWAY</span>
+                    <h3 class="ma-card__title">Specialized Stretch Code</h3>
+                    <p class="ma-card__body">
+                        The Massachusetts Municipal Opt-in Specialized Stretch Energy Code (225 CMR 22 Appendix RC for residential, 225 CMR 23 Appendix CC for commercial) names Passive House — Phius or PHI certification — as one of its published compliance pathways for new construction. Adoption is municipality-by-municipality and continues to expand each Town Meeting cycle.
+                    </p>
+                    <div class="ma-card__cite">
+                        SOURCE
+                        <a href="https://www.mass.gov/info-details/building-energy-code" target="_blank" rel="noopener">mass.gov · Building Energy Code →</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: The Incentives -->
+                <div class="ma-card">
+                    <span class="type-mono-label ma-card__tag">02 · INCENTIVES</span>
+                    <h3 class="ma-card__title">Mass Save Passive House Program</h3>
+                    <p class="ma-card__body">
+                        For multifamily new construction with five or more units in a Mass Save sponsor's service territory, the Passive House Incentive Program funds feasibility studies, pre-construction energy modeling, pre-certification, and per-unit certification incentives. Program eligibility requires a Passive House consultant certified through PHI or Phius — refer to the program page for current incentive amounts.
+                    </p>
+                    <div class="ma-card__cite">
+                        SOURCE
+                        <a href="https://www.masssave.com/residential/rebates-and-incentives/passive-house-incentives" target="_blank" rel="noopener">masssave.com · Passive House Incentives →</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Our Role -->
+                <div class="ma-card">
+                    <span class="type-mono-label ma-card__tag">03 · OUR ROLE</span>
+                    <h3 class="ma-card__title">Feasibility & Engineering</h3>
+                    <p class="ma-card__body">
+                        BLDGTYP is certified through both <a href="https://www.phius.org/" target="_blank" rel="noopener" class="link">Phius</a> (CPHC) and <a href="https://passivehouse.com/" target="_blank" rel="noopener" class="link">PHI</a> (CPHD), meeting the Mass Save consultant requirement on either pathway. We deliver the full early-design scope: feasibility study, parametric envelope and HVAC analysis, WUFI-Passive / PHPP modeling, charrette support, and certification submission.
+                    </p>
+                    <div class="ma-card__cite">
+                        REFERENCE
+                        <a href="https://phmass.org/masssave/" target="_blank" rel="noopener">phmass.org · Mass Save overview →</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="ma-disclaimer">
+                // Code adoption status varies by municipality and incentive amounts are updated periodically. Confirm current details with the Massachusetts Department of Energy Resources and the Mass Save program administrator before relying on them for project decisions.
+            </p>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="stats" id="stats">
         <div class="stats-inner">
@@ -1074,7 +1255,7 @@
                 <img src="assets/ph-logos/download.png" alt="PHI Certified Passive House Designer (CPHD)">
             </a>
         </div>
-        <p>Brooklyn, NY · <a href="mailto:info@bldgtyp.com" class="link">info@bldgtyp.com</a> · © 2026 Building-Type LLC</p>
+        <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@bldgtyp.com" class="link">info@bldgtyp.com</a> · © 2026 Building-Type LLC</p>
     </footer>
 
     <!-- JavaScript -->
