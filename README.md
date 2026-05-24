@@ -77,7 +77,8 @@ python3 -m http.server 8000
 
 ## Design system
 
-This site uses the [BLDGTYP Design System](https://bldgtyp.github.io/bt-branding/). Tokens are inlined in the HTML for zero-dependency deployment, but the canonical source is:
+This site uses the [BLDGTYP Design System](https://bldgtyp.github.io/bt-branding/). Tokens are loaded at render time from the branding site:
 
 - **CSS tokens:** `https://bldgtyp.github.io/bt-branding/tokens/tokens.css`
+- **Component CSS:** `https://bldgtyp.github.io/bt-branding/tokens/components.css`
 - **JSON tokens:** `https://bldgtyp.github.io/bt-branding/tokens/tokens.json`
