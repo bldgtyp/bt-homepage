@@ -23,18 +23,18 @@ Only the contents of `site/` are deployed. Existing server content (like `/Proj_
 ### 1. Create the GitHub repo
 
 ```bash
-gh repo create bldgtyp/homepage --private
+gh repo create bldgtyp/bt-homepage --private
 cd bt-homepage
 git init
 git add .
 git commit -m "Initial homepage"
-git remote add origin git@github.com:bldgtyp/homepage.git
+git remote add origin git@github.com:bldgtyp/bt-homepage.git
 git push -u origin master
 ```
 
 ### 2. Add FTP secrets to the repo
 
-Go to **github.com/bldgtyp/homepage → Settings → Secrets and variables → Actions** and add three repository secrets:
+Go to **github.com/bldgtyp/bt-homepage → Settings → Secrets and variables → Actions** and add three repository secrets:
 
 | Secret     | Value                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------- |
@@ -77,7 +77,7 @@ python3 -m http.server 8000
 
 ## Design system
 
-This site uses the [BLDGTYP Design System](https://bldgtyp.github.io/branding/). Tokens are inlined in the HTML for zero-dependency deployment, but the canonical source is:
+This site uses the [BLDGTYP Design System](https://bldgtyp.github.io/bt-branding/). Tokens are inlined in the HTML for zero-dependency deployment, but the canonical source is:
 
-- **CSS tokens:** `https://bldgtyp.github.io/branding/tokens/tokens.css`
-- **JSON tokens:** `https://bldgtyp.github.io/branding/tokens/tokens.json`
+- **CSS tokens:** `https://bldgtyp.github.io/bt-branding/tokens/tokens.css`
+- **JSON tokens:** `https://bldgtyp.github.io/bt-branding/tokens/tokens.json`

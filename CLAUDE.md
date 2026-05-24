@@ -20,10 +20,10 @@ bt-homepage/
 
 The homepage consumes shared CSS from the BLDGTYP branding repo:
 
-- **Repo:** https://github.com/bldgtyp/branding
-- **Live reference:** https://bldgtyp.github.io/branding/
-- **Tokens CSS:** `https://bldgtyp.github.io/branding/tokens/tokens.css` — design tokens (colors, fonts, radii, transitions) for light/dark themes
-- **Components CSS:** `https://bldgtyp.github.io/branding/tokens/components.css` — reusable component classes
+- **Repo:** https://github.com/bldgtyp/bt-branding
+- **Live reference:** https://bldgtyp.github.io/bt-branding/
+- **Tokens CSS:** `https://bldgtyp.github.io/bt-branding/tokens/tokens.css` — design tokens (colors, fonts, radii, transitions) for light/dark themes
+- **Components CSS:** `https://bldgtyp.github.io/bt-branding/tokens/components.css` — reusable component classes
 
 ### Key component classes from the design system
 
