@@ -3,7 +3,7 @@
 ## Project Structure
 
 ```
-homepage/
+bt-homepage/
 ├── CLAUDE.md
 └── site/
     ├── index.html          ← main homepage (single-file, inline CSS + JS)
@@ -49,7 +49,7 @@ The homepage consumes shared CSS from the BLDGTYP branding repo:
 
 - Running `python3 -m http.server` inside the VM works for `curl` verification but Chrome on the host machine **cannot reach it**
 - Do NOT waste time trying to preview via localhost — it will always show "This site can't be reached"
-- `mcp__Control_Chrome__open_url` can open `file:///Users/em/homepage/site/index.html` in Chrome, but the tab opens outside the MCP tab group so Claude in Chrome **cannot screenshot it**
+- `mcp__Control_Chrome__open_url` can open `file:///Users/em/Dropbox/bldgtyp-00/00_PH_Tools/bldgtyp/bt-homepage/site/index.html` in Chrome, but the tab opens outside the MCP tab group so Claude in Chrome **cannot screenshot it**
 - The Claude in Chrome screenshot/interaction tools only work on tabs inside the MCP tab group, and `file://` tabs opened via Control Chrome are not added to that group
 - **Best workflow for visual feedback:** ask the user to open/refresh the page in Chrome and share a screenshot
 - Use `curl` from within the VM to verify HTML structure, server responses, or CSS correctness if needed for testing

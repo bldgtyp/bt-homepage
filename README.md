@@ -1,11 +1,11 @@
 # bldgtyp.com
 
-Source for the BLDGTYP company homepage. Deploys automatically to Dreamhost via FTP on every push to `main`.
+Source for the BLDGTYP company homepage. Deploys automatically to Dreamhost via FTP on every push to `master`.
 
 ## Repo structure
 
 ```
-homepage/
+bt-homepage/
 ├── .github/workflows/deploy.yml    ← GitHub Actions FTP deploy
 ├── site/                           ← Everything in here gets uploaded to Dreamhost
 │   ├── index.html                  ← The homepage
@@ -23,18 +23,18 @@ Only the contents of `site/` are deployed. Existing server content (like `/Proj_
 ### 1. Create the GitHub repo
 
 ```bash
-gh repo create bldgtyp/bldgtyp-site --private
-cd bldgtyp-site
+gh repo create bldgtyp/homepage --private
+cd bt-homepage
 git init
 git add .
 git commit -m "Initial homepage"
-git remote add origin git@github.com:bldgtyp/bldgtyp-site.git
-git push -u origin main
+git remote add origin git@github.com:bldgtyp/homepage.git
+git push -u origin master
 ```
 
 ### 2. Add FTP secrets to the repo
 
-Go to **github.com/bldgtyp/bldgtyp-site → Settings → Secrets and variables → Actions** and add three repository secrets:
+Go to **github.com/bldgtyp/homepage → Settings → Secrets and variables → Actions** and add three repository secrets:
 
 | Secret     | Value                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------- |
@@ -50,7 +50,7 @@ To find your FTP credentials in Dreamhost:
 
 ### 3. Test the deploy
 
-Push any change to `main` and check **Actions** tab on GitHub. The workflow will upload only new/changed files without disturbing existing content on the server.
+Push any change to `master` and check **Actions** tab on GitHub. The workflow will upload only new/changed files without disturbing existing content on the server.
 
 You can also trigger a deploy manually from the Actions tab using "Run workflow".
 

@@ -1,5 +1,5 @@
 # Deploy homepage to Dreamhost via FTP
-# Triggered on push to main branch
+# Triggered on push to master branch
 # Only uploads files — never deletes existing server content (safe for /Proj_* directories)
 
 name: Deploy to Dreamhost
