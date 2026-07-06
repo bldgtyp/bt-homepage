@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://bldgtyp.github.io/bt-branding/tokens/components.css">
     <style>
         /* ==========================================================
-           BLDGTYP Homepage — Page-specific styles only.
+           BLDGTYP Homepage - Page-specific styles only.
            Design tokens: bt-branding/tokens/tokens.css
            Components:    bt-branding/tokens/components.css
            ========================================================== */
@@ -53,6 +53,7 @@
             text-transform: uppercase;
             color: var(--text-primary);
             cursor: pointer;
+            white-space: nowrap;
             transition: color var(--transition-base);
         }
         .nav-brand:hover { color: var(--accent); }
@@ -67,7 +68,7 @@
             padding-left: 12px;
             border-left: 1px solid var(--border-subtle);
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1180px) {
             .nav-brand-locs { display: none; }
         }
 
@@ -79,8 +80,19 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
             align-items: center;
+        }
+
+        .nav-link-group {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link-group + .nav-link-group {
+            padding-left: 24px;
+            border-left: 1px solid var(--border-subtle);
         }
 
         /* nav link typography inherits from .type-mono-nav in components.css */
@@ -584,7 +596,7 @@
         }
 
         .deliverable-list li::before {
-            content: '–';
+            content: '-';
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -599,50 +611,46 @@
             color: var(--accent-text);
         }
 
-        /* ========== OPEN SOURCE CREDIBILITY STRIP ========== */
-        .oss-strip {
-            padding: 60px 40px;
+        /* ========== PROOF / SELECTED WORK ========== */
+        /* Reuses .ma-inner / .ma-heading / .ma-intro / .ma-grid / .ma-card */
+        .proof {
+            padding: 120px 40px;
             background-color: var(--bg-page);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .oss-inner {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* deliverable-caption: felt-outcome translation under the metric mockup */
+        .deliverable-caption {
+            margin-top: 16px;
+            font-family: var(--font-mono);
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 1.6;
+            letter-spacing: 0.03em;
+            color: var(--text-muted);
+        }
+
+        /* ========== KNOWLEDGE RESOURCE ========== */
+        .resources {
+            padding: 120px 40px;
+            background-color: var(--bg-section-alt);
+        }
+
+        .resources-links {
             display: flex;
-            align-items: center;
-            gap: 40px;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 36px;
+        }
+
+        /* ========== COST ANSWER ========== */
+        .cost {
+            padding: 120px 40px;
+            background-color: var(--bg-section-alt);
         }
 
         @media (max-width: 768px) {
-            .oss-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
+            .proof, .resources, .cost { padding: 80px 20px; }
         }
-
-        /* oss-label: layout only; typography via .type-mono-label */
-        .oss-label {
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .oss-divider {
-            width: 40px;
-            height: 1px;
-            background: var(--border-subtle);
-            flex-shrink: 0;
-        }
-
-        @media (max-width: 768px) {
-            .oss-divider { display: none; }
-        }
-
-        /* oss-text: typography via .type-body in HTML */
-
-        /* .oss-text a styled via .link from components.css */
 
         /* ========== MASSACHUSETTS SECTION ========== */
         .ma-section {
@@ -880,7 +888,9 @@
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
             .nav-right { gap: 20px; }
-            .nav-links { gap: 16px; }
+            .nav-links { gap: 14px; }
+            .nav-link-group { gap: 14px; }
+            .nav-link-group + .nav-link-group { padding-left: 14px; }
             .hero { padding: 100px 20px; min-height: auto; }
             .hero-ghost-bg { opacity: 0.03; width: 300px; height: 300px; right: -150px; }
             .services { padding: 80px 20px; }
@@ -893,6 +903,40 @@
             .who-grid { gap: 40px; }
             .deliverable-grid { gap: 40px; }
             .report-mockup { min-height: 400px; }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                height: auto;
+                min-height: 64px;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 12px 16px 10px;
+            }
+
+            .nav-right {
+                width: 100%;
+                gap: 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+
+            .nav-link-group {
+                gap: 10px;
+            }
+
+            .nav-link-group + .nav-link-group {
+                padding-left: 10px;
+            }
+
+            .nav-icons,
+            #themeToggleBtn {
+                display: none;
+            }
         }
 
         /* ========== ANIMATIONS ========== */
@@ -920,10 +964,19 @@
         <div class="nav-brand" onclick="scrollToTop()">BLDGTYP <span class="nav-brand-locs">New York · Massachusetts</span></div>
         <div class="nav-right">
             <div class="nav-links">
-                <a href="#services" class="type-mono-nav">Services</a>
-                <a href="#process" class="type-mono-nav">Process</a>
-                <a href="#massachusetts" class="type-mono-nav">MA</a>
-                <a href="#contact" class="type-mono-nav">Contact</a>
+                <div class="nav-link-group" aria-label="Homepage sections">
+                    <a href="#services" class="type-mono-nav">Services</a>
+                    <a href="#work" class="type-mono-nav">Work</a>
+                    <a href="#contact" class="type-mono-nav">Contact</a>
+                </div>
+                <div class="nav-link-group" aria-label="Site pages">
+                    <a href="/learn/" class="type-mono-nav">Learn</a>
+                    <a href="/about/" class="type-mono-nav">About</a>
+                </div>
+                <div class="nav-link-group" aria-label="Location pages">
+                    <a href="/ma/" class="type-mono-nav">MA</a>
+                    <a href="/nyc-thermal-bridging/" class="type-mono-nav">NYC</a>
+                </div>
             </div>
             <div class="nav-icons">
                 <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="icon-btn" aria-label="YouTube">
@@ -952,10 +1005,10 @@
         <div class="hero-content">
             <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
             <p class="hero-sub">
-                // Passive House design and consulting for architects, developers, and builders.</br>
-                // We find the answers so you can build with confidence.
+                // Energy modeling with thermal-bridge and certification support for design and construction teams across New York &amp; Massachusetts.<br>
+                // We turn open design questions into buildable, documented performance targets.
             </p>
-            <button class="btn-primary" onclick="handleCTA()">Reach out today: info@bldgtyp.com</button>
+            <button class="btn-primary" onclick="handleCTA()">Send us your drawings &rarr; info@bldgtyp.com</button>
         </div>
     </section>
 
@@ -972,7 +1025,7 @@
                     </div>
                     <h3 class="who-title">ARCHITECTS</h3>
                     <p class="who-subtitle">Designing high-performance luxury homes</p>
-                    <p class="who-body type-body-lg">You care about craft, comfort, and precision. We bring the energy science to match your design ambition — without compromising your architecture.</p>
+                    <p class="who-body type-body-lg">You own the design. We handle the performance work: energy model, thermal bridges, and certification path. You keep design control and give your client a building with documented targets.</p>
                     <p class="type-mono-label">Single-family · Townhouse · Brownstone renovation</p>
                 </div>
 
@@ -983,7 +1036,7 @@
                     </div>
                     <h3 class="who-title">DEVELOPERS</h3>
                     <p class="who-subtitle">Building affordable multifamily at scale</p>
-                    <p class="who-body type-body-lg">You need certification, incentives, and energy performance that pencils out. We model efficiently and deliver documentation your review team will accept.</p>
+                    <p class="who-body type-body-lg">Performance risk belongs in the pro forma early. We model efficiently, right-size the mechanicals, map incentives like Mass Save, stretch-code compliance, and LIHTC points, then prepare documentation your certifier and review team can use.</p>
                     <p class="type-mono-label">Affordable housing · Mixed-use · Multifamily</p>
                 </div>
 
@@ -994,10 +1047,14 @@
                     </div>
                     <h3 class="who-title">BUILDERS</h3>
                     <p class="who-subtitle">Getting high-performance details right</p>
-                    <p class="who-body type-body-lg">You're building it — and you need to know the assemblies will perform. Our standard assessment gives you clear, actionable guidance on envelope details, airtightness, and mechanical sizing.</p>
+                    <p class="who-body type-body-lg">Your name is on it. We give you blower-door-ready details and right-sized mechanicals you can actually install. The result is fewer callbacks and measured proof of the work.</p>
                     <p class="type-mono-label">Single-family homes · Custom builds · Renovations</p>
                 </div>
             </div>
+
+            <p class="ma-disclaimer">
+                // Were you sent here by your architect or builder? In plain terms: we're the specialists your team brings in to verify comfort and durability before anyone breaks ground.
+            </p>
         </div>
     </section>
 
@@ -1010,8 +1067,8 @@
                 <!-- Service Card 1: Energy Modeling -->
                 <div class="service-card">
                     <h3 class="service-card__title">ENERGY MODELING</h3>
-                    <h4 class="service-card__subtitle">Know before you build</h4>
-                    <p class="service-card__body">We model your building's energy performance so you can make design decisions with real data — not assumptions. From envelope to mechanicals, every system is accounted for.</p>
+                    <h4 class="service-card__subtitle">Design with real numbers</h4>
+                    <p class="service-card__body">We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to the performance target before construction locks in.</p>
                     <div class="service-card__img-strip">
                         <img src="assets/energy-model.png" alt="" aria-hidden="true">
                     </div>
@@ -1020,8 +1077,8 @@
                 <!-- Service Card 2: Thermal Bridges -->
                 <div class="service-card">
                     <h3 class="service-card__title">THERMAL BRIDGES</h3>
-                    <h4 class="service-card__subtitle">Find your hidden losses</h4>
-                    <p class="service-card__body">2D and 3D finite-element thermal bridge modeling identifies where your envelope is bleeding performance — before construction begins. Every junction, every connection, verified.</p>
+                    <h4 class="service-card__subtitle">Find the hidden losses</h4>
+                    <p class="service-card__body">2D and 3D finite-element modeling finds envelope heat loss, condensation risk, and mold-risk conditions before construction. Every junction is verified against a buildable detail. <strong>Filing in NYC?</strong> The <a href="/nyc-thermal-bridging/" class="link">2025 energy code now requires psi-value calculations</a>, a service we've delivered for over a decade.</p>
                     <div class="service-card__img-strip">
                         <img src="assets/thermal-bridge.png" alt="" aria-hidden="true">
                     </div>
@@ -1030,8 +1087,8 @@
                 <!-- Service Card 3: Certification -->
                 <div class="service-card">
                     <h3 class="service-card__title">CERTIFICATION</h3>
-                    <h4 class="service-card__subtitle">Cross the finish line</h4>
-                    <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification management from schematic design through final verification. We handle the modeling, the documentation, and the review process - so you don't have to.</p>
+                    <h4 class="service-card__subtitle">De-risk the whole build</h4>
+                    <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification works as durability insurance. It catches costly envelope defects a code inspection can miss. We run the model, prepare the documentation, and manage the review. <strong>Want the performance without the plaque?</strong> We'll hit the targets either way.</p>
                     <div class="service-card__img-strip">
                         <img src="assets/certification.png" alt="" aria-hidden="true">
                     </div>
@@ -1049,31 +1106,31 @@
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-title">SHARE YOUR PLANS</div>
-                    <p class="step-desc">Send us your drawings at any stage — from early sketches to full CDs. The earlier we're involved, the more impact we can have.</p>
+                    <p class="step-desc">Send us your drawings at any stage, from early sketches to full CDs. Earlier involvement gives the team more leverage.</p>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-title">WE BUILD YOUR MODEL</div>
-                    <p class="step-desc">We create a detailed energy model of your building — every wall assembly, every window, every mechanical system — in WUFI Passive or PHPP.</p>
+                    <p class="step-desc">We create a detailed energy model in WUFI Passive or PHPP, including wall assemblies, windows, and mechanical systems.</p>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-title">REVIEW TOGETHER</div>
-                    <p class="step-desc">We walk through the results with your team. Where is performance falling short? What are the most cost-effective upgrades? Real numbers, real options.</p>
+                    <p class="step-desc">We walk through the results with your team. Where is performance falling short? Where can we shrink the mechanical system to save money? Real numbers, real options.</p>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-title">YOUR REPORT</div>
-                    <p class="step-desc">You receive a comprehensive design-phase report — a complete snapshot of your building's energy performance, with clear recommendations.</p>
+                    <p class="step-desc">You receive a design-phase report with the building's energy performance, open risks, and recommended next moves.</p>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-title">BUILD WITH CONFIDENCE</div>
-                    <p class="step-desc">Construction proceeds with a fully documented performance target. We support you through certification and final verification.</p>
+                    <p class="step-desc">Construction proceeds with a documented performance target. We support certification and can verify the finished building against the model.</p>
                 </div>
             </div>
         </div>
@@ -1086,6 +1143,7 @@
 
             <div class="deliverable-grid">
                 <!-- Report Mockup -->
+                <div class="deliverable-report">
                 <div class="report-mockup">
                     <div class="report-header">
                         <div>
@@ -1120,11 +1178,13 @@
                         <img src="assets/detail-foundation.png" alt="Foundation detail drawing">
                     </div>
                 </div>
+                <p class="deliverable-caption">What these numbers mean in the building: even room-to-room temperatures and a home that can hold ~70&deg;F for days without power.</p>
+                </div>
 
                 <!-- Design-Phase Assessment Content -->
                 <div class="deliverable-content">
                     <h3>Understand your building's performance, before you build.</h3>
-                    <p class="deliverable-intro type-body-lg">Every project receives a detailed design-phase report covering:</p>
+                    <p class="deliverable-intro type-body-lg"><strong>One deliverable that de-risks the whole project.</strong> Bring us in at concept and you get a design-phase report that turns open questions into a documented performance target. It covers:</p>
 
                     <ul class="deliverable-list">
                         <li>Annual heating and cooling demand</li>
@@ -1141,12 +1201,50 @@
         </div>
     </section>
 
-    <!-- Open Source Credibility Strip -->
-    <section class="oss-strip">
-        <div class="oss-inner">
-            <span class="oss-label type-mono-label">OPEN SOURCE</span>
-            <div class="oss-divider"></div>
-            <p class="type-body"><strong>BLDGTYP</strong> also builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" class="link">Passive House Tools</a> — the open-source toolkit used by Passive House practitioners worldwide. The same rigor we put into our software goes into every building we work on.</p>
+    <!-- Proof / Selected Work -->
+    <section class="proof" id="work">
+        <div class="ma-inner">
+            <span class="section-label">DOES IT ACTUALLY WORK?</span>
+            <h2 class="ma-heading">We don't model performance and hope. We measure it.</h2>
+            <p class="ma-intro type-body-lg">The real test of an energy model is the utility bill after move-in. On our certified projects we track modeled-versus-measured performance and show the receipts.</p>
+
+            <!-- TODO D4: replace bracketed placeholders with cleared project names, real modeled/measured figures, and an approved client quote. -->
+            <div class="ma-grid">
+                <div class="ma-card">
+                    <span class="type-mono-label ma-card__tag">01 · SINGLE-FAMILY</span>
+                    <h3 class="ma-card__title">[Project name: Brooklyn EnerPHit]</h3>
+                    <p class="ma-card__body">Modeled heating demand [X kWh/m²a], measured [Y]. Result: within [±Z%] of the model. "[Short, visceral client quote, e.g. I don't wear a sweater in my own house anymore.]"</p>
+                    <div class="ma-card__cite">RESULT · modeled vs. measured</div>
+                </div>
+
+                <div class="ma-card">
+                    <span class="type-mono-label ma-card__tag">02 · MULTIFAMILY</span>
+                    <h3 class="ma-card__title">[Project name: MA affordable, NN units]</h3>
+                    <p class="ma-card__body">Certified Phius. Roughly [2-3%] construction premium, with projected operating costs around [40%] of a code-built equivalent.</p>
+                    <div class="ma-card__cite">RESULT · Phius certified</div>
+                </div>
+
+                <div class="ma-card">
+                    <span class="type-mono-label ma-card__tag">03 · ENVELOPE</span>
+                    <h3 class="ma-card__title">[Project name: retrofit / thermal bridge]</h3>
+                    <p class="ma-card__body">[One-line result, e.g. resolved thermal bridges brought the worst junctions back above the condensation threshold and cut peak heat loss.]</p>
+                    <div class="ma-card__cite">RESULT · case study</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Resource -->
+    <section class="resources" id="resources">
+        <div class="ma-inner">
+            <span class="section-label">WE BUILD THE TOOLS, TOO</span>
+            <h2 class="ma-heading">The same rigor we put into our software goes into every building.</h2>
+            <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free in the <a href="/learn/" class="link">knowledge library</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
+            <div class="resources-links">
+                <a href="/learn/" class="btn-ghost">Browse the knowledge library &rarr;</a>
+                <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="btn-ghost">Explore the open-source tools &rarr;</a>
+                <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="btn-ghost">Watch on YouTube &rarr;</a>
+            </div>
         </div>
     </section>
 
@@ -1156,7 +1254,7 @@
             <span class="section-label">WORKING IN MASSACHUSETTS?</span>
             <h2 class="ma-heading">Code-driven Passive House consulting specifically for MA multifamily.</h2>
             <p class="ma-intro type-body-lg">
-                Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction, and the <strong>Mass Save</strong> Passive House Incentive Program funds the work — from feasibility study through certification. We support MA architects and developers across both phases, from our new Massachusetts office.
+                Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <strong>Mass Save</strong> Passive House Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
             </p>
 
             <div class="ma-grid">
@@ -1165,7 +1263,7 @@
                     <span class="type-mono-label ma-card__tag">01 · CODE PATHWAY</span>
                     <h3 class="ma-card__title">Specialized Stretch Code</h3>
                     <p class="ma-card__body">
-                        The Massachusetts Municipal Opt-in Specialized Stretch Energy Code (225 CMR 22 Appendix RC for residential, 225 CMR 23 Appendix CC for commercial) names Passive House — Phius or PHI certification — as one of its published compliance pathways for new construction. Adoption is municipality-by-municipality and continues to expand each Town Meeting cycle.
+                        The Massachusetts Municipal Opt-in Specialized Stretch Energy Code (225 CMR 22 Appendix RC for residential, 225 CMR 23 Appendix CC for commercial) names Passive House, through Phius or PHI certification, as one of its published compliance pathways for new construction. Adoption is municipality-by-municipality and continues to expand each Town Meeting cycle.
                     </p>
                     <div class="ma-card__cite">
                         SOURCE
@@ -1178,7 +1276,7 @@
                     <span class="type-mono-label ma-card__tag">02 · INCENTIVES</span>
                     <h3 class="ma-card__title">Mass Save Passive House Program</h3>
                     <p class="ma-card__body">
-                        For multifamily new construction with five or more units in a Mass Save sponsor's service territory, the Passive House Incentive Program funds feasibility studies, pre-construction energy modeling, pre-certification, and per-unit certification incentives. Program eligibility requires a Passive House consultant certified through PHI or Phius — refer to the program page for current incentive amounts.
+                        For multifamily new construction with five or more units in a Mass Save sponsor's service territory, the Passive House Incentive Program funds feasibility studies, pre-construction energy modeling, pre-certification, and per-unit certification incentives. Program eligibility requires a Passive House consultant certified through PHI or Phius. Refer to the program page for current incentive amounts.
                     </p>
                     <div class="ma-card__cite">
                         SOURCE
@@ -1200,36 +1298,51 @@
                 </div>
             </div>
 
+            <div class="resources-links">
+                <a href="/ma/" class="btn-ghost">More on working in Massachusetts &rarr;</a>
+            </div>
+
             <p class="ma-disclaimer">
                 // Code adoption status varies by municipality and incentive amounts are updated periodically. Confirm current details with the Massachusetts Department of Energy Resources and the Mass Save program administrator before relying on them for project decisions.
             </p>
         </div>
     </section>
 
+    <!-- Cost Answer -->
+    <section class="cost" id="cost">
+        <div class="ma-inner">
+            <span class="section-label">WHAT ABOUT COST?</span>
+            <h2 class="ma-heading">The premium is smaller than most teams expect.</h2>
+            <!-- TODO D4: confirm the headline premium figure for our market. -->
+            <p class="ma-intro type-body-lg">On multifamily, a well-run Passive House project typically carries roughly a <strong>[2-3%]</strong> construction premium that operating savings can recover. On custom residential, much of the "premium" is a one-time learning curve. Costs vary by team and scope. We <em>will</em> show you the numbers for your project before you commit.</p>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="stats" id="stats">
         <div class="stats-inner">
-            <span class="section-label">WHY PASSIVE HOUSE?</span>
+            <span class="section-label">WHY IT'S WORTH IT</span>
 
             <div class="stats-grid">
+                <!-- TODO D4: replace with a verified modeled-vs-measured figure across our certified projects -->
                 <div class="stat">
-                    <div class="type-stat-number">9,000</div>
-                    <div class="type-stat-label">Certified units in North America</div>
+                    <div class="type-stat-number">±2%</div>
+                    <div class="type-stat-label">Modeled vs. measured energy on our certified projects</div>
                 </div>
 
                 <div class="stat">
-                    <div class="type-stat-number">90%</div>
-                    <div class="type-stat-label">Reduction in heating & cooling energy</div>
+                    <div class="type-stat-number">2-3%</div>
+                    <div class="type-stat-label">Typical multifamily cost premium, recovered in operating savings</div>
                 </div>
 
                 <div class="stat">
-                    <div class="type-stat-number">60</div>
-                    <div class="type-stat-label">Years of proven building science</div>
+                    <div class="type-stat-number">70&deg;F</div>
+                    <div class="type-stat-label">Held for days with no power</div>
                 </div>
 
                 <div class="stat">
                     <div class="type-stat-number">#1</div>
-                    <div class="type-stat-label">Fastest-growing standard in the US</div>
+                    <div class="type-stat-label">Fastest-growing high-performance standard in the US</div>
                 </div>
             </div>
         </div>
@@ -1238,9 +1351,9 @@
     <!-- Final CTA Section -->
     <section class="final-cta" id="contact">
         <div class="final-cta-inner">
-            <h2>Ready to get started?</h2>
-            <p class="final-cta-subtitle">We work with architects, developers, and builders constructing to the highest standard. Reach out to discuss how we can help you with your next high-performance project.</p>
-            <button class="btn-primary" onclick="handleCTA()">Reach out today: info@bldgtyp.com</button>
+            <h2>Bring us in early. It's the cheapest time to get performance right.</h2>
+            <p class="final-cta-subtitle">Early involvement gives the team more leverage and makes the design budget work harder. Send us your drawings at any stage and we'll tell you where your project stands.</p>
+            <button class="btn-primary" onclick="handleCTA()">Send us your drawings &rarr; info@bldgtyp.com</button>
         </div>
     </section>
 

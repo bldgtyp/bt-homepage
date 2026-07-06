@@ -3,3 +3,10 @@
 *.swo
 *~
 .ftp-deploy-sync-state.json
+
+# Hugo build artifacts
+hugo/.hugo_build.lock
+hugo/resources/
+
+# Local research recordings
+*.m4a

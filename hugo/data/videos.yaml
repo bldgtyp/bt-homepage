@@ -1,0 +1,156 @@
+# Video library data - source of truth: 001_Proposals/context/presentations/video-inventory.md
+# Talks live on their host channels (PHA / PHN / NYPH / etc.); this library aggregates them.
+# Thumbnails come from YouTube (i.ytimg.com) per video id.
+
+groups:
+  - title: "Thermal Bridging"
+    desc: "Where the envelope bleeds heat, plus the details where condensation and mold risk hide. We run thousands of thermal-bridge simulations a year; start here."
+    videos:
+      - id: cJy0mb0oLYc
+        title: "101 Series: No Thermal Bridges"
+        host: "Passive House Accelerator"
+        year: 2023
+
+  - title: "Multifamily & Case Studies"
+    desc: "Real buildings, end to end, including Candela Lofts, the first PHI-certified multifamily building in New Jersey."
+    videos:
+      - id: Xd4epe9UYMM
+        title: "Candela Lofts: 1st Multifamily Passive House in New Jersey"
+        host: "Passive House Accelerator"
+        year: 2020
+      - id: OfE2vyRs1HA
+        title: "NAPHN LIVE: Candela Lofts, Hoboken NJ"
+        host: "The Passive House Network"
+        year: 2020
+      - id: eJIx9Jlx1rA
+        title: "International Passive House Days with Virtual Tour of Engine 16"
+        host: "Passive House Accelerator"
+        year: 2021
+
+  - title: "AI for Passive House"
+    desc: "Using AI and agentic tools for the tedious parts of Passive House delivery, from data extraction to model QA/QC for certification paperwork."
+    videos:
+      - id: lC_RuKdXXH0
+        title: "AI Meets Passive House: From Algorithms to Airtightness"
+        host: "The Passive House Network"
+        year: 2025
+
+  - title: "Modeling Strategy & Value"
+    desc: "Getting more out of your energy models: work earlier, test ranges of outcomes, then stop re-keying data by hand."
+    videos:
+      - id: e4HVtPkaRWY
+        title: "How to Make Passive House Certification Modeling Easier"
+        host: "Passive House Accelerator"
+        year: 2025
+      - id: XyIWZYr_Qbo
+        title: "Making a Better Crystal Ball: Strategies for PH Energy Modeling"
+        host: "The Passive House Network"
+        year: 2025
+      - id: IxbhDM39_yY
+        title: "Improving Our Passive House Modeling Tools"
+        host: "Reimagine Buildings"
+        year: 2024
+      - id: l0T2UfkgsM8
+        title: "Maximize the Value of Your Passive House Models"
+        host: "Reimagine Buildings"
+        year: 2024
+
+  - title: "Tools & Open Source"
+    desc: "Honeybee-PH, PHX, and the rest of the open-source Passive House Tools stack for parametric PH modeling in standard CAD."
+    videos:
+      - id: DRD-pGVjzQo
+        title: "Intro to Honeybee-PH: A Toolkit for Passive House Modeling"
+        host: "Passive House Accelerator"
+        year: 2025
+      - id: 8lPkArXUUoA
+        title: "Introduction to Honeybee-PH: Software Support for Complex PH Design"
+        host: "The Passive House Network"
+        year: 2022
+      - id: 5W-LH97kvKA
+        title: "Construction Tech: Episode 17"
+        host: "Passive House Accelerator"
+        year: 2021
+      - id: A5zLqwsmrZ0
+        title: "PH \"Jigs\": Digital Tools to Supercharge Practice"
+        host: "Passive House Accelerator"
+        year: 2020
+
+  - title: "Retrofit & EnerPHit"
+    desc: "Deep-energy retrofits, including the NYC townhouse work that is the core of our single-family practice."
+    videos:
+      - id: UhuuA9SIWQ4
+        title: "Peeling Back the Layers of Passive House Renovation"
+        host: "Passive House Accelerator"
+        year: 2025
+      - id: U7V07F-7sUU
+        title: "Brooklyn Heights Passive House Retrofit"
+        host: "Passive House Accelerator"
+        year: 2021
+      - id: Kj_d3ZxlwFA
+        title: "Architects Focus: Retrofit Solutions & Design Opportunities for the NYC Townhouse"
+        host: "New York Passive House"
+        year: 2021
+      - id: 8srvOqPH9-o
+        title: "Passive House + Foundation Reuse"
+        host: "The Passive House Network"
+        year: 2026
+
+  - title: "Fundamentals & Training"
+    desc: "The building blocks: PHPP, windows, and the real purpose of energy models."
+    videos:
+      - id: X38aRx0w8ys
+        title: "10 Easy Ways to Ruin Your Blower Door Score"
+        host: "Passive House Accelerator"
+        year: 2022
+      - id: bvZC6A3Pn8k
+        title: "An Introduction to the Passive House Planning Package (IP)"
+        host: "New York Passive House"
+        year: 2021
+      - id: 8WiXv2iHQks
+        title: "Energy Modeling vs. Load Calculations: What's the Point?"
+        host: "The BS and Beer Show"
+        year: 2021
+      - id: zAXMadA0cRU
+        title: "Modeling Window Details: Ensuring High Performance Windows Stay High Performance"
+        host: "Passive House Accelerator"
+        year: 2022
+      - id: A-JjPXHPp4o
+        title: "Seeing Clearly: How Quality Windows Drive Comfort, Performance & Design Freedom"
+        host: "The Passive House Network"
+        year: 2020
+
+  - title: "Interviews & Community"
+    desc: "Conversations on Passive House practice and where the industry is headed."
+    videos:
+      - id: 5_5Rk7i7l-8
+        title: "Ed May, bldgtyp: IPHC 2023 Interview"
+        host: "Passive House Accelerator"
+        year: 2023
+      - id: crjBgzDJnpI
+        title: "Life in New York, 2050: Passive Houses, Electric Transportation & a Decarbonized Grid"
+        host: "Phius Alliance New York"
+        year: 2021
+      - id: SWvFIqVdO5g
+        title: "Global Passive Happy Hour with Ed May"
+        host: "Passive House Accelerator"
+        year: 2020
+
+course:
+  title: "The Honeybee-PH Course: HBPH to WUFI-Passive"
+  desc: "A complete 14-part tutorial series: build a Phius model in Rhino/Grasshopper with Honeybee-PH and take it all the way to WUFI-Passive."
+  playlist: "https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE"
+  units:
+    - { num: "01", id: DvH_Wxf1D8A, title: "Install Honeybee-PH" }
+    - { num: "02", id: yi-QTB1Z7v0, title: "Geometry" }
+    - { num: "03", id: tTfYKXKG60c, title: "Window Modeling" }
+    - { num: "04", id: VQJykG6t8Lc, title: "Building Segments & Climate" }
+    - { num: "05", id: xtd7cnjflgU, title: "Interior Spaces" }
+    - { num: "06", id: b3aR7ZikHs4, title: "Ventilation Systems" }
+    - { num: "07", id: XRWxGDGecvE, title: "Occupancy and Appliances" }
+    - { num: "08", id: nHbBFgiwjIw, title: "Ventilation Schedule and Load" }
+    - { num: "09", id: uhtxsH_DO38, title: "Heating and Cooling Systems" }
+    - { num: "10", id: fw7HF2XF7w4, title: "Hot Water Systems" }
+    - { num: "11", id: 26JcDljJdNo, title: "Phius CORE Thresholds" }
+    - { num: "12", id: TNsuX2cWy8A, title: "Constructions 1" }
+    - { num: "13", id: ZgHHpQSZ1_w, title: "Constructions 2" }
+    - { num: "14", id: N9B0E54tpLE, title: "Cooling and Shading" }

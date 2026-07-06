@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} · BLDGTYP</title>
+    {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="https://bldgtyp.github.io/bt-branding/tokens/tokens.css">
+    <link rel="stylesheet" href="https://bldgtyp.github.io/bt-branding/tokens/components.css">
+    {{ partial "site-styles.html" . }}
+</head>
+<body>
+    {{ partial "nav.html" . }}
+    <main>
+    {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partial "site-scripts.html" . }}
+</body>
+</html>

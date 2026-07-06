@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Passive House — Master Rules &amp; Best Practices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://bldgtyp.github.io/bt-branding/tokens/tokens.css">
+<link rel="stylesheet" href="https://bldgtyp.github.io/bt-branding/tokens/components.css">
+<style>
+  :root {
+    --reading-width: 760px;
+    --toc-width: 280px;
+    --ink: var(--color-text, #1a1a1a);
+    --ink-soft: var(--color-text-secondary, #555);
+    --surface: var(--color-bg, #ffffff);
+    --surface-alt: var(--color-surface, #f5f5f3);
+    --rule: var(--color-border, #e2e2dd);
+    --accent: var(--color-accent, #b5563c);
+    --accent-soft: var(--color-accent-soft, rgba(181, 86, 60, 0.10));
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: "Outfit", system-ui, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---- Layout ---- */
+  .page {
+    display: grid;
+    grid-template-columns: var(--toc-width) minmax(0, 1fr);
+    gap: 48px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px 120px;
+  }
+
+  /* ---- Sticky TOC ---- */
+  .toc {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0 40px;
+    border-right: 1px solid var(--rule);
+  }
+  .toc__title {
+    margin: 0 0 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: toc;
+  }
+  .toc li { margin: 0 0 2px; }
+  .toc a {
+    display: block;
+    padding: 5px 10px 5px 12px;
+    font-size: 0.86rem;
+    line-height: 1.35;
+    color: var(--ink-soft);
+    border-left: 2px solid transparent;
+    border-radius: 0 4px 4px 0;
+    transition: all .15s ease;
+  }
+  .toc a:hover {
+    color: var(--ink);
+    background: var(--accent-soft);
+    border-left-color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ---- Reading column ---- */
+  .content {
+    max-width: var(--reading-width);
+    padding-top: 56px;
+  }
+
+  .doc-header { margin-bottom: 8px; }
+  .doc-header h1 {
+    margin: 12px 0 16px;
+    line-height: 1.12;
+  }
+  .doc-meta {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0 0 8px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  h2 {
+    margin: 64px 0 8px;
+    padding-top: 20px;
+    line-height: 1.18;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 24px;
+  }
+  h2:first-of-type { border-top: none; }
+  h3 {
+    margin: 40px 0 12px;
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: var(--accent);
+    scroll-margin-top: 24px;
+  }
+
+  p { margin: 0 0 18px; }
+
+  ul, ol { margin: 0 0 22px; padding-left: 0; }
+  .content ul { list-style: none; }
+  .content ul > li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+  .content ul > li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0.72em;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  /* Ranked Top-10 list */
+  ol.ranked { list-style: none; counter-reset: rank; }
+  ol.ranked > li {
+    counter-increment: rank;
+    position: relative;
+    margin-bottom: 28px;
+    padding: 18px 20px 18px 64px;
+    background: var(--surface-alt);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+  }
+  ol.ranked > li::before {
+    content: counter(rank);
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 6px;
+  }
+  ol.ranked .rule-lead {
+    display: block;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  /* Numbered tensions list */
+  ol.numbered { counter-reset: item; padding-left: 0; list-style: none; }
+  ol.numbered > li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+  }
+  ol.numbered > li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+  }
+
+  /* ---- Citations ---- */
+  .cite {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1px 7px;
+    margin: 2px 3px 2px 0;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+  .cite .cite-slug { opacity: 0.6; }
+
+  /* HIGH CONSENSUS flag */
+  .consensus {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-left: 4px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  strong { font-weight: 600; }
+
+  /* ---- Section label / how-to / exec summary callouts ---- */
+  .section-label {
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .callout {
+    background: var(--surface-alt);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .callout h2 { border-top: none; margin-top: 0; padding-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ---- Quotes appendix ---- */
+  ol.quotes { list-style: none; counter-reset: q; padding-left: 0; }
+  ol.quotes > li {
+    counter-increment: q;
+    margin: 0 0 22px;
+    padding: 0;
+  }
+  blockquote.quote {
+    margin: 0;
+    padding: 16px 22px;
+    background: var(--surface-alt);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote.quote p { margin: 0 0 8px; font-size: 1.04rem; }
+  blockquote.quote .attrib {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+  blockquote.quote .attrib .who { color: var(--ink); font-weight: 600; }
+
+  hr.divider { display: none; }
+
+  /* ---- Mobile ---- */
+  @media (max-width: 900px) {
+    .page { grid-template-columns: 1fr; gap: 0; padding: 0 22px 80px; }
+    .toc {
+      position: static;
+      max-height: none;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 28px 0;
+    }
+    .content { padding-top: 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= TABLE OF CONTENTS ================= -->
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc__title">Contents</p>
+    <ol>
+      <li><a href="#how-to-use">How to use this</a></li>
+      <li><a href="#exec-summary">Executive summary</a></li>
+      <li><a href="#top-10">Top 10 Rules</a></li>
+      <li><a href="#sec-language">1. Language &amp; Framing</a></li>
+      <li><a href="#sec-audience">2. Audience &amp; Positioning</a></li>
+      <li><a href="#sec-format">3. Format, Channel &amp; Content</a></li>
+      <li><a href="#sec-scope">4. Scope, Services &amp; Business Model</a></li>
+      <li><a href="#sec-trust">5. Trust, Proof &amp; Social Proof</a></li>
+      <li><a href="#sec-works">6. What Works</a></li>
+      <li><a href="#sec-fails">7. What Fails / Pitfalls</a></li>
+      <li><a href="#sec-psychology">8. Client Psychology</a></li>
+      <li><a href="#sec-tensions">Notable tensions</a></li>
+      <li><a href="#sec-quotes">Memorable Quotes</a></li>
+    </ol>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="content">
+
+    <header class="doc-header">
+      <span class="section-label type-mono-label">Field Guide</span>
+      <h1 class="type-hero">Marketing Passive House — Master Rules &amp; Best Practices</h1>
+      <p class="doc-meta">Distilled from 38 episodes of the “Marketing Passivhaus” podcast (host: James Turner). Each rule is cited to the guest(s) who voiced it, using <span class="cite">Guest — slug</span>. Rules echoed by many guests are flagged <span class="consensus">High Consensus</span>.</p>
+    </header>
+
+    <!-- How to use -->
+    <section id="how-to-use">
+      <h2 class="type-heading">How to use this</h2>
+      <p>This is a field guide, not a textbook. Read the <strong>Top 10 Rules</strong> first — they are the load-bearing principles almost every guest converged on. Then mine the thematic sections for specific language, tactics, and objection-handling you can lift directly into copy, sales conversations, and content. Citations let you trace any rule back to the practitioner who earned it, so you can weigh a lone opinion against a 20-person consensus. When two guests disagree, see <strong>Notable Tensions</strong>. This document deliberately captures the <em>rules</em>; applying them to any specific page or pitch is a separate step.</p>
+    </section>
+
+    <!-- Executive summary -->
+    <section id="exec-summary">
+      <div class="callout">
+        <span class="section-label type-mono-label">Executive Summary</span>
+        <h2 class="type-heading">The biggest cross-cutting themes</h2>
+        <p>The single most-repeated lesson across the entire series: <strong>do not lead with “Passive House,” energy, carbon, or technical metrics.</strong> People buy on emotion and justify with logic, so you lead with the felt, universal, non-arguable human benefits — <strong>comfort, health/clean air, quiet, durability, resilience, and safety</strong> — and let energy efficiency “come along for the ride” as proof, not pitch. The second great theme is <strong>audience segmentation</strong>: the same building requires completely different messaging for homeowners (lived experience), architects (design + integration), builders/trades (craft, fewer callbacks, de-risking), developers (ROI, operating cost, risk management), and policymakers (grid, codes, affordability). Third, <strong>experience beats explanation</strong> — getting a prospect physically inside a finished Passive House (tour, overnight Airbnb stay) converts better than any spec sheet, because the benefits are invisible in a photo. Fourth, <strong>cost is the universal objection</strong>, and the winning moves are reframing the “premium” (a learning curve, a rounding error, 2–3% that evaporates against day-one operating savings) and proving it with hard data. Fifth, <strong>education and measured-performance data ARE the marketing</strong> — give value first, show predicted-vs-actual numbers, and position third-party certification as durability insurance that de-risks the project.</p>
+      </div>
+    </section>
+
+    <!-- Top 10 -->
+    <section id="top-10">
+      <h2 class="type-heading">Top 10 Rules</h2>
+      <p class="type-body" style="color:var(--ink-soft); margin-top:-4px;">Ranked by signal strength.</p>
+      <ol class="ranked">
+        <li>
+          <span class="rule-lead">Lead with comfort, health, and the lived experience — never with energy, carbon, or “Passive House.” <span class="consensus">High Consensus ~30+/38</span></span>
+          Energy and GHG are imperceptible and weak motivators; comfort/health/safety/quiet are universal and unarguable. Solve for those and “the energy comes along for the ride.”
+          <div><span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span><span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">…and many more</span></div>
+        </li>
+        <li>
+          <span class="rule-lead">People decide on emotion and justify with logic — sell to emotion. <span class="consensus">High Consensus</span></span>
+          “People don’t buy for logical reasons, they buy for emotional reasons” (Ziglar via Alter). PH marketing has historically over-indexed on rational/technical argument to its detriment.
+          <div><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span><span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Segment the message by audience — homeowner ≠ architect ≠ builder ≠ developer ≠ policymaker. <span class="consensus">High Consensus ~15+</span></span>
+          Same product, totally different message and call-to-action per segment; “if you talk to all of them the same way, you’re not gonna get anywhere.”
+          <div><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span><span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span><span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Get people physically inside a Passive House — experience beats explanation. <span class="consensus">High Consensus ~12</span></span>
+          Tours, overnight Airbnb stays, demo units, open houses. The benefit is felt, not seen; “the way to market passive houses is to put people in them, over and over, like a theme park.”
+          <div><span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span><span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">John Loercher <span class="cite-slug">· northeast-projects</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Reframe the cost objection — the premium is a myth, a learning curve, or a rounding error. <span class="consensus">High Consensus ~15</span></span>
+          Cost is the dominant objection everywhere. Counter with hard data (2–3% multifamily premium), lifetime/compounding savings, and “the premium evaporates against day-one operating savings.”
+          <div><span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group · “not a premium, a learning curve”</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">The name “Passive House” is a liability — don’t lead with it. <span class="consensus">High Consensus ~12</span></span>
+          “Passive” reads as weak/negative; people confuse it with passive solar; it’s “neither of the things in its name.” Drop benefits first, soft-reveal the label later.
+          <div><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Prove it with measured performance data — predicted ≈ actual. <span class="consensus">High Consensus</span></span>
+          Post-occupancy monitoring and measured-vs-modeled results beat certification logos for client confidence and close the “performance gap” story.
+          <div><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op · within 0.01% of model</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Renee Relf <span class="cite-slug">· m-arch-cphc</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Education and giving value first IS the marketing.</span>
+          Teach the “why” and “how,” give free resources, and business follows (“jab, jab, right hook”). Position as a knowledge resource, not a vendor.
+          <div><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span><span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span><span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span><span class="cite">Lindsey Love <span class="cite-slug">· regenerative-building-solutions</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Stack multiple co-benefits so no single objection kills the sale. <span class="consensus">High Consensus</span></span>
+          Justify a measure with many points of value (comfort + quiet + health + durability + resilience + energy); the “value stack” lets each listener pick the benefit they already care about.
+          <div><span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span></div>
+        </li>
+        <li>
+          <span class="rule-lead">Position third-party certification as de-risking / durability insurance — not an eco-badge. <span class="consensus">High Consensus</span></span>
+          Certification catches costly defects a code inspector misses and de-risks the project for owners, developers, and institutions.
+          <div><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build · “a heck of an insurance policy”</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 1. Language -->
+    <section id="sec-language">
+      <h2 class="type-heading">1. Language &amp; Framing — words to use and avoid</h2>
+
+      <h3>Words and frames that WORK</h3>
+      <ul>
+        <li><strong>Comfort, healthy, quiet, durable, resilient, safe, fresh/filtered air, no bugs, no dust, no mold.</strong> The universal benefit vocabulary. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>“Return on health,” not return on investment</strong> — health is the #1 driver; retrofit ROI is hard to defend. <span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span></li>
+        <li><strong>“Smoke tight” / “radon tight”</strong> — reframe airtightness as protection people can visualize. <span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span></li>
+        <li><strong>“Good buildings,” not “green buildings”</strong> — nobody refuses a good building; “green” connotes expensive. <span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></li>
+        <li><strong>“Best practices / quality / building science,” not a German energy standard.</strong> <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span></li>
+        <li><strong>“Passive house isn’t a premium, it’s a learning curve.”</strong> A reusable cost-objection rebuttal. <span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span></li>
+        <li><strong>Affordability as the master narrative</strong> — “the cheapest time to make a building work well is at the beginning.” <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span></li>
+        <li><strong>“De-risk your project.”</strong> <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></li>
+        <li><strong>“Comfort and security are the same thing”</strong> (etymology + felt) — systems that deliver comfort deliver safety in heat waves/outages. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span></li>
+        <li><strong>Memorable, alliterative soundbites:</strong> “boxy but beautiful,” the “three Ts” (Targets, Tool, Training) <span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span>; “car-tool housing” <span class="cite">Martín Comas <span class="cite-slug">· arquitectura-regenerativa</span></span>; “easy button” <span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span>; “the red door of truth” (blower door) <span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></li>
+        <li><strong>Translate metrics into felt outcomes</strong> — U-value → interior surface temperature → “you’re gonna be cold vs. not cold”; “walk around in your underwear and feel comfortable.” <span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span><span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span></li>
+        <li><strong>Accessible analogies:</strong> thermos / Yeti + “you can’t breathe in a thermos” (envelope + HRV) <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span>; pullover/vest (insulation slows heat loss, doesn’t make heat) <span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span>; puffy coat vs. thin jacket / cooler <span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span>; “thermal battery” <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span>; house-as-airbag <span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span>; “house is a machine, calibrate it” <span class="cite">Lindsey Love <span class="cite-slug">· regenerative-building-solutions</span></span></li>
+        <li><strong>“Above code, not to code” / “code is the floor not the ceiling.”</strong> <span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span></li>
+        <li><strong>“This is just better” / not a “hair shirt.”</strong> PH is not sacrifice or guilt. <span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span></li>
+        <li><strong>Spell it “Passivhaus” (one German word)</strong> to mark it as a defined standard and dodge “just passive / just houses.” <span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span></li>
+        <li><strong>“Upfront carbon,” not “embodied carbon”</strong> — less confusing. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span></li>
+        <li><strong>Window = thermal bridge, not a hole to fill</strong> — “it’s where you cut all your thermal bridge.” <span class="cite">Laurence Hamel Dorais <span class="cite-slug">· nzp-fenestration</span></span></li>
+      </ul>
+
+      <h3>Words and frames that FAIL</h3>
+      <ul>
+        <li><strong>Leading with energy savings / kWh / bills</strong> — energy is cheap (in North America) and “doesn’t drive anyone.” <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>“Airtight” as an opener</strong> — triggers “am I gonna die? / houses need to breathe.” Reframe as “controlling the breathing” via HRV. <span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span></li>
+        <li><strong>Jargon dumps (ACH50, WUFI, hygrothermal, latent recovery, BTUs, U-values)</strong> — “a complete non-starter”; one client said it “feels a little Germanic.” <span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>“Low embodied carbon” as an opener</strong> — “we’ve lost it in the first three words.” <span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span></li>
+        <li><strong>“Green building”</strong> — feels dated and signals “expensive.” <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></li>
+        <li><strong>The “thermos” metaphor used carelessly</strong> — a builder weaponized it as “you’re making a thermos, it’s silly.” <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span></li>
+        <li><strong>Pure fear tactics</strong> — position air quality as wellness/education, not a scare. <span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>Simple-payback math</strong> — implies savings stop at year six; ignores compounding savings, rising rates, real 13-year ownership. <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Laurence Hamel Dorais <span class="cite-slug">· nzp-fenestration</span></span></li>
+        <li><strong>“Boring, literal” branding</strong> (the “Surface Pro” problem); B2B buyers are still humans who want fun/novelty. <span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 2. Audience -->
+    <section id="sec-audience">
+      <h2 class="type-heading">2. Audience &amp; Positioning</h2>
+      <ul>
+        <li><strong>Five+ distinct audiences, each with its own message:</strong> homeowners (health/IAQ/quiet/no-dust/comfort), architects/designers (high-performance standard their designs aim for), builders/trades (craftsmanship, quality, fewer callbacks, removing hurdles), developers (risk management, ROI, operating cost), policymakers (macro/2030 goals, grid, codes). <span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span> <span class="consensus">High Consensus</span>, echoed by <span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span></li>
+        <li><strong>Builders/trades are the critical, most-underserved conversion target</strong> — win them and the project happens; “without the trades we are nothing.” Once a builder sees blower-door proof, “you can’t unlearn passive house.” <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Lindsey Love <span class="cite-slug">· regenerative-building-solutions</span></span></li>
+        <li><strong>For developers/big owners, lead with money and risk; for small residential, lead with comfort/emotion.</strong> <span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>PH-committed architects are a sales funnel</strong> — clients self-select toward them. <span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span></li>
+        <li><strong>Convince one developer who builds ~7 projects/year and the impact propagates</strong> regardless of future architect. <span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span></li>
+        <li><strong>Meet people where they are — sell to their value system, not yours.</strong> “If I ever have to convince someone, I’ve already lost control of the conversation.” <span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>Market to the “other decision-maker”</strong> — the design/experience-driven spouse, not just the performance geek. A handout for “convince the other spouse” is a real need. <span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Renee Relf <span class="cite-slug">· m-arch-cphc</span></span></li>
+        <li><strong>Don’t gatekeep — welcome “near-PH” / “PH-adjacent” / “pretty good house.”</strong> “Even 10% is better”; “you’re on the field.” Lowers the cost/process fear. <span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span><span class="cite">Naomi Beal <span class="cite-slug">· passivhausmaine</span></span><span class="cite">Laurence Hamel Dorais <span class="cite-slug">· nzp-fenestration</span></span><span class="cite">John Loercher <span class="cite-slug">· northeast-projects</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></li>
+        <li><strong>Niche down hard and publicly to corner a nascent market</strong> — “this is the only thing we do” attracts mission-aligned clients and stops you having to convince. <span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span></li>
+        <li><strong>Affordable/owner-operator multifamily is the strongest economic case</strong> (owner = operator, long hold, operating savings + grid + LIHTC points). <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+        <li><strong>Counter the “elitist / only-for-the-rich” image directly</strong> — show affordable and retrofit work, not just high-end custom. <span class="cite">Naomi Beal <span class="cite-slug">· passivhausmaine</span></span><span class="cite">Martín Comas <span class="cite-slug">· arquitectura-regenerativa</span></span><span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span></li>
+        <li><strong>Localize the pitch to locally-felt pain</strong> — wildfire smoke (CA), energy insecurity (rural ME/Maritimes), summer cooling, mold, urban noise. <span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span></li>
+        <li><strong>Position as architect-first / best-practice-first; PH is the method, not the headline.</strong> <span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span></li>
+        <li><strong>Position as an add-on team member / “outside pair of eyes,” not a certification competitor</strong> — offload modeling architects don’t want to do. <span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 3. Format -->
+    <section id="sec-format">
+      <h2 class="type-heading">3. Format, Channel &amp; Content</h2>
+      <ul>
+        <li><strong>Match channel to audience: LinkedIn for the “why”/data (architects, engineers, developers); Instagram for the “how”/visuals (builders, construction details).</strong> “Post the same data on Instagram, it’s crickets.” <span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span> <span class="consensus">High Consensus</span>, echoed by <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>A long-running podcast / blog / newsletter as a content engine and authority builder.</strong> <span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy · Building Science Podcast</span></span><span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture · Passivhaus in Plain English</span></span><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront Substack</span></span></li>
+        <li><strong>The website is the dominant inbound channel for residential PH leads</strong> — and visitors “don’t read,” so make it skimmable; answer instantly “what is it, who’s it for, why it matters.” <span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span><span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span></li>
+        <li><strong>In-person experience as a conversion channel:</strong> open houses, building tours (during AND after construction), overnight Airbnb stays, demo ADUs/casitas, even a “Day of the Open Passivhaus” and PH hotels. <span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span><span class="cite">John Loercher <span class="cite-slug">· northeast-projects</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>Make the invisible visible</strong> — animations, cutaway/section graphics, fog/blower-door air tests, 360 imagery + QR self-inspection, sensor/IAQ dashboards. “You can’t take a picture of good air quality.” <span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span><span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span></li>
+        <li><strong>Art-direct process visuals (3D models, exploded assemblies) like a photographer</strong> — “this thing has to have drama.” They grab architects more than finished photos. <span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span></li>
+        <li><strong>A single shareable infographic / comparison graph can earn outsized attention</strong> — the air-tightness co-benefits chart; the “effective R” window study. <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Laurence Hamel Dorais <span class="cite-slug">· nzp-fenestration</span></span></li>
+        <li><strong>Progressive disclosure:</strong> one-line benefit → expandable paragraph → one-click technical deep dive, so nerds and laypeople both get served. <span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span></li>
+        <li><strong>Free educational content / downloadable resources as the “jab” before the “ask”</strong> — white papers, detail handbooks, plain-English explainers, a free tool/calculator (BEAM precedent). <span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span></li>
+        <li><strong>Recurring single-topic webinar/seminar series, archived publicly</strong> (e.g. 475’s monthly “Building Blocks,” Emu’s free topical research talks) builds authority and acts as top-of-funnel. <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span><span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span></li>
+        <li><strong>Give clients neutral “homework”</strong> (e.g. the <em>Pretty Good House</em> book) so a third party makes your case. <span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>Client testimonial soundbites as social proof</strong> — favor visceral, specific lines (“I don’t have to wear a beanie cap in my own house”). <span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span></li>
+        <li><strong>Conferences/local scene-building as a referral and case-study engine</strong> — found a chapter, run a conference, fly in your “heroes” and convert them to friends. <span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Naomi Beal <span class="cite-slug">· passivhausmaine</span></span></li>
+        <li><strong>Distinctive, fun, non-templated branding</strong> — Marvel-style character products, a PH pub at HQ, a graffiti-wrapped vehicle. B2B buyers respond to “something different.” <span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>A physical storefront / showroom on a high-traffic street IS the channel.</strong> <span class="cite">Naomi Beal <span class="cite-slug">· passivhausmaine</span></span></li>
+        <li><strong>Document your own project as both marketing AND advocacy</strong> — a self-built/retrofit home with a video series and tours is the most effective tool. <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design · the “billboard” house</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Martín Comas <span class="cite-slug">· arquitectura-regenerativa</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 4. Scope -->
+    <section id="sec-scope">
+      <h2 class="type-heading">4. Scope of Work, Services &amp; Business Model</h2>
+      <ul>
+        <li><strong>Position as a “knowledge resource,” not a vendor</strong> — “a knowledge resource company that sells tape.” Education is the differentiator. <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span></li>
+        <li><strong>Productize and name your front-end consulting in plain language</strong> — e.g. “building enclosure technical integration” (four words). Sell it as a distinct service before the modeling. <span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span><span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span></li>
+        <li><strong>Add a plain descriptor to a clever brand name</strong> — “Building Science Consultants” so visitors instantly know what you do. <span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span></li>
+        <li><strong>Bake PH in from the front-end design; refuse bolt-on “make-this-a-passive-house” consulting.</strong> PH must be integrated, or it gets value-engineered out. <span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+        <li><strong>“Get us to the table at the beginning” — late involvement strips your levers</strong> (budget locked post-permit). <span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span><span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>Fold PH detailing into standard service so “the client doesn’t pay for the learning curve of the architect.”</strong> Provocatively, charge <em>more</em> to remove PH details. <span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+        <li><strong>Don’t lead with the certification plaque</strong> — since ~2017 most clients want performance targets, not the badge; they often start certification then abandon it as too expensive. Sell hitting targets. <span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span></li>
+        <li><strong>Embed PH silently as the building-science backbone; sell the performance goals.</strong> Anchor on an Owner’s Project Requirements doc, not a standard. <span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span></li>
+        <li><strong>Use “trigger” events (boiler failure, any renovation) as the moment</strong> to run a whole-building optimum-performance analysis instead of a like-for-like swap. <span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span></li>
+        <li><strong>Low-friction lead magnets:</strong> “send us your drawings” plan review / takeoff / system design; a free best-practices white paper. <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span></li>
+        <li><strong>Bundle complementary services as a “trifecta”</strong> — PH + low-embodied-carbon + healthy/Red-List-free materials. <span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></li>
+        <li><strong>Offer a productized “minimum viable M&amp;V” tier</strong> (utility meters + IAQ sensors + dashboard, &lt;$10k) to stay “long term at the table.” <span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span></li>
+        <li><strong>A “homeowner’s manual / how to operate your Passive House” deliverable</strong> is a differentiating offering. <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span></li>
+        <li><strong>Education/training as a distinct service line and advocacy as marketing</strong> — codes, legislation, incentive point-systems, cold calls to housing-finance agencies. <span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span><span class="cite">Lindsey Love <span class="cite-slug">· regenerative-building-solutions</span></span><span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span></li>
+        <li><strong>Reduce decision overwhelm:</strong> “we need you to make these three decisions, here are your options.” Use an explicit priority matrix / design-criteria onboarding. <span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">John Loercher <span class="cite-slug">· northeast-projects</span></span></li>
+        <li><strong>Right-sizing mechanicals via energy modeling is a concrete, money-saving value-add</strong> (“the envelope and mechanicals go hand in hand”). <span class="cite">Lindsey Love <span class="cite-slug">· regenerative-building-solutions</span></span><span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span></li>
+        <li><strong>Help clients find aligned builders early</strong> as part of the service. <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span></li>
+        <li><strong>Having a named Director of Sustainability is itself marketing</strong> — signals serious commitment, “not lip service.” <span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 5. Trust -->
+    <section id="sec-trust">
+      <h2 class="type-heading">5. Trust, Proof &amp; Social Proof</h2>
+      <ul>
+        <li><strong>Measured-vs-modeled performance is the most powerful proof</strong> — “within 0.01% of the energy model.” Beats certification logos for client confidence. <span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span><span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span></li>
+        <li><strong>Tell the “performance gap” story</strong> — most buildings are unverified prototypes; PH delivers predicted ≈ actual certainty. <span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span></li>
+        <li><strong>Real, named, real-time energy-bill data</strong> — a roomful reacting “this is unreal” to a consultant’s own PH bill. <span class="cite">Renee Relf <span class="cite-slug">· m-arch-cphc</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span></li>
+        <li><strong>Hard cost stats to kill the premium myth</strong> — MassCEC’s 2–3% large-multifamily premium; $450/sf is the going custom rate “passive or not”; operating costs 30–50% of code-built. <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span></li>
+        <li><strong>Concrete, testable resilience promises</strong> — “stays 70°F for three days in winter without power.” <span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering · held &gt;17.9°C, no heat, May–Nov</span></span></li>
+        <li><strong>Third-party certification as a quality/durability/warranty signal</strong> — even floating a 10-year warranty on certified homes; real failure cases of uncertified “passive-ish” buildings (&gt;$100k rot repairs) justify the rigor. <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span></li>
+        <li><strong>Display trust seals/certifications</strong> (PHI, Phius, Declare/Red List, EPD, ASTM/CanULC) as marketing credibility, not technical footnotes. <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span></li>
+        <li><strong>Flagship proof points</strong> — world’s-largest-PH-office chose PH voluntarily; affordable housing that “pencils” removes all excuses. <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>Have the GC/contractor in the room confirming feasibility and cost</strong> — “the guys on the field,” not “people dressed in black in an office.” <span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+        <li><strong>Portfolio as de-risking proof</strong> — “we’ve done this a lot before.” <span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">John Loercher <span class="cite-slug">· northeast-projects · a “50 projects” retrospective campaign</span></span></li>
+        <li><strong>Honesty builds credibility</strong> — “tell the bad stuff first,” share the good <em>and</em> the ugly, refuse to claim “no premium” when it depends. <span class="cite">Adam White <span class="cite-slug">· intelligent-membranes</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span></li>
+        <li><strong>Warm, personable team-bio pages</strong> drove strong “I connected with your team” reactions. <span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span></li>
+        <li><strong>Let big third-party voices de-risk products</strong> — Matt Risinger, NS Builders, building code, PH associations normalize a product once they discuss it. <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 6. What Works -->
+    <section id="sec-works">
+      <h2 class="type-heading">6. What Works — tactics with field evidence</h2>
+      <ul>
+        <li><strong>Going benefit-by-benefit until the client wants them all, then soft-dropping “…kind of like a passive house”</strong> (Michael Ingui’s technique). <span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span></li>
+        <li><strong>“Stealth Passive House”</strong> — don’t name it; just deliver the airtight, super-insulated, healthy house. Works until you must justify the cost premium. <span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront · Ingui often doesn’t tell clients</span></span></li>
+        <li><strong>Reframing technical value into the client’s own language closes sales</strong> — the Gunnison window sale closed once U-value became “you’re gonna be not cold.” <span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span></li>
+        <li><strong>Selling “no bugs” and “quiet”</strong> — Ingui says “no bugs” is “one of the things people love more than anything.” Quiet on a busy street converts. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span></li>
+        <li><strong>Asking-first conversational approach</strong> — “what do you dislike about your building?” — almost everyone names a pain PH solves. <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span></li>
+        <li><strong>Mining recurring site/meeting questions to drive content and trainings.</strong> <span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span></li>
+        <li><strong>Blower-door + fog-machine theater</strong> gives builders a “thrill” and tangible proof. <span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>News-jacking timely events</strong> (move in right before the Texas grid freeze → resilience press). <span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span></li>
+        <li><strong>Utility/state reimbursement</strong> (Xcel reimburses 90% of training fees) secured via relationship-building, not cold asks. <span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span></li>
+        <li><strong>Cold-calling housing-finance agencies</strong> to get PH added as a scoring criterion in competitive point systems. <span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span></li>
+        <li><strong>Stacking incentives</strong> (Mass Save, LIHTC points, voluntary stretch codes). <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+        <li><strong>Designing PH in from the start so it can’t be value-engineered out.</strong> <span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span><span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span></li>
+        <li><strong>Curiosity/contrarian headlines</strong> — “10 Things I Hate About Passive House” was the highest-traffic post. <span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span></li>
+        <li><strong>Just committing publicly and “saying the words”</strong> generated inbound work — “there was no marketing wizardry.” <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span></li>
+        <li><strong>Doing the unglamorous footwork</strong> (extracting Manual J/S, ERI/HERS from PHPP for permitting) is “attractive to architects.” <span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 7. What Fails -->
+    <section id="sec-fails">
+      <h2 class="type-heading">7. What Fails / Pitfalls</h2>
+      <ul>
+        <li><strong>Leading with logic/specs/energy to a general audience</strong> — assumes everyone shares the geek’s passion. <span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>Trying to convince an uninterested person from scratch</strong> — “I have never convinced someone who wasn’t already interested.” Target the seed, don’t plant it cold. <span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span><span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span></li>
+        <li><strong>Relying on a single benefit</strong> — easy for a client to dismiss as “not applicable to me.” <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span></li>
+        <li><strong>Pushing a measure (exterior insulation) without builder buy-in</strong> — builder was “furious.” <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span></li>
+        <li><strong>Promoting a single “Passive House look”</strong> — alienates clients; everyone pictures something different (tiny windows, boxy, foam). <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span></li>
+        <li><strong>“Passive-ish” building without certification or real best practices</strong> — lower drying capacity means small leaks become big failures. <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>Getting involved too late (post-permit)</strong> — budget locked, levers gone. <span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span><span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>SEO that pulls wrong-fit traffic</strong> — searchers for “modular/prefab/passive solar” want the cheapest option and rarely convert. <span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span></li>
+        <li><strong>Telling dramatic construction “war stories”</strong> — undermines confidence; “share the successes.” <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span></li>
+        <li><strong>Purism / gatekeeping</strong> — the load-bearing-straw purists “lost patience” and isolated people. <span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></li>
+        <li><strong>Expecting blogging/“plain English” to reach the general public</strong> — the audience self-selected to architects/consultants. <span class="cite">Elrond Burrell <span class="cite-slug">· via-architecture</span></span></li>
+        <li><strong>Over-engineering to hit the standard</strong> (3-ft sub-slab insulation) instead of simplifying form. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span></li>
+        <li><strong>Pitching design media without great photography</strong> — editors decide on pictures regardless of story. <span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>Selling “design certified” as an end in itself</strong> — “do people live in the drawing?” <span class="cite">Enrico Bonilauri <span class="cite-slug">· emu-passive</span></span></li>
+        <li><strong>Procurement structure can kill prefab/integration value</strong> — design-bid-build (CCDC 2) and lowest-bid exclude early involvement. <span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>Heavy 3D modeling can read as “showing off / wasting our time”</strong> to some clients. <span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span></li>
+        <li><strong>VC “disruptor” plays</strong> that try to fix slow-moving construction fast (Katerra). <span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span></li>
+        <li><strong>Most failures are expectation-alignment failures, not technical failures</strong> — especially treating windows as a late finish rather than an early make-or-break driver. <span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span></li>
+      </ul>
+    </section>
+
+    <!-- 8. Psychology -->
+    <section id="sec-psychology">
+      <h2 class="type-heading">8. Client Psychology — likes, dislikes, objections</h2>
+
+      <h3>What clients genuinely like</h3>
+      <ul>
+        <li><strong>Felt comfort</strong> — no cold spots, even temperatures, warm by the window in a snowstorm, barefoot in winter, “walk around in your underwear.” <span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>Health / indoor air quality</strong> — fresh filtered air, fewer allergy/eczema flares, “feel safe in your space” (decisive for health-sensitive families). <span class="cite">John Loercher <span class="cite-slug">· northeast-projects</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>Quiet, no bugs, no dust.</strong> <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span></li>
+        <li><strong>Resilience / “peace of mind, comfortable even with no power for a week.”</strong> <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Kristof Irwin <span class="cite-slug">· positive-energy</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span></li>
+        <li><strong>Durability / “forever home” / “hundred-year building”</strong> and lower maintenance / fewer service calls (~90% of HVAC calls are no-heat emergencies). <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span></li>
+        <li><strong>Beautiful design</strong> — many clients arrive purely for aesthetics, indifferent to the method. “There is no substitute for great design.” <span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span></li>
+        <li><strong>Data/dashboards</strong> for the “spreadsheet” / tech-nerd segment. <span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span></li>
+        <li><strong>Luxury / status / “conspicuous conservation”</strong> for affluent clients. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span></li>
+        <li><strong>Visible cool-factor / flag-flying</strong> (the Prius effect). <span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span></li>
+        <li><strong>Predictable budgets, transparent billing, de-risked process.</strong> <span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span><span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>Builders/trades: pride of craft</strong> — measurable proof their work is superior; PH as “a vehicle to communicate quality of craft.” <span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Aaron Waldt <span class="cite-slug">· 475-high-performance-building-supply</span></span></li>
+      </ul>
+
+      <h3>What clients dislike / objections (and counters)</h3>
+      <ul>
+        <li><strong>Cost / “it doesn’t pencil” / “costs 10–20% more”</strong> — THE dominant objection. Counter: 2–3% real premium, lifetime/compounding savings, “evaporates against day-one operating savings,” “rounding error on the interest rate.” <span class="cite">Alexander Gard-Murray <span class="cite-slug">· passive-house-massachusetts</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span><span class="cite">Trey Farmer <span class="cite-slug">· forge-craft-architecture-design</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span> <span class="consensus">High Consensus</span></li>
+        <li><strong>“Sealed box / can’t open windows / houses need to breathe.”</strong> Counter: “if you want birdsong, open the window — it’s only sealed when you want it.” <span class="cite">Graham Irwin <span class="cite-slug">· essential-habitat-architecture</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span></li>
+        <li><strong>“Airtight = I’ll suffocate.”</strong> Counter: reframe as “controlling the breathing” via HRV/fresh air. <span class="cite">Zack Semke <span class="cite-slug">· passive-house-accelerator</span></span><span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span></li>
+        <li><strong>“PH is for cold European climates.”</strong> Counter: “smoke tight,” cooling/summer-comfort data, built examples in warm climates. <span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span><span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span></li>
+        <li><strong>“PH means ugly boxes with tiny windows.”</strong> Counter: gallery of beautiful, well-glazed, aesthetically diverse certified buildings. <span class="cite">Shefali Sanghvi <span class="cite-slug">· dattner-architects</span></span><span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span></li>
+        <li><strong>“Elitist / only for the rich.”</strong> Counter: affordable/retrofit proof; “for normal people, not only rich people.” <span class="cite">Naomi Beal <span class="cite-slug">· passivhausmaine</span></span><span class="cite">Martín Comas <span class="cite-slug">· arquitectura-regenerativa</span></span><span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span></li>
+        <li><strong>“Prefab/PH is cheaper.”</strong> Counter: it’s not — you’re buying streamlining and quality assurance, not a discount. <span class="cite">Mariana Pickering <span class="cite-slug">· b-public-prefab</span></span><span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span></li>
+        <li><strong>Certification hassle/expense</strong> — clients frequently abandon it. Address honestly (value vs. cost); sell targets not the plaque. <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span></li>
+        <li><strong>Invisible benefits are hard to value</strong> — “can’t take a picture of good air quality.” Counter: make it visible. <span class="cite">Alexis Jarvis <span class="cite-slug">· sidecar-pr</span></span></li>
+        <li><strong>“Gimme the granite, not the insulation”</strong> — clients prefer visible finishes over invisible performance. <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></li>
+        <li><strong>Trusting the tradesperson over the consultant</strong> — “my heating contractor says it won’t work.” <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span><span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span></li>
+        <li><strong>Builder/trade resistance to new methods</strong> — fear of cost, schedule, callbacks; “the way I was always taught.” Counter with the why + blower-door proof + fewer callbacks. <span class="cite">Brian Pearson <span class="cite-slug">· studio-pear</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></li>
+        <li><strong>Developers hear “cost, red tape, complications, delays”</strong> when they hear “performance.” Counter: frame everything as risk management. <span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></li>
+        <li><strong>The “house as a disposable consumer product” mindset</strong> suppresses demand for durable performance. <span class="cite">Michael Quast <span class="cite-slug">· passive-house-canada</span></span></li>
+        <li><strong>No elevator pitch / confusing name</strong> — owners default to “net zero” because people understand it; they crave a catchphrase to “latch onto.” <span class="cite">Rachel Rennard &amp; Mike Bratina <span class="cite-slug">· clay-brook-passive-house</span></span></li>
+      </ul>
+    </section>
+
+    <!-- Tensions -->
+    <section id="sec-tensions">
+      <h2 class="type-heading">Notable tensions / disagreements</h2>
+      <ol class="numbered">
+        <li><strong>Reveal the standard, or never name it?</strong> Most say lead with benefits then soft-reveal “Passive House.” But some go further to full “stealth PH” — never naming it <span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span><span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront · Ingui</span></span> — while Wolfgang Feist insists PH is a clear, defined <em>end goal</em> worth naming and that built examples defeat objections <span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span>, and Bronwyn Barry sells PH precisely <em>as</em> the defined target the industry lacks <span class="cite">Bronwyn Barry <span class="cite-slug">· passive-house-bb</span></span>.</li>
+        <li><strong>Is there a cost premium at all?</strong> Feist and Hans Breaux argue there’s essentially no premium with a competent team <span class="cite">Wolfgang Feist <span class="cite-slug">· passive-house-institute</span></span><span class="cite">Hans Breaux <span class="cite-slug">· project-co-op</span></span>; Beth Campbell explicitly refuses to claim “no upfront cost” because “it depends completely on the team” and sees overpromising as a credibility risk <span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span>; Steve Hessler and Tanya Savas say plainly the savings “don’t pencil for the premium” and you must be honest about it <span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span><span class="cite">Tanya Savas <span class="cite-slug">· collective-carpentry</span></span>.</li>
+        <li><strong>Comfort/emotion vs. money/logic as the lead.</strong> The dominant view is comfort-first. But for large/commercial/portfolio owners, Beth Eckenrode insists you lead with modeled ROI and “comfort/emotion is the small-residential pitch” <span class="cite">Beth Eckenrode <span class="cite-slug">· auros-group</span></span>; Lindsey Love and Katrina Belle argue “the strongest arguments are always the economical ones” / the housing-crisis cost angle, not comfort <span class="cite">Lindsey Love <span class="cite-slug">· regenerative-building-solutions</span></span><span class="cite">Katrina Belle <span class="cite-slug">· maine-passive-house</span></span>.</li>
+        <li><strong>Energy efficiency: by-product or sometimes harmful?</strong> Most treat energy as the silent by-product of comfort. Jacob Racusin goes further — leading with energy efficiency <em>in isolation</em> can cause unintended durability/IAQ harm (per Robert Bean) <span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span>. Lloyd Alter even cites a Quebec analysis where code-minimum beat PH on lifetime carbon on a clean grid <span class="cite">Lloyd Alter <span class="cite-slug">· carbon-upfront</span></span>.</li>
+        <li><strong>Certification: essential de-risking or low-value badge?</strong> Josh Salinger, Beth Campbell, and the Clay Brook owners champion certification as insurance/QA <span class="cite">Josh Salinger <span class="cite-slug">· birdsmouth-design-build</span></span><span class="cite">Beth Campbell <span class="cite-slug">· passive-house-massachusetts</span></span>; Lorrie Rand (no certified projects), Tessa Bradley (1-in-4 to 1-in-6), and Jeremy Clarke find most clients don’t want it and abandon it <span class="cite">Lorrie Rand <span class="cite-slug">· habit-studio</span></span><span class="cite">Tessa Bradley <span class="cite-slug">· artisans-group</span></span><span class="cite">Jeremy Clarke <span class="cite-slug">· simple-life-homes</span></span>.</li>
+        <li><strong>Carbon/materials: lead, mention, or hide?</strong> Natural-materials advocates weave bio-based/embodied-carbon into the core story <span class="cite">Jacob Deva Racusin <span class="cite-slug">· new-frameworks</span></span><span class="cite">Valentine Gomez <span class="cite-slug">· gomex-engineering</span></span><span class="cite">Martín Comas <span class="cite-slug">· arquitectura-regenerativa</span></span>; Steve Hessler and Jacob both warn that <em>leading</em> with carbon is “preaching to the choir” and loses the market <span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span>.</li>
+        <li><strong>3D modeling / technical depth: differentiator or showing off?</strong> Steve Hessler wins architects with dramatic 3D models <span class="cite">Steve Hessler <span class="cite-slug">· new-energy-works</span></span>; he and Mark Attard both note some clients read deep modeling as time-wasting <span class="cite">Mark Attard <span class="cite-slug">· point-6</span></span>.</li>
+      </ol>
+    </section>
+
+    <!-- Quotes -->
+    <section id="sec-quotes">
+      <h2 class="type-heading">Memorable Quotes <span style="font-weight:400;color:var(--ink-soft);font-size:0.7em;">appendix</span></h2>
+      <ol class="quotes">
+        <li><blockquote class="quote"><p>“You can’t take a picture of good air quality.”</p><span class="attrib"><span class="who">Alexis Jarvis</span> · sidecar-pr</span></blockquote></li>
+        <li><blockquote class="quote"><p>“I always say passive house is return on health… that’s the number one driver.”</p><span class="attrib"><span class="who">Adam White</span> · intelligent-membranes</span></blockquote></li>
+        <li><blockquote class="quote"><p>“Passive house isn’t a premium, it’s a learning curve.”</p><span class="attrib"><span class="who">Beth Eckenrode</span> · auros-group</span></blockquote></li>
+        <li><blockquote class="quote"><p>“Everyone wants to be comfortable and healthy and safe in their buildings… so the other attributes come along for the ride.”</p><span class="attrib"><span class="who">Jacob Deva Racusin</span> · new-frameworks</span></blockquote></li>
+        <li><blockquote class="quote"><p>“If I ever have to convince someone of a solution, then I’ve already lost control of the conversation.”</p><span class="attrib"><span class="who">Jacob Deva Racusin</span> · new-frameworks</span></blockquote></li>
+        <li><blockquote class="quote"><p>“We turn it all upside down — we talk about durability, quality, and best practices first… and you get this happy little accident, which is energy efficiency.”</p><span class="attrib"><span class="who">Josh Salinger</span> · birdsmouth-design-build</span></blockquote></li>
+        <li><blockquote class="quote"><p>“It’s a terrible name… passive means weak. People don’t buy for logical reasons. They buy for emotional reasons.”</p><span class="attrib"><span class="who">Lloyd Alter</span> · carbon-upfront</span></blockquote></li>
+        <li><blockquote class="quote"><p>“Actually the no-bugs thing is one of the things people love more than anything else.”</p><span class="attrib"><span class="who">Lloyd Alter</span> · carbon-upfront</span></blockquote></li>
+        <li><blockquote class="quote"><p>“The way you speak to a homeowner is health and air quality… a builder it’s craftsmanship… a policymaker it’s macro scale. Talk to all of them the same way and you won’t get anywhere.”</p><span class="attrib"><span class="who">Mariana Pickering</span> · b-public-prefab</span></blockquote></li>
+        <li><blockquote class="quote"><p>“He doesn’t sell people green buildings anymore. He just sells people good buildings. It’s really hard to tell him I don’t want a good building.”</p><span class="attrib"><span class="who">Valentine Gomez</span> · gomex-engineering</span></blockquote></li>
+        <li><blockquote class="quote"><p>“The way to market passive houses is to put people in them. Over and over. Like a theme park.”</p><span class="attrib"><span class="who">James Turner</span> (host) · brian-pearson-studio-pear</span></blockquote></li>
+        <li><blockquote class="quote"><p>“If you can afford to hire an architect to design you a house, you can afford to build a passive house.”</p><span class="attrib"><span class="who">Trey Farmer</span> · forge-craft-architecture-design</span></blockquote></li>
+        <li><blockquote class="quote"><p>“You can’t just sell energy. I don’t perceive energy… we need to talk to people in ways that matter to them.”</p><span class="attrib"><span class="who">Kristof Irwin</span> · positive-energy</span></blockquote></li>
+        <li><blockquote class="quote"><p>“We just started saying the words and people found us. There was no marketing wizardry.”</p><span class="attrib"><span class="who">Lorrie Rand</span> · habit-studio</span></blockquote></li>
+        <li><blockquote class="quote"><p>“You can’t unlearn passive house.”</p><span class="attrib"><span class="who">Valentine Gomez</span> · gomex-engineering</span></blockquote></li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

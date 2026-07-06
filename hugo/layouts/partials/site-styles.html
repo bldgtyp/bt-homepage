@@ -1,0 +1,483 @@
+<style>
+    /* ==========================================================
+       BLDGTYP content pages - shared styles.
+       Mirrors the homepage's page-specific styles (nav, ma-cards,
+       footer) + subpage-only patterns (page hero, video library,
+       bios). Design tokens: bt-branding/tokens/tokens.css
+       ========================================================== */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+        background-color: var(--bg-page);
+        color: var(--text-primary);
+        font-family: var(--font-primary);
+        font-weight: 300;
+        line-height: 1.7;
+        transition: all var(--transition-base);
+    }
+
+    /* ========== NAVIGATION (matches homepage) ========== */
+    nav {
+        position: sticky;
+        top: 0;
+        height: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        background: color-mix(in oklab, var(--bg-page) 86%, transparent);
+        backdrop-filter: saturate(1.4) blur(14px);
+        -webkit-backdrop-filter: saturate(1.4) blur(14px);
+        border-bottom: 1px solid var(--border-subtle);
+        z-index: 40;
+    }
+
+    .nav-brand {
+        font-family: var(--font-primary);
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color var(--transition-base);
+    }
+    .nav-brand:hover { color: var(--accent); }
+
+    .nav-brand-locs {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        color: var(--text-muted);
+        margin-left: 12px;
+        padding-left: 12px;
+        border-left: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 1180px) {
+        .nav-brand-locs { display: none; }
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 40px; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-link-group { display: flex; gap: 24px; align-items: center; }
+    .nav-link-group + .nav-link-group {
+        padding-left: 24px;
+        border-left: 1px solid var(--border-subtle);
+    }
+
+    /* ========== PAGE HERO (subpage-scale, not homepage-scale) ========== */
+    .page-hero {
+        padding: 100px 40px 60px;
+        background-color: var(--bg-page);
+    }
+
+    .page-hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .page-hero h1 {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.25;
+        color: var(--text-primary);
+        margin-top: 12px;
+        margin-bottom: 24px;
+        max-width: 820px;
+    }
+
+    .page-hero .page-hero-intro {
+        max-width: 760px;
+        color: var(--text-secondary);
+    }
+
+    /* ========== GENERIC SECTION ========== */
+    .page-section {
+        padding: 80px 40px;
+    }
+    .page-section--alt { background-color: var(--bg-section-alt); }
+
+    .page-section-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .page-heading {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+        line-height: 1.3;
+        color: var(--text-primary);
+        margin-top: 12px;
+        margin-bottom: 24px;
+        max-width: 760px;
+    }
+
+    .page-intro {
+        max-width: 760px;
+        margin-bottom: 48px;
+        color: var(--text-secondary);
+    }
+
+    /* ========== CARD SYSTEM (matches homepage .ma-card) ========== */
+    .ma-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+    .ma-grid--2col { grid-template-columns: repeat(2, 1fr); }
+
+    @media (max-width: 900px) {
+        .ma-grid, .ma-grid--2col { grid-template-columns: 1fr; gap: 20px; }
+    }
+
+    .ma-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ma-card__tag { color: var(--accent); margin-bottom: 16px; }
+
+    .ma-card__title {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+    }
+
+    .ma-card__body {
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .ma-card__cite {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 14px;
+        margin-top: auto;
+    }
+
+    .ma-card__cite a {
+        display: block;
+        color: var(--text-muted);
+        margin-top: 4px;
+        word-break: break-word;
+    }
+    .ma-card__cite a:hover { color: var(--accent); }
+
+    .ma-disclaimer {
+        margin-top: 32px;
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        max-width: 760px;
+    }
+
+    /* ========== VIDEO LIBRARY ========== */
+    .video-group { margin-bottom: 72px; }
+    .video-group:last-child { margin-bottom: 0; }
+
+    .video-group-title {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+    }
+
+    .video-group-desc {
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 15px;
+        color: var(--text-secondary);
+        max-width: 720px;
+        margin-bottom: 28px;
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .video-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        transition: transform var(--transition-base), border-color var(--transition-base);
+    }
+    .video-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+    }
+
+    .video-card__thumb {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--bg-section-alt);
+        position: relative;
+    }
+    .video-card__thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    [data-theme="light"] .video-card__thumb img { filter: saturate(0.85); }
+
+    .video-card__meta { padding: 18px 20px 20px; }
+
+    .video-card__title {
+        font-family: var(--font-primary);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.45;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+    }
+
+    .video-card__host {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+
+    /* Compact numbered list for the HBPH course */
+    .course-list {
+        list-style: none;
+        columns: 2;
+        column-gap: 48px;
+        max-width: 900px;
+    }
+    @media (max-width: 768px) { .course-list { columns: 1; } }
+
+    .course-list li { break-inside: avoid; }
+
+    .course-list a {
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+        padding: 10px 4px;
+        border-bottom: 1px solid var(--border-subtle);
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 14px;
+        transition: color var(--transition-base);
+    }
+    .course-list a:hover { color: var(--accent); }
+
+    .course-list .course-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        color: var(--accent);
+        min-width: 22px;
+    }
+
+    /* ========== ABOUT / BIOS ========== */
+    .bio-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 48px;
+    }
+    @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; } }
+
+    .bio-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        padding: 36px;
+    }
+
+    .bio-name {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 24px;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .bio-creds {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+    }
+
+    .bio-body {
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--text-secondary);
+        margin-bottom: 24px;
+    }
+
+    .bio-facts { list-style: none; }
+
+    .bio-facts li {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1.7;
+        color: var(--text-muted);
+        padding: 8px 0;
+        border-top: 1px solid var(--border-subtle);
+    }
+    .bio-facts li strong {
+        color: var(--text-secondary);
+        font-weight: 400;
+    }
+
+    /* ========== CTA BAND ========== */
+    .page-cta {
+        padding: 100px 40px;
+        text-align: center;
+        background-color: var(--bg-page);
+    }
+
+    .page-cta-inner { max-width: 700px; margin: 0 auto; }
+
+    .page-cta h2 {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        line-height: 1.3;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+    }
+
+    .page-cta-subtitle {
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 36px;
+    }
+
+    /* ========== FOOTER (matches homepage) ========== */
+    footer {
+        padding: 60px 40px;
+        background-color: var(--bg-section-alt);
+        text-align: center;
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        margin-bottom: 20px;
+    }
+
+    .footer-logos a {
+        display: block;
+        height: 40px;
+        opacity: 0.45;
+        transition: opacity var(--transition-base);
+    }
+    .footer-logos a:hover { opacity: 0.75; }
+
+    .footer-logos img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+
+    [data-theme="dark"] .footer-logos img { filter: brightness(0.9) contrast(0.9); }
+
+    footer p {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+        nav { padding: 0 20px; }
+        .nav-right { gap: 20px; }
+        .nav-links { gap: 14px; }
+        .nav-link-group { gap: 14px; }
+        .nav-link-group + .nav-link-group { padding-left: 14px; }
+        .page-hero { padding: 70px 20px 40px; }
+        .page-section { padding: 60px 20px; }
+        .page-cta { padding: 70px 20px; }
+    }
+
+    @media (max-width: 640px) {
+        nav {
+            height: auto;
+            min-height: 64px;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 12px 16px 10px;
+        }
+
+        .nav-right {
+            width: 100%;
+            gap: 0;
+        }
+
+        .nav-links {
+            width: 100%;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .nav-link-group {
+            gap: 10px;
+        }
+
+        .nav-link-group + .nav-link-group {
+            padding-left: 10px;
+        }
+
+        .nav-icons,
+        #themeToggleBtn {
+            display: none;
+        }
+    }
+</style>
