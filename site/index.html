@@ -80,22 +80,46 @@
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 18px;
             align-items: center;
         }
 
         .nav-link-group {
             display: flex;
-            gap: 24px;
+            gap: 18px;
             align-items: center;
         }
 
         .nav-link-group + .nav-link-group {
-            padding-left: 24px;
+            padding-left: 18px;
             border-left: 1px solid var(--border-subtle);
         }
 
         /* nav link typography inherits from .type-mono-nav in components.css */
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 0 1px;
+            border-bottom: 2px solid transparent;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition:
+                color var(--transition-base),
+                border-color var(--transition-base);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .nav-link.is-active,
+        .nav-link[aria-current="page"],
+        .nav-link[aria-current="location"] {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
 
         /* ========== HERO SECTION ========== */
         .hero {
@@ -171,6 +195,58 @@
             margin-bottom: 48px;
             color: var(--primary-text);
             font-weight: 600;
+        }
+
+        /* ========== CREDENTIALS STRIP ========== */
+        .credentials-strip {
+            background-color: var(--bg-section-alt);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 28px 40px;
+        }
+
+        .credentials-strip-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .credential-label {
+            max-width: 320px;
+            text-align: right;
+            color: var(--text-muted);
+        }
+
+        .credential-logos {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .credential-logos a {
+            display: flex;
+            align-items: center;
+            height: 58px;
+            opacity: 0.82;
+            transition: opacity var(--transition-base), transform var(--transition-base);
+        }
+
+        .credential-logos a:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .credential-logos img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        [data-theme="dark"] .credential-logos img {
+            filter: brightness(0.92) contrast(0.92);
         }
 
         /* ========== SERVICES SECTION ========== */
@@ -845,35 +921,6 @@
             border-top: 1px solid var(--border-subtle);
         }
 
-        .footer-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 28px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logos a {
-            display: block;
-            height: 40px;
-            opacity: 0.45;
-            transition: opacity var(--transition-base);
-        }
-
-        .footer-logos a:hover {
-            opacity: 0.75;
-        }
-
-        .footer-logos img {
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-        }
-
-        [data-theme="dark"] .footer-logos img {
-            filter: brightness(0.9) contrast(0.9);
-        }
-
         footer p {
             font-family: var(--font-mono);
             font-weight: 300;
@@ -888,11 +935,13 @@
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
             .nav-right { gap: 20px; }
-            .nav-links { gap: 14px; }
-            .nav-link-group { gap: 14px; }
-            .nav-link-group + .nav-link-group { padding-left: 14px; }
+            .nav-links { gap: 12px; }
+            .nav-link-group { gap: 12px; }
+            .nav-link-group + .nav-link-group { padding-left: 12px; }
             .hero { padding: 100px 20px; min-height: auto; }
             .hero-ghost-bg { opacity: 0.03; width: 300px; height: 300px; right: -150px; }
+            .credentials-strip { padding: 24px 20px; }
+            .credentials-strip-inner { justify-content: center; }
             .services { padding: 80px 20px; }
             .who-section { padding: 80px 20px; }
             .process { padding: 80px 20px; }
@@ -921,21 +970,48 @@
 
             .nav-links {
                 width: 100%;
-                justify-content: space-between;
-                gap: 10px;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 6px 8px;
             }
 
             .nav-link-group {
-                gap: 10px;
+                gap: 6px;
             }
 
             .nav-link-group + .nav-link-group {
-                padding-left: 10px;
+                padding-left: 8px;
+            }
+
+            .nav-link {
+                min-height: 28px;
+                padding: 0 5px;
             }
 
             .nav-icons,
             #themeToggleBtn {
                 display: none;
+            }
+
+            .credentials-strip-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .credential-label {
+                max-width: none;
+                text-align: left;
+            }
+
+            .credential-logos {
+                width: 100%;
+                justify-content: space-between;
+                gap: 16px;
+            }
+
+            .credential-logos a {
+                height: 46px;
             }
         }
 
@@ -965,16 +1041,16 @@
         <div class="nav-right">
             <div class="nav-links">
                 <div class="nav-link-group" aria-label="Homepage sections">
-                    <a href="#services" class="type-mono-nav">Services</a>
-                    <a href="#contact" class="type-mono-nav">Contact</a>
+                    <a href="#services" class="type-mono-nav nav-link" data-nav-path="/" data-nav-hash="#services">Services</a>
+                    <a href="#contact" class="type-mono-nav nav-link" data-nav-path="/" data-nav-hash="#contact">Contact</a>
                 </div>
                 <div class="nav-link-group" aria-label="Site pages">
-                    <a href="/learn/" class="type-mono-nav">Learn</a>
-                    <a href="/about/" class="type-mono-nav">About</a>
+                    <a href="/learn/" class="type-mono-nav nav-link" data-nav-path="/learn/">Learn</a>
+                    <a href="/about/" class="type-mono-nav nav-link" data-nav-path="/about/">About</a>
                 </div>
                 <div class="nav-link-group" aria-label="Location pages">
-                    <a href="/ma/" class="type-mono-nav">MA</a>
-                    <a href="/nyc-thermal-bridging/" class="type-mono-nav">NYC</a>
+                    <a href="/ma/" class="type-mono-nav nav-link" data-nav-path="/ma/">MA</a>
+                    <a href="/nyc-thermal-bridging/" class="type-mono-nav nav-link" data-nav-path="/nyc-thermal-bridging/">NYC</a>
                 </div>
             </div>
             <div class="nav-icons">
@@ -1004,10 +1080,24 @@
         <div class="hero-content">
             <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
             <p class="hero-sub">
-                // Energy modeling with thermal-bridge and certification support for design and construction teams across New York &amp; Massachusetts.<br>
-                // We turn open design questions into buildable, documented performance targets.
+                // Building performance modeling with thermal-bridge and Passive House certification support for design, development, and construction teams.<br>
             </p>
-            <button class="btn-primary" onclick="handleCTA()">Send us your drawings &rarr; info@bldgtyp.com</button>
+            <button class="btn-primary" onclick="handleCTA()">Get in touch &rarr; info@buildingtype.com</button>
+        </div>
+    </section>
+
+    <!-- Credentials Strip -->
+    <section class="credentials-strip" aria-label="Passive House credentials">
+        <div class="credentials-strip-inner">
+            <p class="credential-label type-mono-label">Certified through both Passive House pathways</p>
+            <div class="credential-logos">
+                <a href="https://www.phius.org/" target="_blank" rel="noopener" aria-label="PHIUS Certified Consultant">
+                    <img src="assets/ph-logos/phius-logo-rgb-color-transparent-small.png" alt="Phius">
+                </a>
+                <a href="https://passivehouse.com/" target="_blank" rel="noopener" aria-label="PHI Certified Passive House Designer">
+                    <img src="assets/ph-logos/download.png" alt="PHI Certified Passive House Designer (CPHD)">
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1023,8 +1113,8 @@
                         <img src="assets/who-architect.png" alt="Pixel art modern office building">
                     </div>
                     <h3 class="who-title">ARCHITECTS</h3>
-                    <p class="who-subtitle">Designing high-performance luxury homes</p>
-                    <p class="who-body type-body-lg">You own the design. We handle the performance work: energy model, thermal bridges, and certification path. You keep design control and give your client a building with documented targets.</p>
+                    <p class="who-subtitle"> High-design, High-performance.</p>
+                    <p class="who-body type-body-lg">You own the design. We take care of the performance work: performance simulations, thermal bridge analysis, and certification management. You keep design control and deliver your client a building with documented targets.</p>
                     <p class="type-mono-label">Single-family · Townhouse · Brownstone renovation</p>
                 </div>
 
@@ -1034,8 +1124,8 @@
                         <img src="assets/who-developer.png" alt="Pixel art apartment towers">
                     </div>
                     <h3 class="who-title">DEVELOPERS</h3>
-                    <p class="who-subtitle">Building affordable multifamily at scale</p>
-                    <p class="who-body type-body-lg">Performance risk belongs in the pro forma early. We model efficiently, right-size the mechanicals, map incentives like Mass Save, stretch-code compliance, and LIHTC points, then prepare documentation your certifier and review team can use.</p>
+                    <p class="who-subtitle">Affordable multifamily at scale</p>
+                    <p class="who-body type-body-lg">Performance risk belongs in the pro forma early. We model efficiently, help you right-size the mechanicals, map incentives like Mass Save, stretch-code compliance, and LIHTC points, then prepare documentation your certifier and review team can use.</p>
                     <p class="type-mono-label">Affordable housing · Mixed-use · Multifamily</p>
                 </div>
 
@@ -1046,13 +1136,13 @@
                     </div>
                     <h3 class="who-title">BUILDERS</h3>
                     <p class="who-subtitle">Getting high-performance details right</p>
-                    <p class="who-body type-body-lg">Your name is on it. We give you blower-door-ready details and right-sized mechanicals you can actually install. The result is fewer callbacks and measured proof of the work.</p>
-                    <p class="type-mono-label">Single-family homes · Custom builds · Renovations</p>
+                    <p class="who-body type-body-lg">Your name is on it. We help you develop blower-door-ready details you can actually install. The result is fewer callbacks and measured proof of the work.</p>
+                    <p class="type-mono-label">Custom builds · Renovations</p>
                 </div>
             </div>
 
             <p class="ma-disclaimer">
-                // Were you sent here by your architect or builder? In plain terms: we're the specialists your team brings in to verify comfort and durability before anyone breaks ground.
+                // Were you sent here by your architect or builder? In plain terms: we're the specialists your team brings in to verify energy performance, comfort, and durability before anyone breaks ground.
             </p>
         </div>
     </section>
@@ -1063,9 +1153,9 @@
             <span class="section-label">WHAT DO WE DO?</span>
 
             <div class="services-grid">
-                <!-- Service Card 1: Energy Modeling -->
+                <!-- Service Card 1: Performence Modeling -->
                 <div class="service-card">
-                    <h3 class="service-card__title">ENERGY MODELING</h3>
+                    <h3 class="service-card__title">PERFORMANCE MODELING</h3>
                     <h4 class="service-card__subtitle">Design with real numbers</h4>
                     <p class="service-card__body">We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to the performance target before construction locks in.</p>
                     <div class="service-card__img-strip">
@@ -1111,7 +1201,7 @@
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-title">WE BUILD YOUR MODEL</div>
-                    <p class="step-desc">We create a detailed energy model in WUFI Passive or PHPP, including wall assemblies, windows, and mechanical systems.</p>
+                    <p class="step-desc">We create digital performance simulation model, including all wall assemblies, windows, and mechanical systems.</p>
                 </div>
 
                 <div class="process-step">
@@ -1254,7 +1344,7 @@
             <span class="section-label">WORKING IN MASSACHUSETTS?</span>
             <h2 class="ma-heading">Code-driven Passive House consulting specifically for MA multifamily.</h2>
             <p class="ma-intro type-body-lg">
-                Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <strong>Mass Save</strong> Passive House Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
+                Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <a href="https://www.masssave.com" class="link">Mass Save</a> Passive House Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
             </p>
 
             <div class="ma-grid">
@@ -1267,7 +1357,7 @@
                     </p>
                     <div class="ma-card__cite">
                         SOURCE
-                        <a href="https://www.mass.gov/info-details/building-energy-code" target="_blank" rel="noopener">mass.gov · Building Energy Code →</a>
+                        <a href="https://www.mass.gov/info-details/building-energy-code" target="_blank" rel="noopener">MA Building Energy Code →</a>
                     </div>
                 </div>
 
@@ -1280,7 +1370,7 @@
                     </p>
                     <div class="ma-card__cite">
                         SOURCE
-                        <a href="https://www.masssave.com/residential/rebates-and-incentives/passive-house-incentives" target="_blank" rel="noopener">masssave.com · Passive House Incentives →</a>
+                        <a href="https://www.masssave.com/residential/rebates-and-incentives/passive-house-incentives" target="_blank" rel="noopener">Passive House Incentives →</a>
                     </div>
                 </div>
 
@@ -1293,7 +1383,7 @@
                     </p>
                     <div class="ma-card__cite">
                         REFERENCE
-                        <a href="https://phmass.org/masssave/" target="_blank" rel="noopener">phmass.org · Mass Save overview →</a>
+                        <a href="https://phmass.org/masssave/" target="_blank" rel="noopener">PH-Mass overview →</a>
                     </div>
                 </div>
             </div>
@@ -1305,16 +1395,6 @@
             <p class="ma-disclaimer">
                 // Code adoption status varies by municipality and incentive amounts are updated periodically. Confirm current details with the Massachusetts Department of Energy Resources and the Mass Save program administrator before relying on them for project decisions.
             </p>
-        </div>
-    </section>
-
-    <!-- Cost Answer -->
-    <section class="cost" id="cost">
-        <div class="ma-inner">
-            <span class="section-label">WHAT ABOUT COST?</span>
-            <h2 class="ma-heading">The premium is smaller than most teams expect.</h2>
-            <!-- TODO D4: confirm the headline premium figure for our market. -->
-            <p class="ma-intro type-body-lg">On multifamily, a well-run Passive House project typically carries roughly a <strong>[2-3%]</strong> construction premium that operating savings can recover. On custom residential, much of the "premium" is a one-time learning curve. Costs vary by team and scope. We <em>will</em> show you the numbers for your project before you commit.</p>
         </div>
     </section>
 
@@ -1353,22 +1433,13 @@
         <div class="final-cta-inner">
             <h2>Bring us in early. It's the cheapest time to get performance right.</h2>
             <p class="final-cta-subtitle">Early involvement gives the team more leverage and makes the design budget work harder. Send us your drawings at any stage and we'll tell you where your project stands.</p>
-            <button class="btn-primary" onclick="handleCTA()">Send us your drawings &rarr; info@bldgtyp.com</button>
+            <button class="btn-primary" onclick="handleCTA()">Get in touch today &rarr; info@buildingtype.com</button>
         </div>
     </section>
 
-    <!-- Credentials Strip -->
     <!-- Footer -->
     <footer>
-        <div class="footer-logos">
-            <a href="https://www.phius.org/" target="_blank" rel="noopener" aria-label="PHIUS Certified Consultant">
-                <img src="assets/ph-logos/cphc-logo-image-grid-short.png.webp" alt="PHIUS Certified Passive House Consultant (CPHC)">
-            </a>
-            <a href="https://passivehouse.com/" target="_blank" rel="noopener" aria-label="PHI Certified Passive House Designer">
-                <img src="assets/ph-logos/download.png" alt="PHI Certified Passive House Designer (CPHD)">
-            </a>
-        </div>
-        <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@bldgtyp.com" class="link">info@bldgtyp.com</a> · © 2026 Building-Type LLC</p>
+        <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com" class="link">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
     </footer>
 
     <!-- JavaScript -->
@@ -1402,7 +1473,33 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
             applyThemeIcons(savedTheme);
+            updateActiveNavLink();
         });
+
+        function normalizePath(path) {
+            if (path === '') return '/';
+            return path.endsWith('/') ? path : `${path}/`;
+        }
+
+        function updateActiveNavLink() {
+            const currentPath = normalizePath(window.location.pathname);
+            const currentHash = window.location.hash;
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const linkPath = normalizePath(link.dataset.navPath || new URL(link.href, window.location.href).pathname);
+                const linkHash = link.dataset.navHash || '';
+                const isActive = currentPath === linkPath && (!linkHash || currentHash === linkHash);
+
+                link.classList.toggle('is-active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', linkHash ? 'location' : 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        window.addEventListener('hashchange', updateActiveNavLink);
 
         // Scroll to top
         function scrollToTop() {
@@ -1411,7 +1508,7 @@
 
         // CTA handler
         function handleCTA() {
-            window.location.href = 'mailto:info@bldgtyp.com';
+            window.location.href = 'mailto:info@buildingtype.com';
         }
 
         // Smooth scroll for nav links
@@ -1422,6 +1519,8 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.pushState(null, '', href);
+                    updateActiveNavLink();
                 }
             });
         });

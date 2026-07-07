@@ -16,4 +16,4 @@ disableKinds = ["home", "taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"
   unsafe = true # allow inline HTML in markdown content
 
 [params]
-  email = "info@bldgtyp.com"
+  email = "info@buildingtype.com"

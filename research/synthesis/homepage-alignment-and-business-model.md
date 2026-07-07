@@ -104,7 +104,7 @@ Tagged with the requested verbs and a priority. **P0 = do first / highest levera
 *after (option A, benefit-first, soft-reveal):*
 > **Buildings that are quiet, healthy, and comfortable — and stay that way when the power doesn't.**
 > // We're the Passive House engineering team behind high-performance homes and multifamily across New York & Massachusetts. We de-risk the performance so architects, developers, and builders deliver with confidence.
-> [Send us your drawings →]  ·  info@bldgtyp.com
+> [Send us your drawings →]  ·  info@buildingtype.com
 
 *Why:* opens on felt outcome + resilience [kristof-irwin…][lloyd-alter…], names PH as the *method*, keeps the B2B audience explicit, upgrades the CTA from raw mailto to a low-friction offer [aaron-waldt…].
 

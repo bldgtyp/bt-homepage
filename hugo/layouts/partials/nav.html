@@ -3,16 +3,16 @@
     <div class="nav-right">
         <div class="nav-links">
             <div class="nav-link-group" aria-label="Homepage sections">
-                <a href="/#services" class="type-mono-nav">Services</a>
-                <a href="/#contact" class="type-mono-nav">Contact</a>
+                <a href="/#services" class="type-mono-nav nav-link">Services</a>
+                <a href="/#contact" class="type-mono-nav nav-link">Contact</a>
             </div>
             <div class="nav-link-group" aria-label="Site pages">
-                <a href="/learn/" class="type-mono-nav">Learn</a>
-                <a href="/about/" class="type-mono-nav">About</a>
+                <a href="/learn/" class="type-mono-nav nav-link"{{ if eq .Section "learn" }} aria-current="page"{{ end }}>Learn</a>
+                <a href="/about/" class="type-mono-nav nav-link"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a>
             </div>
             <div class="nav-link-group" aria-label="Location pages">
-                <a href="/ma/" class="type-mono-nav">MA</a>
-                <a href="/nyc-thermal-bridging/" class="type-mono-nav">NYC</a>
+                <a href="/ma/" class="type-mono-nav nav-link"{{ if eq .RelPermalink "/ma/" }} aria-current="page"{{ end }}>MA</a>
+                <a href="/nyc-thermal-bridging/" class="type-mono-nav nav-link"{{ if eq .RelPermalink "/nyc-thermal-bridging/" }} aria-current="page"{{ end }}>NYC</a>
             </div>
         </div>
         <div class="nav-icons">

@@ -69,11 +69,35 @@
     }
 
     .nav-right { display: flex; align-items: center; gap: 40px; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-link-group { display: flex; gap: 24px; align-items: center; }
+    .nav-links { display: flex; gap: 18px; align-items: center; }
+    .nav-link-group { display: flex; gap: 18px; align-items: center; }
     .nav-link-group + .nav-link-group {
-        padding-left: 24px;
+        padding-left: 18px;
         border-left: 1px solid var(--border-subtle);
+    }
+
+    .nav-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0 1px;
+        border-bottom: 2px solid transparent;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition:
+            color var(--transition-base),
+            border-color var(--transition-base);
+    }
+
+    .nav-link:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+
+    .nav-link[aria-current="page"],
+    .nav-link[aria-current="location"] {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
     }
 
      
@@ -409,30 +433,6 @@
         border-top: 1px solid var(--border-subtle);
     }
 
-    .footer-logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 28px;
-        margin-bottom: 20px;
-    }
-
-    .footer-logos a {
-        display: block;
-        height: 40px;
-        opacity: 0.45;
-        transition: opacity var(--transition-base);
-    }
-    .footer-logos a:hover { opacity: 0.75; }
-
-    .footer-logos img {
-        height: 100%;
-        width: auto;
-        object-fit: contain;
-    }
-
-    [data-theme="dark"] .footer-logos img { filter: brightness(0.9) contrast(0.9); }
-
     footer p {
         font-family: var(--font-mono);
         font-weight: 300;
@@ -445,9 +445,9 @@
     @media (max-width: 768px) {
         nav { padding: 0 20px; }
         .nav-right { gap: 20px; }
-        .nav-links { gap: 14px; }
-        .nav-link-group { gap: 14px; }
-        .nav-link-group + .nav-link-group { padding-left: 14px; }
+        .nav-links { gap: 12px; }
+        .nav-link-group { gap: 12px; }
+        .nav-link-group + .nav-link-group { padding-left: 12px; }
         .page-hero { padding: 70px 20px 40px; }
         .page-section { padding: 60px 20px; }
         .page-cta { padding: 70px 20px; }
@@ -469,16 +469,22 @@
 
         .nav-links {
             width: 100%;
-            justify-content: space-between;
-            gap: 10px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 6px 8px;
         }
 
         .nav-link-group {
-            gap: 10px;
+            gap: 6px;
         }
 
         .nav-link-group + .nav-link-group {
-            padding-left: 10px;
+            padding-left: 8px;
+        }
+
+        .nav-link {
+            min-height: 28px;
+            padding: 0 5px;
         }
 
         .nav-icons,
@@ -495,16 +501,16 @@
     <div class="nav-right">
         <div class="nav-links">
             <div class="nav-link-group" aria-label="Homepage sections">
-                <a href="/#services" class="type-mono-nav">Services</a>
-                <a href="/#contact" class="type-mono-nav">Contact</a>
+                <a href="/#services" class="type-mono-nav nav-link">Services</a>
+                <a href="/#contact" class="type-mono-nav nav-link">Contact</a>
             </div>
             <div class="nav-link-group" aria-label="Site pages">
-                <a href="/learn/" class="type-mono-nav">Learn</a>
-                <a href="/about/" class="type-mono-nav">About</a>
+                <a href="/learn/" class="type-mono-nav nav-link">Learn</a>
+                <a href="/about/" class="type-mono-nav nav-link" aria-current="page">About</a>
             </div>
             <div class="nav-link-group" aria-label="Location pages">
-                <a href="/ma/" class="type-mono-nav">MA</a>
-                <a href="/nyc-thermal-bridging/" class="type-mono-nav">NYC</a>
+                <a href="/ma/" class="type-mono-nav nav-link">MA</a>
+                <a href="/nyc-thermal-bridging/" class="type-mono-nav nav-link">NYC</a>
             </div>
         </div>
         <div class="nav-icons">
@@ -637,21 +643,13 @@
     <div class="page-cta-inner">
         <h2>Want us on your team?</h2>
         <p class="page-cta-subtitle">Send us your drawings at any stage. Earlier involvement gives us more room to de-risk the project.</p>
-        <a class="btn-primary" href="mailto:info@bldgtyp.com">Send us your drawings &rarr; info@bldgtyp.com</a>
+        <a class="btn-primary" href="mailto:info@buildingtype.com">Send us your drawings &rarr; info@buildingtype.com</a>
     </div>
 </section>
 
     </main>
     <footer>
-    <div class="footer-logos">
-        <a href="https://www.phius.org/" target="_blank" rel="noopener" aria-label="PHIUS Certified Consultant">
-            <img src="/assets/ph-logos/cphc-logo-image-grid-short.png.webp" alt="PHIUS Certified Passive House Consultant (CPHC)">
-        </a>
-        <a href="https://passivehouse.com/" target="_blank" rel="noopener" aria-label="PHI Certified Passive House Designer">
-            <img src="/assets/ph-logos/download.png" alt="PHI Certified Passive House Designer (CPHD)">
-        </a>
-    </div>
-    <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@bldgtyp.com" class="link">info@bldgtyp.com</a> · © 2026 Building-Type LLC</p>
+    <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com" class="link">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
 </footer>
 
     <script>

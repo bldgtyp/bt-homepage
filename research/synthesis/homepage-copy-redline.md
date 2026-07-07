@@ -36,17 +36,17 @@ Add two anchors for the new sections so they're reachable: **Work** (proof) and 
 > Your Passive House questions. *Answered.*
 > // Passive House design and consulting for architects, developers, and builders.
 > // We find the answers so you can build with confidence.
-> [Reach out today: info@bldgtyp.com]
+> [Reach out today: info@buildingtype.com]
 
 **After — recommended (A):**
 > # The performance team behind high-performance buildings.
 > // Passive House energy consulting for architects, developers, and builders across New York & Massachusetts. We model it, prove it, and carry the certification — so your project hits its targets and your client gets a building that's comfortable, quiet, and resilient for decades.
-> [Send us your drawings →]   ·   info@bldgtyp.com
+> [Send us your drawings →]   ·   info@buildingtype.com
 
 **Alternate (B) — keeps your current "answers" equity:**
 > # Your Passive House questions. *Answered.*
 > // The energy-modeling and certification team architects and developers call when performance has to be right the first time. We de-risk the building science so you can design and build with confidence.
-> [Send us your drawings →]   ·   info@bldgtyp.com
+> [Send us your drawings →]   ·   info@buildingtype.com
 
 **Why:** Leads with professional competence + de-risk, not the PH *name* as the value; states audience explicitly; the felt outcome ("comfortable, quiet, resilient") rides along as *what the building delivers* [kristof-irwin-positive-energy][lloyd-alter-carbon-upfront]; CTA upgraded from a raw mailto to the corpus's classic low-friction lead magnet "send us your drawings" [aaron-waldt-475-high-performance-building-supply]. *Decision embedded: A demotes the name harder; B is the lower-risk evolution. My pick: A.*
 
@@ -186,7 +186,7 @@ Best section on the site — specific, localized, cited, honest disclaimer. Mode
 **After:**
 > ## Bring us in early. It's the cheapest time to get performance right.
 > The earlier we're at the table, the more we can de-risk — and the more your design budget buys. Send us your drawings at any stage and we'll tell you where your project stands.
-> [Send us your drawings → info@bldgtyp.com]
+> [Send us your drawings → info@buildingtype.com]
 
 *Why:* "get us to the table at the beginning" + "cheapest time to make a building work well is at the start" [mark-attard-point-6][alexander-gard-murray-passive-house-massachusetts]; low-friction CTA.
 
