@@ -31,17 +31,31 @@ nav {
 
 
 .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-primary);
     font-weight: 500;
     font-size: 14px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
     color: var(--text-primary);
     cursor: pointer;
     text-decoration: none;
     white-space: nowrap;
     transition: color var(--transition-base);
 }
+
+.nav-brand__mark {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: block;
+}
+
+.nav-brand__name {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
 .nav-brand:hover {
     color: var(--accent);
     text-decoration: none;
@@ -1484,6 +1498,8 @@ nav {
 
 .site-footer__mark {
     display: inline-flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 12px;
     color: #f8f9f6;
     font-family: var(--font-primary);
@@ -1492,6 +1508,13 @@ nav {
     letter-spacing: 0.32em;
     line-height: 1;
     text-decoration: none;
+}
+
+.site-footer__mark-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: block;
 }
 
 .site-footer__mark:hover {

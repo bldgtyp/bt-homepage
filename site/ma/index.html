@@ -92,17 +92,31 @@ nav {
 
 
 .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-primary);
     font-weight: 500;
     font-size: 14px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
     color: var(--text-primary);
     cursor: pointer;
     text-decoration: none;
     white-space: nowrap;
     transition: color var(--transition-base);
 }
+
+.nav-brand__mark {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: block;
+}
+
+.nav-brand__name {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
 .nav-brand:hover {
     color: var(--accent);
     text-decoration: none;
@@ -1545,6 +1559,8 @@ nav {
 
 .site-footer__mark {
     display: inline-flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 12px;
     color: #f8f9f6;
     font-family: var(--font-primary);
@@ -1553,6 +1569,13 @@ nav {
     letter-spacing: 0.32em;
     line-height: 1;
     text-decoration: none;
+}
+
+.site-footer__mark-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: block;
 }
 
 .site-footer__mark:hover {
@@ -1795,7 +1818,11 @@ nav {
 </head>
 <body>
     <nav id="nav">
-    <a class="nav-brand" href="/">BLDGTYP <span class="nav-brand-locs">New York · Massachusetts</span></a>
+    <a class="nav-brand" href="/">
+        <img class="nav-brand__mark" src="/assets/bldgtyp-icon.svg" width="30" height="30" alt="" aria-hidden="true">
+        <span class="nav-brand__name">BLDGTYP</span>
+        <span class="nav-brand-locs">New York · Massachusetts</span>
+    </a>
     <div class="nav-right">
         <div class="nav-links">
             <div class="nav-link-group" aria-label="Homepage sections">
@@ -1937,7 +1964,10 @@ nav {
     <footer class="site-footer">
     <div class="site-footer__inner">
         <div class="site-footer__brand">
-            <a href="/" class="site-footer__mark">BLDGTYP</a>
+            <a href="/" class="site-footer__mark">
+                <img class="site-footer__mark-icon" src="/assets/bldgtyp-icon.svg" width="34" height="34" alt="" aria-hidden="true">
+                <span>BLDGTYP</span>
+            </a>
             <p>Passive House consulting, thermal-bridge simulation, certification, and Appendix G modeling.</p>
         </div>
         <div class="footer-nav">
