@@ -1,0 +1,33 @@
+# BLDGTYP static site - Hugo config.
+# Source files live under ./hugo; generated deploy output builds into ./site.
+# Build:  hugo
+# Dev:    hugo server
+
+baseURL = "https://www.bldgtyp.com/"
+languageCode = "en-us"
+title = "BLDGTYP"
+
+contentDir = "hugo/content"
+dataDir = "hugo/data"
+layoutDir = "hugo/layouts"
+staticDir = "hugo/static"
+publishDir = "site"
+
+# Skip the machinery this small static site doesn't need.
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+
+[markup.goldmark.renderer]
+  unsafe = true # allow inline HTML in markdown content
+
+[params]
+  email = "info@buildingtype.com"
+  description = "Passive House consulting, thermal-bridge modeling, energy modeling, and certification support for architects, developers, builders, and certification teams in New York and Massachusetts."
+  defaultImage = "/assets/hero-city.png"
+  youtube = "https://www.youtube.com/@edmay8900/playlists"
+  github = "https://github.com/bldgtyp"
+  passiveHouseTools = "https://www.passivehousetools.com/"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5

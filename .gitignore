@@ -5,6 +5,7 @@
 .ftp-deploy-sync-state.json
 
 # Hugo build artifacts
+.hugo_build.lock
 hugo/.hugo_build.lock
 hugo/resources/
 

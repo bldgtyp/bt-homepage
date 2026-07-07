@@ -86,6 +86,37 @@
     </div>
 </section>
 
+<section class="page-section">
+    <div class="page-section-inner">
+        <span class="section-label">DOWNLOADS</span>
+        <div style="margin-top: 48px;">
+        {{- range .Site.Data.downloads.groups }}
+        <div class="download-group">
+            <h2 class="video-group-title">{{ .title }}</h2>
+            <p class="video-group-desc">{{ .desc }}</p>
+            <div class="download-grid">
+                {{- range .sections }}
+                <section class="download-card">
+                    <h3 class="download-card__title">{{ .title }}</h3>
+                    <ul class="download-list">
+                        {{- range .items }}
+                        <li>
+                            <a href="{{ .href | safeURL }}"{{ if strings.HasPrefix .href "http" }} target="_blank" rel="noopener"{{ else }} download{{ end }}>
+                                <span class="download-list__name">{{ .title }}</span>
+                                <span class="download-list__meta">{{ .meta }}</span>
+                            </a>
+                        </li>
+                        {{- end }}
+                    </ul>
+                </section>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+        </div>
+    </div>
+</section>
+
 
 <section class="page-cta">
     <div class="page-cta-inner">

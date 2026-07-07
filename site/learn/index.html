@@ -1202,6 +1202,65 @@ nav {
         min-width: 22px;
     }
 
+    .download-group { margin-bottom: 72px; }
+    .download-group:last-child { margin-bottom: 0; }
+
+    .download-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .download-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        padding: 24px;
+    }
+
+    .download-card__title {
+        font-family: var(--font-primary);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.4;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+    }
+
+    .download-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .download-list li + li { border-top: 1px solid var(--border-subtle); }
+
+    .download-list a {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: baseline;
+        padding: 12px 0;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color var(--transition-base);
+    }
+    .download-list a:hover { color: var(--accent); }
+
+    .download-list__name {
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .download-list__meta {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        color: var(--accent);
+    }
+
 
     .bio-grid {
         display: grid;
@@ -2386,6 +2445,153 @@ footer p {
             <p style="margin-top: 24px;"><a href="https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
         </div>
         
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="page-section-inner">
+        <span class="section-label">DOWNLOADS</span>
+        <div style="margin-top: 48px;">
+        <div class="download-group">
+            <h2 class="video-group-title">AIA-NY / Center for Architecture THERM Class</h2>
+            <p class="video-group-desc">A three-part THERM workshop on setup, psi-value calculation, corners, windows, parapets, slab-on-grade details, fRsi, and interstitial temperature review.</p>
+            <div class="download-grid">
+                <section class="download-card">
+                    <h3 class="download-card__title">Part 1 [Oct 2019]</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_1/01_1_Therm_Setup.pdf" download>
+                                <span class="download-list__name">01.1 THERM Setup Part 1</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_1/01_2_Therm_Setup.pdf" download>
+                                <span class="download-list__name">01.2 THERM Setup Part 2</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_1/part_1_THM_files.zip" download>
+                                <span class="download-list__name">THERM files</span>
+                                <span class="download-list__meta">ZIP</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="download-card">
+                    <h3 class="download-card__title">Part 2 [Jan 2020]</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_2/02_1_Psi-Values.pdf" download>
+                                <span class="download-list__name">02.1 Psi-Values</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_2/02_2_Psi-Values_Outside%20Corners.pdf" download>
+                                <span class="download-list__name">02.2 Psi-Values: Outside Corners</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_2/02_3_Psi-Values_Windows.pdf" download>
+                                <span class="download-list__name">02.3 Psi-Values: Windows</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_2/part_2_THM_files.zip" download>
+                                <span class="download-list__name">THERM files</span>
+                                <span class="download-list__meta">ZIP</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="download-card">
+                    <h3 class="download-card__title">Part 3 [Feb 2020]</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_3/02_4_Parapets.pdf" download>
+                                <span class="download-list__name">02.4 Psi-Values: Parapets</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_3/02_5_SlabOnGrade.pdf" download>
+                                <span class="download-list__name">02.5 Psi-Values: Slab On Grade</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_3/03_1_fRsi.pdf" download>
+                                <span class="download-list__name">03.1 Moisture: fRsi</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_3/03_2_InterstitalTemp.pdf" download>
+                                <span class="download-list__name">03.2 Moisture: Interstitial Temps</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/thermal_bridging/part_3/part_3_THM_files.zip" download>
+                                <span class="download-list__name">THERM files</span>
+                                <span class="download-list__meta">ZIP</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <div class="download-group">
+            <h2 class="video-group-title">RPI Workshops</h2>
+            <p class="video-group-desc">Workshop materials for window thermal comfort, PMV review, THERM setup, and Grasshopper-assisted psi-value calculation.</p>
+            <div class="download-grid">
+                <section class="download-card">
+                    <h3 class="download-card__title">Window Thermal Comfort Workshop</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="/assets/downloads/rpi/200206%20-%20Intro%20to%20Thermal%20Comfort.pdf" download>
+                                <span class="download-list__name">A brief introduction to windows and thermal comfort</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/rpi/ThermalComfort_GH_Internalized.gh" download>
+                                <span class="download-list__name">Windows and PMV sample Grasshopper file</span>
+                                <span class="download-list__meta">GH</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="download-card">
+                    <h3 class="download-card__title">THERM &#43; Grasshopper Workshop</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="/assets/downloads/rpi/RPI%20Thermal%20Bridge%20Modeling%20using%20GH.pdf" download>
+                                <span class="download-list__name">THERM setup and simple psi-value calculations</span>
+                                <span class="download-list__meta">PDF</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/downloads/rpi/Psi_Calc_Example_191114%2B%5BInternalized%5D.gh" download>
+                                <span class="download-list__name">Grasshopper psi-calculation sample file</span>
+                                <span class="download-list__meta">GH</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discourse.ladybug.tools/t/using-honeybee-therm-to-calculate-psi-values/3328/19?u=edpmay" target="_blank" rel="noopener">
+                                <span class="download-list__name">Two-element psi-calculation example</span>
+                                <span class="download-list__meta">LINK</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        </div>
     </div>
 </section>
 
