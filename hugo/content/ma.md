@@ -7,7 +7,7 @@ url: "/ma/"
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">MASSACHUSETTS</span>
-        <h1>Code-driven Passive House consulting for Massachusetts.</h1>
+        <h1>Passive House consulting for Massachusetts Teams.</h1>
         <p class="page-hero-intro type-body-lg">
             Massachusetts has become one of the most active Passive House markets in the country: the
             opt-in <strong>Specialized Stretch Energy Code</strong> names Phius and PHI certification as a
@@ -23,7 +23,7 @@ url: "/ma/"
         <span class="section-label">THE MA LANDSCAPE</span>
         <h2 class="page-heading">
             <p>
-                Your code requires for Passive House.
+                Your code requires Passive House certification.
             </p>
             <p>
                 We help you deliver.
@@ -92,13 +92,11 @@ url: "/ma/"
         <span class="section-label">HOW A MASS SAVE PROJECT RUNS</span>
         <h2 class="page-heading">From feasibility through certification, we carry the full sequence.</h2>
         <p class="page-intro type-body-lg">
-            The Mass Save Passive House pathway funds consulting in stages, which keeps the developer's
+            The <a href="https://www.masssave.com/" class="link" target="_blank" rel="noopener">Mass Save</a> Passive House pathway funds consulting in stages, which keeps the developer's
             risk lower at each gate. A funded <strong>feasibility study</strong> answers "can this building
             hit the target, and what does it cost?" before design commits. Funded
             <strong>pre-construction modeling</strong> carries the design to a certifiable model.
-            <strong>Per-unit certification incentives</strong> land after the building proves out. We've
-            run this sequence as the PH consultant of record. Because we're certified on both the Phius and
-            PHI tracks, we can recommend the pathway that fits your building.
+            <strong>Per-unit certification incentives</strong> land after the building proves out. And because we're certified on both the Phius and PHI tracks, we can recommend the pathway that actually fits your building best.
         </p>
             </div>
 </section>
@@ -107,6 +105,6 @@ url: "/ma/"
     <div class="page-cta-inner">
         <h2>Building in Massachusetts?</h2>
         <p class="page-cta-subtitle">Tell us the town and the unit count. We'll tell you which code applies, what Mass Save will fund, and whether Passive House pencils for your project.</p>
-        <a class="btn-primary" href="mailto:info@buildingtype.com">Get in touch &rarr; info@buildingtype.com</a>
+        <a class="btn-primary" href="mailto:info@buildingtype.com">Get in touch today &rarr; info@buildingtype.com</a>
     </div>
 </section>

@@ -1,6 +1,6 @@
 ---
 title: "BLDGTYP · Passive House Consulting · New York · Massachusetts"
-description: "Passive House consulting and design support for architects, developers, builders, and certification teams across New York and Massachusetts."
+description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and design support for architects, developers, builders, and certification teams across New York and Massachusetts."
 ---
 
 <section class="hero" id="hero">
@@ -9,7 +9,7 @@ description: "Passive House consulting and design support for architects, develo
     <div class="hero-content">
         <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
         <p class="hero-sub">
-            // Building performance modeling with thermal-bridge and Passive House certification support for design, development, and construction teams.<br>
+            // Building performance modeling, thermal-bridge analysis, and Passive House certification for design, development, and construction teams.<br>
         </p>
         <button class="btn-primary" onclick="handleCTA()">Get in touch &rarr; info@buildingtype.com</button>
     </div>
@@ -79,7 +79,7 @@ description: "Passive House consulting and design support for architects, develo
                         <div class="service-card">
                 <h3 class="service-card__title">PERFORMANCE MODELING</h3>
                 <h4 class="service-card__subtitle">Design with real numbers</h4>
-                <p class="service-card__body">We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to the performance target before construction locks in.</p>
+                <p class="service-card__body">We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to Passive House, code, or incentive targets before construction locks in.</p>
                 <div class="service-card__img-strip">
                     <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
@@ -100,6 +100,15 @@ description: "Passive House consulting and design support for architects, develo
                 <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification works as durability insurance. It catches costly envelope defects a code inspection can miss. We run the model, prepare the documentation, and manage the review. <strong>Want the performance without the plaque?</strong> We'll hit the targets either way.</p>
                 <div class="service-card__img-strip">
                     <img src="/assets/certification.png" alt="" aria-hidden="true">
+                </div>
+            </div>
+
+                        <div class="service-card">
+                <h3 class="service-card__title">CODE &amp; INCENTIVE MODELING</h3>
+                <h4 class="service-card__subtitle">Appendix G without the program-management headache</h4>
+                <p class="service-card__body">We can build <strong>ASHRAE 90.1 Appendix G</strong> baseline and proposed models for commercial, mixed-use, and substantial-renovation projects. For New York projects, we can pair the model with <strong>NYSERDA FlexTech</strong> and <strong>New Construction Commercial</strong> coordination, from enrollment through comment responses and incentive closeout.</p>
+                <div class="service-card__img-strip">
+                    <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
             </div>
         </div>
@@ -241,9 +250,9 @@ description: "Passive House consulting and design support for architects, develo
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
         <h2 class="ma-heading">The same rigor we put into our software goes into every building.</h2>
-        <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free in the <a href="/learn/" class="link">knowledge library</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
+        <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the <a href="/learn/" class="link">Learn page</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
         <div class="resources-links">
-            <a href="/learn/" class="btn-ghost">Browse the knowledge library &rarr;</a>
+            <a href="/learn/" class="btn-ghost">Browse the talks and tutorials &rarr;</a>
             <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="btn-ghost">Explore the open-source tools &rarr;</a>
             <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="btn-ghost">Watch on YouTube &rarr;</a>
         </div>

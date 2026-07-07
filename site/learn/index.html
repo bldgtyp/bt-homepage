@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn: The Passive House Knowledge Library · BLDGTYP</title>
-    <meta name="description" content="Free Passive House talks and tutorials from BLDGTYP, including thermal bridging, multifamily, Honeybee-PH, AI for PH, and more.">
+    <title>Learn: Passive House Talks and Tutorials · BLDGTYP</title>
+    <meta name="description" content="Passive House talks and tutorials from BLDGTYP, including thermal bridging, multifamily, Honeybee-PH, AI for PH, and more.">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="stylesheet" href="https://bldgtyp.github.io/bt-branding/tokens/tokens.css">
@@ -264,9 +264,15 @@ nav {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px;
     margin-top: 48px;
+}
+
+@media (max-width: 760px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -1351,6 +1357,7 @@ footer p {
 .service-card:nth-child(1) { animation-delay: 0.3s; }
 .service-card:nth-child(2) { animation-delay: 0.4s; }
 .service-card:nth-child(3) { animation-delay: 0.5s; }
+.service-card:nth-child(4) { animation-delay: 0.6s; }
 </style>
 
 </head>
@@ -1397,61 +1404,17 @@ footer p {
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">LEARN</span>
-        <h1>The Passive House knowledge library.</h1>
+        <h1>Passive House talks and tutorials.</h1>
         <p class="page-hero-intro type-body-lg">
             Fifteen years of talks and tutorials, free in one place. A stronger
             high-performance building industry helps everyone, including us. We give the knowledge away.
-            The talks live on our hosts' channels; this page is the map.
         </p>
-    </div>
-</section>
-
-<section class="page-section page-section--alt">
-    <div class="page-section-inner">
-        
-        <div class="video-group">
-            <h2 class="video-group-title">The Honeybee-PH Course: HBPH to WUFI-Passive</h2>
-            <p class="video-group-desc">A complete 14-part tutorial series: build a Phius model in Rhino/Grasshopper with Honeybee-PH and take it all the way to WUFI-Passive.</p>
-            <ul class="course-list">
-                
-                <li><a href="https://www.youtube.com/watch?v=DvH_Wxf1D8A" target="_blank" rel="noopener"><span class="course-num">01</span>Install Honeybee-PH</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=yi-QTB1Z7v0" target="_blank" rel="noopener"><span class="course-num">02</span>Geometry</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=tTfYKXKG60c" target="_blank" rel="noopener"><span class="course-num">03</span>Window Modeling</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=VQJykG6t8Lc" target="_blank" rel="noopener"><span class="course-num">04</span>Building Segments &amp; Climate</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=xtd7cnjflgU" target="_blank" rel="noopener"><span class="course-num">05</span>Interior Spaces</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=b3aR7ZikHs4" target="_blank" rel="noopener"><span class="course-num">06</span>Ventilation Systems</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=XRWxGDGecvE" target="_blank" rel="noopener"><span class="course-num">07</span>Occupancy and Appliances</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=nHbBFgiwjIw" target="_blank" rel="noopener"><span class="course-num">08</span>Ventilation Schedule and Load</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=uhtxsH_DO38" target="_blank" rel="noopener"><span class="course-num">09</span>Heating and Cooling Systems</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=fw7HF2XF7w4" target="_blank" rel="noopener"><span class="course-num">10</span>Hot Water Systems</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=26JcDljJdNo" target="_blank" rel="noopener"><span class="course-num">11</span>Phius CORE Thresholds</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=TNsuX2cWy8A" target="_blank" rel="noopener"><span class="course-num">12</span>Constructions 1</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=ZgHHpQSZ1_w" target="_blank" rel="noopener"><span class="course-num">13</span>Constructions 2</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=N9B0E54tpLE" target="_blank" rel="noopener"><span class="course-num">14</span>Cooling and Shading</a></li>
-                
-            </ul>
-            <p style="margin-top: 24px;"><a href="https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
-        </div>
-        
     </div>
 </section>
 
 <section class="page-section">
     <div class="page-section-inner">
-        <span class="section-label">TALKS &amp; PRESENTATIONS</span>
+        <span class="section-label">RECORDED TALKS</span>
         <div style="margin-top: 48px;">
         
         <div class="video-group">
@@ -1771,6 +1734,50 @@ footer p {
         </div>
     </div>
 </section>
+
+<section class="page-section page-section--alt">
+    <div class="page-section-inner">
+        
+        <div class="video-group">
+            <h2 class="video-group-title">The Honeybee-PH Course: HBPH to WUFI-Passive</h2>
+            <p class="video-group-desc">A complete 14-part tutorial series: build a Phius model in Rhino/Grasshopper with Honeybee-PH and take it all the way to WUFI-Passive.</p>
+            <ul class="course-list">
+                
+                <li><a href="https://www.youtube.com/watch?v=DvH_Wxf1D8A" target="_blank" rel="noopener"><span class="course-num">01</span>Install Honeybee-PH</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=yi-QTB1Z7v0" target="_blank" rel="noopener"><span class="course-num">02</span>Geometry</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=tTfYKXKG60c" target="_blank" rel="noopener"><span class="course-num">03</span>Window Modeling</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=VQJykG6t8Lc" target="_blank" rel="noopener"><span class="course-num">04</span>Building Segments &amp; Climate</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=xtd7cnjflgU" target="_blank" rel="noopener"><span class="course-num">05</span>Interior Spaces</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=b3aR7ZikHs4" target="_blank" rel="noopener"><span class="course-num">06</span>Ventilation Systems</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=XRWxGDGecvE" target="_blank" rel="noopener"><span class="course-num">07</span>Occupancy and Appliances</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=nHbBFgiwjIw" target="_blank" rel="noopener"><span class="course-num">08</span>Ventilation Schedule and Load</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=uhtxsH_DO38" target="_blank" rel="noopener"><span class="course-num">09</span>Heating and Cooling Systems</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=fw7HF2XF7w4" target="_blank" rel="noopener"><span class="course-num">10</span>Hot Water Systems</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=26JcDljJdNo" target="_blank" rel="noopener"><span class="course-num">11</span>Phius CORE Thresholds</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=TNsuX2cWy8A" target="_blank" rel="noopener"><span class="course-num">12</span>Constructions 1</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=ZgHHpQSZ1_w" target="_blank" rel="noopener"><span class="course-num">13</span>Constructions 2</a></li>
+                
+                <li><a href="https://www.youtube.com/watch?v=N9B0E54tpLE" target="_blank" rel="noopener"><span class="course-num">14</span>Cooling and Shading</a></li>
+                
+            </ul>
+            <p style="margin-top: 24px;"><a href="https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
+        </div>
+        
+    </div>
+</section>
+
 
 <section class="page-cta">
     <div class="page-cta-inner">

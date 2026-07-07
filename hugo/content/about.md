@@ -7,13 +7,13 @@ url: "/about/"
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">ABOUT US</span>
-        <h1>Two people. Every project. Since 2010.</h1>
+        <h1>Hands on. Every project.</h1>
         <p class="page-hero-intro type-body-lg">
-            BLDGTYP is a two-person Passive House consultancy by design. When you hire us, the people
-            doing your energy model, resolving your thermal bridges, and answering your certifier are the
-            partners whose names are on the door. We met in the M.Arch program at Parsons and built our first
-            high-performance buildings together on the U.S. DOE Solar Decathlon. Since then, our work has
-            stayed focused on buildings that perform the way the model says they will.
+            BLDGTYP is a small, hands-on Passive House consultancy by design. When you hire us, the people
+            doing your energy model, resolving your thermal bridges, and answering your certifier are the same
+            partners whose names are on the door. We met in the M.Arch program at <a herf="https://www.newschool.edu/parsons/" target="_blank" rel="noopener" class="link">Parsons</a> and built our first
+            high-performance buildings together for the <a href="https://www.newschool.edu/pressroom/pressreleases/2011/solardecathloncompetition.htm"  target="_blank" rel="noopener" class="link">U.S. DOE Solar Decathlon in 2009</a>. Since then, our work has
+            stayed laser focused on buildings that perform the way the model says they will.
         </p>
     </div>
 </section>
@@ -39,9 +39,12 @@ url: "/about/"
                 <ul class="bio-facts">
                     <li><strong>Certified Passive House Consultant (CPHC)</strong>: Phius, 2016</li>
                     <li><strong>Certified Passive House Designer (CPHD)</strong>: Passive House Institute, 2013</li>
-                    <li><strong>M.Arch</strong>: Parsons School of Design, 2009 (Honors)</li>
-                    <li><strong>Teaching</strong>: Passive House Canada · Passive House Network · Stevens Institute (Industry Professor) · Parsons (Adjunct Faculty)</li>
-                    <li><strong>Solar Decathlon</strong>: Faculty Lead 2015 · Project Manager 2011</li>
+                    <li><strong>M.Arch</strong>: Parsons School of Design, 2009</li>
+                    <li><strong>Teaching</strong>: Passive House Academy · Passive House Canada · Passive House Network · Stevens Institute (Industry Professor) · Parsons (Adjunct Faculty) · Reimagine Buildings Collective (Expert in Residence)</li>
+                    <li><strong>Solar Decathlon:</strong>
+                        <p>- 2015 Stevens Inst. | Faculty Lead and Project Manager<p>
+                        <p>- 2011 Parsons NewSchool | Construction Manager</p>
+                    </li>
                 </ul>
             </div>
 
@@ -62,9 +65,11 @@ url: "/about/"
                     <li><strong>Certified Passive House Consultant (CPHC)</strong>: Phius, 2016</li>
                     <li><strong>Certified Passive House Designer (CPHD)</strong>: Passive House Institute, 2013</li>
                     <li><strong>Living Future Accredited Professional (LFA)</strong>: ILFI, 2021</li>
-                    <li><strong>M.Arch</strong>: Parsons School of Design, 2009 (Honors)</li>
+                    <li><strong>M.Arch</strong>: Parsons School of Design, 2009</li>
                     <li><strong>Teaching</strong>: Passive House Network (2014-present) · Parsons (Adjunct Faculty)</li>
-                    <li><strong>Solar Decathlon</strong>: Construction Manager 2011</li>
+                    <li><strong>Solar Decathlon</strong>:
+                        <p>- 2011 Parsons NewSchool | Construction Manager</p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -94,14 +99,15 @@ url: "/about/"
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">02 · THE TEACHING</span>
                 <h3 class="ma-card__title">Trained the trainers</h3>
-                <p class="ma-card__body">Between us we've taught Passive House practice for the Passive House Network, Passive House Canada, Stevens Institute, Parsons, and two U.S. DOE Solar Decathlon teams. The talks and tutorials are all free in the knowledge library.</p>
+                <p class="ma-card__body">Between us we've taught Passive House practice for the Passive House Network, Passive House Canada, Stevens Institute, Parsons, and two U.S. DOE Solar Decathlon teams. The talks and tutorials are all free on the Learn page.</p>
                 <div class="ma-card__cite"><a href="/learn/">bldgtyp.com/learn →</a></div>
             </div>
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">03 · THE WORK</span>
                 <h3 class="ma-card__title">Firsts, on purpose</h3>
                 <p class="ma-card__body">First PHI-certified multifamily building in New Jersey. Among the first EnerPHit retrofits in the US and the first Phius homes in Maine. We take on projects where the details have not been worked out yet. Then we publish what we learned.</p>
-                <div class="ma-card__cite">SELECT PROJECTS · case studies forthcoming</div>
+                <!-- TODO: Once we have CASE-STUDIES, link them here -->
+                <!-- <div class="ma-card__cite">SELECT PROJECTS · case studies forthcoming</div> -->
             </div>
         </div>
     </div>
@@ -110,7 +116,10 @@ url: "/about/"
 <section class="page-cta">
     <div class="page-cta-inner">
         <h2>Want us on your team?</h2>
-        <p class="page-cta-subtitle">Send us your drawings at any stage. Earlier involvement gives us more room to de-risk the project.</p>
+        <p class="page-cta-subtitle">
+            <span>Send us your drawings at any stage.</span></br>
+            <span>Earlier involvement gives us more room to de-risk your project.</span>
+        </p>
         <a class="btn-primary" href="mailto:info@buildingtype.com">Send us your drawings &rarr; info@buildingtype.com</a>
     </div>
 </section>

@@ -36,7 +36,7 @@ url: "/nyc-thermal-bridging/"
                 </p>
                 <div class="ma-card__cite">
                     SOURCE
-                    <a href="https://www.nyc.gov/site/buildings/codes/2025-energy-conservation-code.page" target="_blank" rel="noopener">nyc.gov · 2025 Energy Conservation Code →</a>
+                    <a href="https://www.nyc.gov/site/buildings/codes/2025-energy-conservation-code.page" target="_blank" rel="noopener">nyc.gov · 2025 NYCECC →</a>
                 </div>
             </div>
 
@@ -52,7 +52,7 @@ url: "/nyc-thermal-bridging/"
                 </p>
                 <div class="ma-card__cite">
                     SOURCE
-                    <a href="https://www.nyc.gov/assets/buildings/codes-pdf/energy_code_2025/2025nycecc_c4.pdf" target="_blank" rel="noopener">2025 NYCECC · Chapter C4 (PDF) →</a>
+                    <a href="https://up.codes/viewer/new_york_city/nyc-energy-conservation-code-2025/chapter/C4/commercial-energy-efficiency#C402.1.4" target="_blank" rel="noopener">2025 NYCECC · C402.1.4 →</a>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@ url: "/nyc-thermal-bridging/"
                 </p>
                 <div class="ma-card__cite">
                     REFERENCE
-                    <a href="https://www.urbangreencouncil.org/highlights-of-the-2025-new-york-city-energy-code/" target="_blank" rel="noopener">Urban Green Council · 2025 code highlights →</a>
+                    <a href="https://www.urbangreencouncil.org/highlights-of-the-2025-new-york-city-energy-code/" target="_blank" rel="noopener">UGC · 2025 code highlights →</a>
                 </div>
             </div>
         </div>

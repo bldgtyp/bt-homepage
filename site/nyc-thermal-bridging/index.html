@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYC Thermal Bridging: 2025 Energy Code · BLDGTYP</title>
@@ -264,9 +264,15 @@ nav {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px;
     margin-top: 48px;
+}
+
+@media (max-width: 760px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -1351,6 +1357,7 @@ footer p {
 .service-card:nth-child(1) { animation-delay: 0.3s; }
 .service-card:nth-child(2) { animation-delay: 0.4s; }
 .service-card:nth-child(3) { animation-delay: 0.5s; }
+.service-card:nth-child(4) { animation-delay: 0.6s; }
 </style>
 
 </head>
@@ -1427,7 +1434,7 @@ footer p {
                 </p>
                 <div class="ma-card__cite">
                     SOURCE
-                    <a href="https://www.nyc.gov/site/buildings/codes/2025-energy-conservation-code.page" target="_blank" rel="noopener">nyc.gov · 2025 Energy Conservation Code →</a>
+                    <a href="https://www.nyc.gov/site/buildings/codes/2025-energy-conservation-code.page" target="_blank" rel="noopener">nyc.gov · 2025 NYCECC →</a>
                 </div>
             </div>
 
@@ -1443,7 +1450,7 @@ footer p {
                 </p>
                 <div class="ma-card__cite">
                     SOURCE
-                    <a href="https://www.nyc.gov/assets/buildings/codes-pdf/energy_code_2025/2025nycecc_c4.pdf" target="_blank" rel="noopener">2025 NYCECC · Chapter C4 (PDF) →</a>
+                    <a href="https://up.codes/viewer/new_york_city/nyc-energy-conservation-code-2025/chapter/C4/commercial-energy-efficiency#C402.1.4" target="_blank" rel="noopener">2025 NYCECC · C402.1.4 →</a>
                 </div>
             </div>
 
@@ -1458,7 +1465,7 @@ footer p {
                 </p>
                 <div class="ma-card__cite">
                     REFERENCE
-                    <a href="https://www.urbangreencouncil.org/highlights-of-the-2025-new-york-city-energy-code/" target="_blank" rel="noopener">Urban Green Council · 2025 code highlights →</a>
+                    <a href="https://www.urbangreencouncil.org/highlights-of-the-2025-new-york-city-energy-code/" target="_blank" rel="noopener">UGC · 2025 code highlights →</a>
                 </div>
             </div>
         </div>

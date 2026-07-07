@@ -1,0 +1,262 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "BLDGTYP" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic "Homepage sections" [ref=e6]:
+          - link "Services" [ref=e7] [cursor=pointer]:
+            - /url: /#services
+          - link "Contact" [ref=e8] [cursor=pointer]:
+            - /url: /#contact
+        - generic "Site pages" [ref=e9]:
+          - link "Learn" [ref=e10] [cursor=pointer]:
+            - /url: /learn/
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: /about/
+        - generic "Location pages" [ref=e12]:
+          - link "MA" [ref=e13] [cursor=pointer]:
+            - /url: /ma/
+          - link "NYC" [ref=e14] [cursor=pointer]:
+            - /url: /nyc-thermal-bridging/
+      - generic [ref=e15]:
+        - link "YouTube" [ref=e16] [cursor=pointer]:
+          - /url: https://www.youtube.com/@edmay8900/playlists
+          - img [ref=e17]
+        - link "GitHub" [ref=e19] [cursor=pointer]:
+          - /url: https://github.com/bldgtyp
+          - img [ref=e20]
+      - button "Toggle theme" [ref=e22] [cursor=pointer]:
+        - img [ref=e23]
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img
+      - generic [ref=e28]:
+        - heading "Your Passive House questions. Answered." [level=1] [ref=e29]:
+          - text: Your Passive House questions.
+          - emphasis [ref=e30]: Answered.
+        - paragraph [ref=e31]: // Building performance modeling, thermal-bridge analysis, Passive House certification, and commercial code/incentive support for design, development, and construction teams.
+        - button "Get in touch → info@buildingtype.com" [ref=e32] [cursor=pointer]
+    - region "Passive House credentials" [ref=e33]:
+      - generic [ref=e34]:
+        - paragraph [ref=e35]: Certified through both Passive House pathways
+        - generic [ref=e36]:
+          - link "PHIUS Certified Consultant" [ref=e37] [cursor=pointer]:
+            - /url: https://www.phius.org/
+            - img "Phius" [ref=e38]
+          - link "PHI Certified Passive House Designer" [ref=e39] [cursor=pointer]:
+            - /url: https://passivehouse.com/
+            - img "PHI Certified Passive House Designer (CPHD)" [ref=e40]
+    - generic [ref=e42]:
+      - generic [ref=e43]: WHO DO WE WORK WITH?
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img "Pixel art modern office building" [ref=e47]
+          - heading "ARCHITECTS" [level=3] [ref=e48]
+          - paragraph [ref=e49]: High-design, High-performance.
+          - paragraph [ref=e50]: "You own the design. We take care of the performance work: performance simulations, thermal bridge analysis, and certification management. You keep design control and deliver your client a building with documented targets."
+          - paragraph [ref=e51]: Single-family · Townhouse · Brownstone renovation
+        - generic [ref=e52]:
+          - img "Pixel art apartment towers" [ref=e54]
+          - heading "DEVELOPERS" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Affordable multifamily at scale
+          - paragraph [ref=e57]: Performance risk belongs in the pro forma early. We model efficiently, help you right-size the mechanicals, map incentives like Mass Save, stretch-code compliance, and LIHTC points, then prepare documentation your certifier and review team can use.
+          - paragraph [ref=e58]: Affordable housing · Mixed-use · Multifamily
+        - generic [ref=e59]:
+          - img "Pixel art house under construction" [ref=e61]
+          - heading "BUILDERS" [level=3] [ref=e62]
+          - paragraph [ref=e63]: Getting high-performance details right
+          - paragraph [ref=e64]: Your name is on it. We help you develop blower-door-ready details you can actually install. The result is fewer callbacks and measured proof of the work.
+          - paragraph [ref=e65]: Custom builds · Renovations
+      - paragraph [ref=e66]: "// Were you sent here by your architect or builder? In plain terms: we're the specialists your team brings in to verify energy performance, comfort, and durability before anyone breaks ground."
+    - generic [ref=e68]:
+      - generic [ref=e69]: WHAT DO WE DO?
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - heading "PERFORMANCE MODELING" [level=3] [ref=e72]
+          - heading "Design with real numbers" [level=4] [ref=e73]
+          - paragraph [ref=e74]: We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to Passive House, code, or incentive targets before construction locks in.
+          - img [ref=e76]
+        - generic [ref=e77]:
+          - heading "THERMAL BRIDGES" [level=3] [ref=e78]
+          - heading "Find the hidden losses" [level=4] [ref=e79]
+          - paragraph [ref=e80]:
+            - text: 2D and 3D finite-element modeling finds envelope heat loss, condensation risk, and mold-risk conditions before construction. Every junction is verified against a buildable detail.
+            - strong [ref=e81]: Filing in NYC?
+            - text: The
+            - link "2025 energy code now requires psi-value calculations" [ref=e82] [cursor=pointer]:
+              - /url: /nyc-thermal-bridging/
+            - text: ", a service we've delivered for over a decade."
+          - img [ref=e84]
+        - generic [ref=e85]:
+          - heading "CERTIFICATION" [level=3] [ref=e86]
+          - heading "De-risk the whole build" [level=4] [ref=e87]
+          - paragraph [ref=e88]:
+            - link "PHIUS" [ref=e89] [cursor=pointer]:
+              - /url: https://www.phius.org/
+            - text: and
+            - link "PHI" [ref=e90] [cursor=pointer]:
+              - /url: https://passivehouse.com/
+            - text: certification works as durability insurance. It catches costly envelope defects a code inspection can miss. We run the model, prepare the documentation, and manage the review.
+            - strong [ref=e91]: Want the performance without the plaque?
+            - text: We'll hit the targets either way.
+          - img [ref=e93]
+        - generic [ref=e94]:
+          - heading "CODE & INCENTIVE MODELING" [level=3] [ref=e95]
+          - heading "Appendix G without the program-management headache" [level=4] [ref=e96]
+          - paragraph [ref=e97]:
+            - text: We can build
+            - strong [ref=e98]: ASHRAE 90.1 Appendix G
+            - text: baseline and proposed models for commercial, mixed-use, and substantial-renovation projects. For New York projects, we can pair the model with
+            - strong [ref=e99]: NYSERDA FlexTech
+            - text: and
+            - strong [ref=e100]: New Construction Commercial
+            - text: coordination, from enrollment through comment responses and incentive closeout.
+          - img [ref=e102]
+    - generic [ref=e104]:
+      - generic [ref=e105]: HOW DOES IT WORK?
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]: "1"
+          - generic [ref=e109]: SHARE YOUR PLANS
+          - paragraph [ref=e110]: Send us your drawings at any stage, from early sketches to full CDs. Earlier involvement gives the team more leverage.
+        - generic [ref=e111]:
+          - generic [ref=e112]: "2"
+          - generic [ref=e113]: WE BUILD YOUR MODEL
+          - paragraph [ref=e114]: We create digital performance simulation model, including all wall assemblies, windows, and mechanical systems.
+        - generic [ref=e115]:
+          - generic [ref=e116]: "3"
+          - generic [ref=e117]: REVIEW TOGETHER
+          - paragraph [ref=e118]: We walk through the results with your team. Where is performance falling short? Where can we shrink the mechanical system to save money? Real numbers, real options.
+        - generic [ref=e119]:
+          - generic [ref=e120]: "4"
+          - generic [ref=e121]: YOUR REPORT
+          - paragraph [ref=e122]: You receive a design-phase report with the building's energy performance, open risks, and recommended next moves.
+        - generic [ref=e123]:
+          - generic [ref=e124]: "5"
+          - generic [ref=e125]: BUILD WITH CONFIDENCE
+          - paragraph [ref=e126]: Construction proceeds with a documented performance target. We support certification and can verify the finished building against the model.
+    - generic [ref=e128]:
+      - generic [ref=e129]: Design-Phase Assessment
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e134]:
+              - generic [ref=e135]: BLDGTYP · ENERGY REPORT
+              - generic [ref=e136]: PROJECT INFO
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]: Heating
+                - generic [ref=e145]: 15 kWh/m²a
+              - generic [ref=e146]:
+                - generic [ref=e147]: Cooling
+                - generic [ref=e148]: 8 kWh/m²a
+              - generic [ref=e149]:
+                - generic [ref=e150]: Peak Load
+                - generic [ref=e151]: 25 W/m²
+            - img "Foundation detail drawing" [ref=e153]
+          - paragraph [ref=e154]: "What these numbers mean in the building: even room-to-room temperatures and a home that can hold ~70°F for days without power."
+        - generic [ref=e155]:
+          - heading "Understand your building's performance, before you build." [level=3] [ref=e156]
+          - paragraph [ref=e157]:
+            - strong [ref=e158]: One deliverable that de-risks the whole project.
+            - text: "Bring us in at concept and you get a design-phase report that turns open questions into a documented performance target. It covers:"
+          - list [ref=e159]:
+            - listitem [ref=e160]: "- Annual heating and cooling demand"
+            - listitem [ref=e161]: "- Peak load calculations"
+            - listitem [ref=e162]: "- Envelope performance by assembly"
+            - listitem [ref=e163]: "- Thermal bridge impact analysis"
+            - listitem [ref=e164]: "- Mechanical system recommendations"
+            - listitem [ref=e165]: "- Certification pathway and compliance status"
+          - paragraph [ref=e166]:
+            - text: CLEAR ENOUGH FOR EVERYONE.
+            - text: DETAILED ENOUGH FOR AN ENGINEER.
+    - generic [ref=e168]:
+      - generic [ref=e169]: WE BUILD THE TOOLS, TOO
+      - heading "The same rigor we put into our software goes into every building." [level=2] [ref=e170]
+      - paragraph [ref=e171]:
+        - strong [ref=e172]: BLDGTYP
+        - text: builds and maintains
+        - link "Passive House Tools" [ref=e173] [cursor=pointer]:
+          - /url: https://www.passivehousetools.com/
+        - text: ", the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the"
+        - link "Learn page" [ref=e174] [cursor=pointer]:
+          - /url: /learn/
+        - text: ", including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class."
+      - generic [ref=e175]:
+        - link "Browse the talks and tutorials →" [ref=e176] [cursor=pointer]:
+          - /url: /learn/
+        - link "Explore the open-source tools →" [ref=e177] [cursor=pointer]:
+          - /url: https://www.passivehousetools.com/
+        - link "Watch on YouTube →" [ref=e178] [cursor=pointer]:
+          - /url: https://www.youtube.com/@edmay8900/playlists
+    - generic [ref=e180]:
+      - generic [ref=e181]: WORKING IN MASSACHUSETTS?
+      - heading "Code-driven Passive House consulting specifically for MA multifamily." [level=2] [ref=e182]
+      - paragraph [ref=e183]:
+        - text: Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in
+        - strong [ref=e184]: Specialized Stretch Energy Code
+        - text: recognizes Phius and PHI certification as a compliance pathway for new construction. The
+        - link "Mass Save" [ref=e185] [cursor=pointer]:
+          - /url: https://www.masssave.com
+        - text: Passive House Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - generic [ref=e188]: 01 · CODE PATHWAY
+          - heading "Specialized Stretch Code" [level=3] [ref=e189]
+          - paragraph [ref=e190]: The Massachusetts Municipal Opt-in Specialized Stretch Energy Code (225 CMR 22 Appendix RC for residential, 225 CMR 23 Appendix CC for commercial) names Passive House, through Phius or PHI certification, as one of its published compliance pathways for new construction. Adoption is municipality-by-municipality and continues to expand each Town Meeting cycle.
+          - generic [ref=e191]:
+            - text: SOURCE
+            - link "MA Building Energy Code →" [ref=e192] [cursor=pointer]:
+              - /url: https://www.mass.gov/info-details/building-energy-code
+        - generic [ref=e193]:
+          - generic [ref=e194]: 02 · INCENTIVES
+          - heading "Mass Save Passive House Program" [level=3] [ref=e195]
+          - paragraph [ref=e196]: For multifamily new construction with five or more units in a Mass Save sponsor's service territory, the Passive House Incentive Program funds feasibility studies, pre-construction energy modeling, pre-certification, and per-unit certification incentives. Program eligibility requires a Passive House consultant certified through PHI or Phius. Refer to the program page for current incentive amounts.
+          - generic [ref=e197]:
+            - text: SOURCE
+            - link "Passive House Incentives →" [ref=e198] [cursor=pointer]:
+              - /url: https://www.masssave.com/residential/rebates-and-incentives/passive-house-incentives
+        - generic [ref=e199]:
+          - generic [ref=e200]: 03 · OUR ROLE
+          - heading "Feasibility & Engineering" [level=3] [ref=e201]
+          - paragraph [ref=e202]:
+            - text: BLDGTYP is certified through both
+            - link "Phius" [ref=e203] [cursor=pointer]:
+              - /url: https://www.phius.org/
+            - text: (CPHC) and
+            - link "PHI" [ref=e204] [cursor=pointer]:
+              - /url: https://passivehouse.com/
+            - text: "(CPHD), meeting the Mass Save consultant requirement on either pathway. We deliver the full early-design scope: feasibility study, parametric envelope and HVAC analysis, WUFI-Passive / PHPP modeling, charrette support, and certification submission."
+          - generic [ref=e205]:
+            - text: REFERENCE
+            - link "PH-Mass overview →" [ref=e206] [cursor=pointer]:
+              - /url: https://phmass.org/masssave/
+      - link "More on working in Massachusetts →" [ref=e208] [cursor=pointer]:
+        - /url: /ma/
+      - paragraph [ref=e209]: // Code adoption status varies by municipality and incentive amounts are updated periodically. Confirm current details with the Massachusetts Department of Energy Resources and the Mass Save program administrator before relying on them for project decisions.
+    - generic [ref=e211]:
+      - generic [ref=e212]: WHY IT'S WORTH IT
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - generic [ref=e215]: ±2%
+          - generic [ref=e216]: Modeled vs. measured energy on our certified projects
+        - generic [ref=e217]:
+          - generic [ref=e218]: 2-3%
+          - generic [ref=e219]: Typical multifamily cost premium, recovered in operating savings
+        - generic [ref=e220]:
+          - generic [ref=e221]: 70°F
+          - generic [ref=e222]: Held for days with no power
+        - generic [ref=e223]:
+          - generic [ref=e224]: "#1"
+          - generic [ref=e225]: Fastest-growing high-performance standard in the US
+    - generic [ref=e227]:
+      - heading "Bring us in early. It's the cheapest time to get performance right." [level=2] [ref=e228]
+      - paragraph [ref=e229]: Early involvement gives the team more leverage and makes the design budget work harder. Send us your drawings at any stage and we'll tell you where your project stands.
+      - button "Get in touch today → info@buildingtype.com" [ref=e230] [cursor=pointer]
+  - contentinfo [ref=e231]:
+    - paragraph [ref=e232]:
+      - text: NEW YORK · MASSACHUSETTS ·
+      - link "info@buildingtype.com" [ref=e233] [cursor=pointer]:
+        - /url: mailto:info@buildingtype.com
+      - text: · © 2026 Building-Type LLC
