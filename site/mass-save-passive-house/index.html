@@ -762,6 +762,10 @@ nav {
     background-color: var(--bg-section-alt);
 }
 
+.resources.graph-paper::before {
+    opacity: 0.9;
+}
+
 .resources-links {
     display: flex;
     flex-wrap: wrap;
@@ -1020,6 +1024,138 @@ nav {
         color: var(--text-secondary);
     }
 
+    .learn-layout {
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 100px 40px 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 220px;
+        gap: 48px;
+        align-items: start;
+    }
+
+    .learn-primary {
+        min-width: 0;
+    }
+
+    .learn-hero {
+        padding: 0 0 60px;
+    }
+
+    .learn-hero .page-hero-inner {
+        max-width: none;
+    }
+
+    .learn-content {
+        min-width: 0;
+    }
+
+    .learn-content .page-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .learn-content .page-section-inner {
+        max-width: none;
+    }
+
+    .learn-section,
+    .video-group,
+    .download-group {
+        scroll-margin-top: 96px;
+    }
+
+    .learn-toc {
+        position: sticky;
+        top: 96px;
+        max-height: calc(100vh - 112px);
+        overflow-y: auto;
+    }
+
+    .learn-toc nav {
+        position: static;
+        display: block;
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        z-index: auto;
+        border-left: 1px solid var(--border-subtle);
+        border-bottom: 0;
+        padding: 0 0 0 18px;
+    }
+
+    .learn-toc__list,
+    .learn-toc__list ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .learn-toc__list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .learn-toc__list ol {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-left: 0;
+    }
+
+    .learn-toc__list li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .learn-toc__title {
+        width: 100%;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+    }
+
+    .learn-toc a {
+        display: block;
+        color: var(--text-secondary);
+        font-family: var(--font-primary);
+        font-size: 13px;
+        line-height: 1.35;
+        text-decoration: none;
+        transition: color var(--transition-base);
+    }
+
+    .learn-toc__list ol a {
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .learn-toc a:hover,
+    .learn-toc a:focus {
+        color: var(--accent);
+    }
+
+    @media (max-width: 1180px) {
+        .learn-layout {
+            display: block;
+            max-width: 1100px;
+            padding-top: 100px;
+        }
+
+        .learn-toc {
+            display: none;
+        }
+    }
 
     .ma-grid {
         display: grid;
@@ -1094,6 +1230,26 @@ nav {
 
     .video-group { margin-bottom: 72px; }
     .video-group:last-child { margin-bottom: 0; }
+
+    .ph-tools-context {
+        background-color: color-mix(in oklab, var(--bg-card) 88%, transparent);
+        border: 1px solid var(--border-subtle);
+    }
+
+    .ma-card.ph-tools-context {
+        background-color: color-mix(in oklab, var(--bg-card) 86%, transparent);
+    }
+
+    .video-group.ph-tools-context {
+        border-radius: var(--radius-sm);
+        padding: 28px;
+        margin-left: -28px;
+        margin-right: -28px;
+    }
+
+    .video-group.ph-tools-context .video-card {
+        background-color: color-mix(in oklab, var(--bg-card) 94%, transparent);
+    }
 
     .video-group-title {
         font-family: var(--font-primary);
@@ -1348,39 +1504,127 @@ nav {
     }
 
 
-footer {
-    padding: 60px 40px;
-    background-color: var(--bg-section-alt);
-    text-align: center;
-    border-top: 1px solid var(--border-subtle);
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 40px;
+    background:
+        linear-gradient(135deg, rgba(14, 18, 20, 0.98), rgba(28, 34, 34, 0.96)),
+        var(--text-primary);
+    color: rgba(248, 249, 246, 0.78);
+    border-top: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
 }
 
-footer p {
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(248, 249, 246, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(248, 249, 246, 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    opacity: 0.75;
+}
+
+.site-footer__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(320px, 1fr);
+    gap: 28px 56px;
+    align-items: end;
+}
+
+.site-footer__brand {
+    text-align: left;
+}
+
+.site-footer__mark {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: #f8f9f6;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.site-footer__mark:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-footer p {
+    margin: 0;
+    max-width: 420px;
     font-family: var(--font-mono);
     font-weight: 300;
     font-size: 11px;
+    line-height: 1.65;
     letter-spacing: 0.05em;
-    color: var(--text-muted);
+    color: rgba(248, 249, 246, 0.62);
 }
 
 .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 20px;
-    margin-bottom: 24px;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 10px 16px;
+    justify-self: end;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    z-index: auto;
 }
 
 .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(248, 249, 246, 0.18);
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    color: rgba(248, 249, 246, 0.72);
     text-decoration: none;
     text-transform: uppercase;
+    transition:
+        color var(--transition-base),
+        border-color var(--transition-base);
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #f8f9f6;
+    border-bottom-color: var(--accent);
+}
+
+.site-footer .site-footer__meta {
+    grid-column: 1 / -1;
+    padding-top: 22px;
+    border-top: 1px solid rgba(248, 249, 246, 0.14);
+    max-width: none;
+    text-align: right;
+}
+
+.site-footer__meta a {
+    color: #f8f9f6;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.site-footer__meta a:hover {
     color: var(--accent);
 }
 
@@ -1467,6 +1711,28 @@ footer p {
 
     .credential-logos a {
         height: 46px;
+    }
+
+    .site-footer {
+        padding: 44px 20px;
+    }
+
+    .site-footer__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-links {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-self: stretch;
+    }
+
+    .site-footer .site-footer__meta {
+        width: 100%;
+        text-align: left;
     }
 }
 
@@ -1593,16 +1859,22 @@ footer p {
 
 
     </main>
-    <footer>
-    <nav class="footer-links" aria-label="Footer services">
-        <a href="/passive-house-consulting/">Passive House Consulting</a>
-        <a href="/passive-house-certification/">Certification</a>
-        <a href="/thermal-bridge-modeling/">Thermal Bridges</a>
-        <a href="/energy-modeling/">Energy Modeling</a>
-        <a href="/appendix-g-modeling/">Appendix G</a>
-        <a href="/mass-save-passive-house/">Mass Save</a>
-    </nav>
-    <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com" class="link">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
+    <footer class="site-footer">
+    <div class="site-footer__inner">
+        <div class="site-footer__brand">
+            <a href="/" class="site-footer__mark">BLDGTYP</a>
+            <p>Passive House consulting, certification, energy modeling, and thermal-bridge simulation.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer services">
+            <a href="/passive-house-consulting/">Passive House Consulting</a>
+            <a href="/passive-house-certification/">Certification</a>
+            <a href="/thermal-bridge-modeling/">Thermal Bridges</a>
+            <a href="/energy-modeling/">Energy Modeling</a>
+            <a href="/appendix-g-modeling/">Appendix G</a>
+            <a href="/mass-save-passive-house/">Mass Save</a>
+        </nav>
+        <p class="site-footer__meta">NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
+    </div>
 </footer>
 
     <script>

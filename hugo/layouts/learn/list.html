@@ -31,91 +31,126 @@
 {{ dict "@context" "https://schema.org" "@graph" $videos | jsonify (dict "indent" "  ") | safeJS }}
 </script>
 
-<section class="page-hero">
-    <div class="page-hero-inner">
-        <span class="section-label">LEARN</span>
-        <h1>Passive House talks and tutorials.</h1>
-        <p class="page-hero-intro type-body-lg">
-            Fifteen years of talks and tutorials, free in one place. A stronger
-            high-performance building industry helps everyone, including us. We give the knowledge away.
-        </p>
-    </div>
-</section>
-
-<section class="page-section">
-    <div class="page-section-inner">
-        <span class="section-label">RECORDED TALKS</span>
-        <div style="margin-top: 48px;">
-        {{ range .Site.Data.videos.groups }}
-        <div class="video-group">
-            <h2 class="video-group-title">{{ .title }}</h2>
-            <p class="video-group-desc">{{ .desc }}</p>
-            <div class="video-grid">
-                {{ range .videos }}
-                <a class="video-card" href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/{{ .id }}/hqdefault.jpg" alt="{{ .title }}" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">{{ .title }}</div>
-                        <div class="video-card__host">{{ .host }} · {{ .year }}</div>
-                    </div>
-                </a>
-                {{ end }}
+<div class="learn-layout">
+    <div class="learn-primary">
+        <section class="page-hero learn-hero">
+            <div class="page-hero-inner">
+                <span class="section-label">LEARN</span>
+                <h1>Passive House talks and tutorials.</h1>
+                <p class="page-hero-intro type-body-lg">
+                    Fifteen years of talks and tutorials, free in one place. A stronger
+                    high-performance building industry helps everyone, including us. We give the knowledge away.
+                </p>
             </div>
-        </div>
-        {{ end }}
-        </div>
-    </div>
-</section>
+        </section>
 
-<section class="page-section page-section--alt">
-    <div class="page-section-inner">
-        {{ with .Site.Data.videos.course }}
-        <div class="video-group">
-            <h2 class="video-group-title">{{ .title }}</h2>
-            <p class="video-group-desc">{{ .desc }}</p>
-            <ul class="course-list">
-                {{ range .units }}
-                <li><a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener"><span class="course-num">{{ .num }}</span>{{ .title }}</a></li>
-                {{ end }}
-            </ul>
-            <p style="margin-top: 24px;"><a href="{{ .playlist }}" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
-        </div>
-        {{ end }}
-    </div>
-</section>
+        <div class="learn-content" id="learn-content">
+        <section class="page-section learn-section" id="recorded-talks">
+            <div class="page-section-inner">
+                <span class="section-label">RECORDED TALKS</span>
+                <div style="margin-top: 48px;">
+                {{- range .Site.Data.videos.groups }}
+                {{- $isPhToolsGroup := or (in .title "Tools") (in .desc "Honeybee-PH") (in .desc "PHX") -}}
+                <div class="video-group{{ if $isPhToolsGroup }} ph-tools-context graph-paper graph-paper--hex-fine{{ end }}" id="{{ .title | anchorize }}">
+                    <h2 class="video-group-title">{{ .title }}</h2>
+                    <p class="video-group-desc">{{ .desc }}</p>
+                    <div class="video-grid">
+                        {{- range .videos }}
+                        <a class="video-card" href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/{{ .id }}/hqdefault.jpg" alt="{{ .title }}" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">{{ .title }}</div>
+                                <div class="video-card__host">{{ .host }} · {{ .year }}</div>
+                            </div>
+                        </a>
+                        {{- end }}
+                    </div>
+                </div>
+                {{- end }}
+                </div>
+            </div>
+        </section>
 
-<section class="page-section">
-    <div class="page-section-inner">
-        <span class="section-label">DOWNLOADS</span>
-        <div style="margin-top: 48px;">
-        {{- range .Site.Data.downloads.groups }}
-        <div class="download-group">
-            <h2 class="video-group-title">{{ .title }}</h2>
-            <p class="video-group-desc">{{ .desc }}</p>
-            <div class="download-grid">
-                {{- range .sections }}
-                <section class="download-card">
-                    <h3 class="download-card__title">{{ .title }}</h3>
-                    <ul class="download-list">
-                        {{- range .items }}
-                        <li>
-                            <a href="{{ .href | safeURL }}"{{ if strings.HasPrefix .href "http" }} target="_blank" rel="noopener"{{ else }} download{{ end }}>
-                                <span class="download-list__name">{{ .title }}</span>
-                                <span class="download-list__meta">{{ .meta }}</span>
-                            </a>
-                        </li>
+        <section class="page-section page-section--alt learn-section" id="course">
+            <div class="page-section-inner">
+                {{- with .Site.Data.videos.course }}
+                {{- $isPhToolsCourse := or (in .title "Honeybee-PH") (in .desc "Honeybee-PH") -}}
+                <div class="video-group{{ if $isPhToolsCourse }} ph-tools-context graph-paper graph-paper--hex-fine{{ end }}">
+                    <h2 class="video-group-title">{{ .title }}</h2>
+                    <p class="video-group-desc">{{ .desc }}</p>
+                    <ul class="course-list">
+                        {{- range .units }}
+                        <li><a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener"><span class="course-num">{{ .num }}</span>{{ .title }}</a></li>
                         {{- end }}
                     </ul>
-                </section>
+                    <p style="margin-top: 24px;"><a href="{{ .playlist }}" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
+                </div>
                 {{- end }}
             </div>
-        </div>
-        {{- end }}
+        </section>
+
+        <section class="page-section learn-section" id="downloads">
+            <div class="page-section-inner">
+                <span class="section-label">DOWNLOADS</span>
+                <div style="margin-top: 48px;">
+                {{- range .Site.Data.downloads.groups }}
+                <div class="download-group" id="{{ .title | anchorize }}">
+                    <h2 class="video-group-title">{{ .title }}</h2>
+                    <p class="video-group-desc">{{ .desc }}</p>
+                    <div class="download-grid">
+                        {{- range .sections }}
+                        <section class="download-card">
+                            <h3 class="download-card__title">{{ .title }}</h3>
+                            <ul class="download-list">
+                                {{- range .items }}
+                                <li>
+                                    <a href="{{ .href | safeURL }}"{{ if strings.HasPrefix .href "http" }} target="_blank" rel="noopener"{{ else }} download{{ end }}>
+                                        <span class="download-list__name">{{ .title }}</span>
+                                        <span class="download-list__meta">{{ .meta }}</span>
+                                    </a>
+                                </li>
+                                {{- end }}
+                            </ul>
+                        </section>
+                        {{- end }}
+                    </div>
+                </div>
+                {{- end }}
+                </div>
+            </div>
+        </section>
         </div>
     </div>
-</section>
+
+    <aside class="learn-toc" aria-labelledby="learn-toc-title">
+        <nav aria-label="On this page">
+            <h2 id="learn-toc-title" class="learn-toc__title">On this page</h2>
+            <ol class="learn-toc__list">
+                <li>
+                    <a href="#recorded-talks">Recorded talks</a>
+                    <ol>
+                        {{- range .Site.Data.videos.groups }}
+                        <li><a href="#{{ .title | anchorize }}">{{ .title }}</a></li>
+                        {{- end }}
+                    </ol>
+                </li>
+                {{- with .Site.Data.videos.course }}
+                <li><a href="#course">{{ .title }}</a></li>
+                {{- end }}
+                <li>
+                    <a href="#downloads">Downloads</a>
+                    <ol>
+                        {{- range .Site.Data.downloads.groups }}
+                        <li><a href="#{{ .title | anchorize }}">{{ .title }}</a></li>
+                        {{- end }}
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+    </aside>
+</div>
 
 
 <section class="page-cta">

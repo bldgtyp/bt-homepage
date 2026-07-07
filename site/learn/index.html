@@ -762,6 +762,10 @@ nav {
     background-color: var(--bg-section-alt);
 }
 
+.resources.graph-paper::before {
+    opacity: 0.9;
+}
+
 .resources-links {
     display: flex;
     flex-wrap: wrap;
@@ -1020,6 +1024,138 @@ nav {
         color: var(--text-secondary);
     }
 
+    .learn-layout {
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 100px 40px 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 220px;
+        gap: 48px;
+        align-items: start;
+    }
+
+    .learn-primary {
+        min-width: 0;
+    }
+
+    .learn-hero {
+        padding: 0 0 60px;
+    }
+
+    .learn-hero .page-hero-inner {
+        max-width: none;
+    }
+
+    .learn-content {
+        min-width: 0;
+    }
+
+    .learn-content .page-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .learn-content .page-section-inner {
+        max-width: none;
+    }
+
+    .learn-section,
+    .video-group,
+    .download-group {
+        scroll-margin-top: 96px;
+    }
+
+    .learn-toc {
+        position: sticky;
+        top: 96px;
+        max-height: calc(100vh - 112px);
+        overflow-y: auto;
+    }
+
+    .learn-toc nav {
+        position: static;
+        display: block;
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        z-index: auto;
+        border-left: 1px solid var(--border-subtle);
+        border-bottom: 0;
+        padding: 0 0 0 18px;
+    }
+
+    .learn-toc__list,
+    .learn-toc__list ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .learn-toc__list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .learn-toc__list ol {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-left: 0;
+    }
+
+    .learn-toc__list li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .learn-toc__title {
+        width: 100%;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+    }
+
+    .learn-toc a {
+        display: block;
+        color: var(--text-secondary);
+        font-family: var(--font-primary);
+        font-size: 13px;
+        line-height: 1.35;
+        text-decoration: none;
+        transition: color var(--transition-base);
+    }
+
+    .learn-toc__list ol a {
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .learn-toc a:hover,
+    .learn-toc a:focus {
+        color: var(--accent);
+    }
+
+    @media (max-width: 1180px) {
+        .learn-layout {
+            display: block;
+            max-width: 1100px;
+            padding-top: 100px;
+        }
+
+        .learn-toc {
+            display: none;
+        }
+    }
 
     .ma-grid {
         display: grid;
@@ -1094,6 +1230,26 @@ nav {
 
     .video-group { margin-bottom: 72px; }
     .video-group:last-child { margin-bottom: 0; }
+
+    .ph-tools-context {
+        background-color: color-mix(in oklab, var(--bg-card) 88%, transparent);
+        border: 1px solid var(--border-subtle);
+    }
+
+    .ma-card.ph-tools-context {
+        background-color: color-mix(in oklab, var(--bg-card) 86%, transparent);
+    }
+
+    .video-group.ph-tools-context {
+        border-radius: var(--radius-sm);
+        padding: 28px;
+        margin-left: -28px;
+        margin-right: -28px;
+    }
+
+    .video-group.ph-tools-context .video-card {
+        background-color: color-mix(in oklab, var(--bg-card) 94%, transparent);
+    }
 
     .video-group-title {
         font-family: var(--font-primary);
@@ -1348,39 +1504,127 @@ nav {
     }
 
 
-footer {
-    padding: 60px 40px;
-    background-color: var(--bg-section-alt);
-    text-align: center;
-    border-top: 1px solid var(--border-subtle);
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 40px;
+    background:
+        linear-gradient(135deg, rgba(14, 18, 20, 0.98), rgba(28, 34, 34, 0.96)),
+        var(--text-primary);
+    color: rgba(248, 249, 246, 0.78);
+    border-top: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
 }
 
-footer p {
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(248, 249, 246, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(248, 249, 246, 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    opacity: 0.75;
+}
+
+.site-footer__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(320px, 1fr);
+    gap: 28px 56px;
+    align-items: end;
+}
+
+.site-footer__brand {
+    text-align: left;
+}
+
+.site-footer__mark {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: #f8f9f6;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.site-footer__mark:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-footer p {
+    margin: 0;
+    max-width: 420px;
     font-family: var(--font-mono);
     font-weight: 300;
     font-size: 11px;
+    line-height: 1.65;
     letter-spacing: 0.05em;
-    color: var(--text-muted);
+    color: rgba(248, 249, 246, 0.62);
 }
 
 .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 20px;
-    margin-bottom: 24px;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 10px 16px;
+    justify-self: end;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    z-index: auto;
 }
 
 .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(248, 249, 246, 0.18);
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    color: rgba(248, 249, 246, 0.72);
     text-decoration: none;
     text-transform: uppercase;
+    transition:
+        color var(--transition-base),
+        border-color var(--transition-base);
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #f8f9f6;
+    border-bottom-color: var(--accent);
+}
+
+.site-footer .site-footer__meta {
+    grid-column: 1 / -1;
+    padding-top: 22px;
+    border-top: 1px solid rgba(248, 249, 246, 0.14);
+    max-width: none;
+    text-align: right;
+}
+
+.site-footer__meta a {
+    color: #f8f9f6;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.site-footer__meta a:hover {
     color: var(--accent);
 }
 
@@ -1467,6 +1711,28 @@ footer p {
 
     .credential-logos a {
         height: 46px;
+    }
+
+    .site-footer {
+        padding: 44px 20px;
+    }
+
+    .site-footer__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-links {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-self: stretch;
+    }
+
+    .site-footer .site-footer__meta {
+        width: 100%;
+        text-align: left;
     }
 }
 
@@ -2085,539 +2351,505 @@ footer p {
 }
 </script>
 
-<section class="page-hero">
-    <div class="page-hero-inner">
-        <span class="section-label">LEARN</span>
-        <h1>Passive House talks and tutorials.</h1>
-        <p class="page-hero-intro type-body-lg">
-            Fifteen years of talks and tutorials, free in one place. A stronger
-            high-performance building industry helps everyone, including us. We give the knowledge away.
-        </p>
-    </div>
-</section>
+<div class="learn-layout">
+    <div class="learn-primary">
+        <section class="page-hero learn-hero">
+            <div class="page-hero-inner">
+                <span class="section-label">LEARN</span>
+                <h1>Passive House talks and tutorials.</h1>
+                <p class="page-hero-intro type-body-lg">
+                    Fifteen years of talks and tutorials, free in one place. A stronger
+                    high-performance building industry helps everyone, including us. We give the knowledge away.
+                </p>
+            </div>
+        </section>
 
-<section class="page-section">
-    <div class="page-section-inner">
-        <span class="section-label">RECORDED TALKS</span>
-        <div style="margin-top: 48px;">
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Thermal Bridging</h2>
-            <p class="video-group-desc">Where the envelope bleeds heat, plus the details where condensation and mold risk hide. We run thousands of thermal-bridge simulations a year; start here.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=cJy0mb0oLYc" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/cJy0mb0oLYc/hqdefault.jpg" alt="101 Series: No Thermal Bridges" loading="lazy">
+        <div class="learn-content" id="learn-content">
+        <section class="page-section learn-section" id="recorded-talks">
+            <div class="page-section-inner">
+                <span class="section-label">RECORDED TALKS</span>
+                <div style="margin-top: 48px;"><div class="video-group" id="thermal-bridging">
+                    <h2 class="video-group-title">Thermal Bridging</h2>
+                    <p class="video-group-desc">Where the envelope bleeds heat, plus the details where condensation and mold risk hide. We run thousands of thermal-bridge simulations a year; start here.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=cJy0mb0oLYc" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/cJy0mb0oLYc/hqdefault.jpg" alt="101 Series: No Thermal Bridges" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">101 Series: No Thermal Bridges</div>
+                                <div class="video-card__host">Passive House Accelerator · 2023</div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">101 Series: No Thermal Bridges</div>
-                        <div class="video-card__host">Passive House Accelerator · 2023</div>
+                </div><div class="video-group" id="multifamily--case-studies">
+                    <h2 class="video-group-title">Multifamily &amp; Case Studies</h2>
+                    <p class="video-group-desc">Real buildings, end to end, including Candela Lofts, the first PHI-certified multifamily building in New Jersey.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=Xd4epe9UYMM" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/Xd4epe9UYMM/hqdefault.jpg" alt="Candela Lofts: 1st Multifamily Passive House in New Jersey" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Candela Lofts: 1st Multifamily Passive House in New Jersey</div>
+                                <div class="video-card__host">Passive House Accelerator · 2020</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=OfE2vyRs1HA" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/OfE2vyRs1HA/hqdefault.jpg" alt="NAPHN LIVE: Candela Lofts, Hoboken NJ" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">NAPHN LIVE: Candela Lofts, Hoboken NJ</div>
+                                <div class="video-card__host">The Passive House Network · 2020</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=eJIx9Jlx1rA" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/eJIx9Jlx1rA/hqdefault.jpg" alt="International Passive House Days with Virtual Tour of Engine 16" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">International Passive House Days with Virtual Tour of Engine 16</div>
+                                <div class="video-card__host">Passive House Accelerator · 2021</div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                
+                </div><div class="video-group" id="ai-for-passive-house">
+                    <h2 class="video-group-title">AI for Passive House</h2>
+                    <p class="video-group-desc">Using AI and agentic tools for the tedious parts of Passive House delivery, from data extraction to model QA/QC for certification paperwork.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=lC_RuKdXXH0" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/lC_RuKdXXH0/hqdefault.jpg" alt="AI Meets Passive House: From Algorithms to Airtightness" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">AI Meets Passive House: From Algorithms to Airtightness</div>
+                                <div class="video-card__host">The Passive House Network · 2025</div>
+                            </div>
+                        </a>
+                    </div>
+                </div><div class="video-group" id="modeling-strategy--value">
+                    <h2 class="video-group-title">Modeling Strategy &amp; Value</h2>
+                    <p class="video-group-desc">Getting more out of your energy models: work earlier, test ranges of outcomes, then stop re-keying data by hand.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=e4HVtPkaRWY" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/e4HVtPkaRWY/hqdefault.jpg" alt="How to Make Passive House Certification Modeling Easier" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">How to Make Passive House Certification Modeling Easier</div>
+                                <div class="video-card__host">Passive House Accelerator · 2025</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=XyIWZYr_Qbo" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/XyIWZYr_Qbo/hqdefault.jpg" alt="Making a Better Crystal Ball: Strategies for PH Energy Modeling" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Making a Better Crystal Ball: Strategies for PH Energy Modeling</div>
+                                <div class="video-card__host">The Passive House Network · 2025</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=IxbhDM39_yY" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/IxbhDM39_yY/hqdefault.jpg" alt="Improving Our Passive House Modeling Tools" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Improving Our Passive House Modeling Tools</div>
+                                <div class="video-card__host">Reimagine Buildings · 2024</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=l0T2UfkgsM8" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/l0T2UfkgsM8/hqdefault.jpg" alt="Maximize the Value of Your Passive House Models" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Maximize the Value of Your Passive House Models</div>
+                                <div class="video-card__host">Reimagine Buildings · 2024</div>
+                            </div>
+                        </a>
+                    </div>
+                </div><div class="video-group ph-tools-context graph-paper graph-paper--hex-fine" id="tools--open-source">
+                    <h2 class="video-group-title">Tools &amp; Open Source</h2>
+                    <p class="video-group-desc">Honeybee-PH, PHX, and the rest of the open-source Passive House Tools stack for parametric PH modeling in standard CAD.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=y1TMH72mW64" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/y1TMH72mW64/hqdefault.jpg" alt="DesignPH | 01_Workflow: Modeling, Required Tools" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">DesignPH | 01_Workflow: Modeling, Required Tools</div>
+                                <div class="video-card__host">New York Passive House · 2020</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=DRD-pGVjzQo" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/DRD-pGVjzQo/hqdefault.jpg" alt="Intro to Honeybee-PH: A Toolkit for Passive House Modeling" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Intro to Honeybee-PH: A Toolkit for Passive House Modeling</div>
+                                <div class="video-card__host">Passive House Accelerator · 2025</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=8lPkArXUUoA" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/8lPkArXUUoA/hqdefault.jpg" alt="Introduction to Honeybee-PH: Software Support for Complex PH Design" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Introduction to Honeybee-PH: Software Support for Complex PH Design</div>
+                                <div class="video-card__host">The Passive House Network · 2022</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=5W-LH97kvKA" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/5W-LH97kvKA/hqdefault.jpg" alt="Construction Tech: Episode 17" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Construction Tech: Episode 17</div>
+                                <div class="video-card__host">Passive House Accelerator · 2021</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=A5zLqwsmrZ0" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/A5zLqwsmrZ0/hqdefault.jpg" alt="PH &#34;Jigs&#34;: Digital Tools to Supercharge Practice" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">PH &#34;Jigs&#34;: Digital Tools to Supercharge Practice</div>
+                                <div class="video-card__host">Passive House Accelerator · 2020</div>
+                            </div>
+                        </a>
+                    </div>
+                </div><div class="video-group" id="retrofit--enerphit">
+                    <h2 class="video-group-title">Retrofit &amp; EnerPHit</h2>
+                    <p class="video-group-desc">Deep-energy retrofits, including the NYC townhouse work that is the core of our single-family practice.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=UhuuA9SIWQ4" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/UhuuA9SIWQ4/hqdefault.jpg" alt="Peeling Back the Layers of Passive House Renovation" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Peeling Back the Layers of Passive House Renovation</div>
+                                <div class="video-card__host">Passive House Accelerator · 2025</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=U7V07F-7sUU" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/U7V07F-7sUU/hqdefault.jpg" alt="Brooklyn Heights Passive House Retrofit" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Brooklyn Heights Passive House Retrofit</div>
+                                <div class="video-card__host">Passive House Accelerator · 2021</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=Kj_d3ZxlwFA" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/Kj_d3ZxlwFA/hqdefault.jpg" alt="Architects Focus: Retrofit Solutions &amp; Design Opportunities for the NYC Townhouse" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Architects Focus: Retrofit Solutions &amp; Design Opportunities for the NYC Townhouse</div>
+                                <div class="video-card__host">New York Passive House · 2021</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=8srvOqPH9-o" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/8srvOqPH9-o/hqdefault.jpg" alt="Passive House &#43; Foundation Reuse" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Passive House &#43; Foundation Reuse</div>
+                                <div class="video-card__host">The Passive House Network · 2026</div>
+                            </div>
+                        </a>
+                    </div>
+                </div><div class="video-group" id="fundamentals--training">
+                    <h2 class="video-group-title">Fundamentals &amp; Training</h2>
+                    <p class="video-group-desc">The building blocks: PHPP, windows, and the real purpose of energy models.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=X38aRx0w8ys" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/X38aRx0w8ys/hqdefault.jpg" alt="10 Easy Ways to Ruin Your Blower Door Score" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">10 Easy Ways to Ruin Your Blower Door Score</div>
+                                <div class="video-card__host">Passive House Accelerator · 2022</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=bvZC6A3Pn8k" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/bvZC6A3Pn8k/hqdefault.jpg" alt="An Introduction to the Passive House Planning Package (IP)" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">An Introduction to the Passive House Planning Package (IP)</div>
+                                <div class="video-card__host">New York Passive House · 2021</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=8WiXv2iHQks" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/8WiXv2iHQks/hqdefault.jpg" alt="Energy Modeling vs. Load Calculations: What&#39;s the Point?" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Energy Modeling vs. Load Calculations: What&#39;s the Point?</div>
+                                <div class="video-card__host">The BS and Beer Show · 2021</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=zAXMadA0cRU" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/zAXMadA0cRU/hqdefault.jpg" alt="Modeling Window Details: Ensuring High Performance Windows Stay High Performance" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Modeling Window Details: Ensuring High Performance Windows Stay High Performance</div>
+                                <div class="video-card__host">Passive House Accelerator · 2022</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=A-JjPXHPp4o" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/A-JjPXHPp4o/hqdefault.jpg" alt="Seeing Clearly: How Quality Windows Drive Comfort, Performance &amp; Design Freedom" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Seeing Clearly: How Quality Windows Drive Comfort, Performance &amp; Design Freedom</div>
+                                <div class="video-card__host">The Passive House Network · 2020</div>
+                            </div>
+                        </a>
+                    </div>
+                </div><div class="video-group" id="interviews--community">
+                    <h2 class="video-group-title">Interviews &amp; Community</h2>
+                    <p class="video-group-desc">Conversations on Passive House practice and where the industry is headed.</p>
+                    <div class="video-grid">
+                        <a class="video-card" href="https://www.youtube.com/watch?v=5_5Rk7i7l-8" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/5_5Rk7i7l-8/hqdefault.jpg" alt="Ed May, bldgtyp: IPHC 2023 Interview" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Ed May, bldgtyp: IPHC 2023 Interview</div>
+                                <div class="video-card__host">Passive House Accelerator · 2023</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=crjBgzDJnpI" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/crjBgzDJnpI/hqdefault.jpg" alt="Life in New York, 2050: Passive Houses, Electric Transportation &amp; a Decarbonized Grid" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Life in New York, 2050: Passive Houses, Electric Transportation &amp; a Decarbonized Grid</div>
+                                <div class="video-card__host">Phius Alliance New York · 2021</div>
+                            </div>
+                        </a>
+                        <a class="video-card" href="https://www.youtube.com/watch?v=SWvFIqVdO5g" target="_blank" rel="noopener">
+                            <div class="video-card__thumb">
+                                <img src="https://i.ytimg.com/vi/SWvFIqVdO5g/hqdefault.jpg" alt="Global Passive Happy Hour with Ed May" loading="lazy">
+                            </div>
+                            <div class="video-card__meta">
+                                <div class="video-card__title">Global Passive Happy Hour with Ed May</div>
+                                <div class="video-card__host">Passive House Accelerator · 2020</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Multifamily &amp; Case Studies</h2>
-            <p class="video-group-desc">Real buildings, end to end, including Candela Lofts, the first PHI-certified multifamily building in New Jersey.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=Xd4epe9UYMM" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/Xd4epe9UYMM/hqdefault.jpg" alt="Candela Lofts: 1st Multifamily Passive House in New Jersey" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Candela Lofts: 1st Multifamily Passive House in New Jersey</div>
-                        <div class="video-card__host">Passive House Accelerator · 2020</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=OfE2vyRs1HA" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/OfE2vyRs1HA/hqdefault.jpg" alt="NAPHN LIVE: Candela Lofts, Hoboken NJ" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">NAPHN LIVE: Candela Lofts, Hoboken NJ</div>
-                        <div class="video-card__host">The Passive House Network · 2020</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=eJIx9Jlx1rA" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/eJIx9Jlx1rA/hqdefault.jpg" alt="International Passive House Days with Virtual Tour of Engine 16" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">International Passive House Days with Virtual Tour of Engine 16</div>
-                        <div class="video-card__host">Passive House Accelerator · 2021</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">AI for Passive House</h2>
-            <p class="video-group-desc">Using AI and agentic tools for the tedious parts of Passive House delivery, from data extraction to model QA/QC for certification paperwork.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=lC_RuKdXXH0" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/lC_RuKdXXH0/hqdefault.jpg" alt="AI Meets Passive House: From Algorithms to Airtightness" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">AI Meets Passive House: From Algorithms to Airtightness</div>
-                        <div class="video-card__host">The Passive House Network · 2025</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Modeling Strategy &amp; Value</h2>
-            <p class="video-group-desc">Getting more out of your energy models: work earlier, test ranges of outcomes, then stop re-keying data by hand.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=e4HVtPkaRWY" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/e4HVtPkaRWY/hqdefault.jpg" alt="How to Make Passive House Certification Modeling Easier" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">How to Make Passive House Certification Modeling Easier</div>
-                        <div class="video-card__host">Passive House Accelerator · 2025</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=XyIWZYr_Qbo" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/XyIWZYr_Qbo/hqdefault.jpg" alt="Making a Better Crystal Ball: Strategies for PH Energy Modeling" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Making a Better Crystal Ball: Strategies for PH Energy Modeling</div>
-                        <div class="video-card__host">The Passive House Network · 2025</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=IxbhDM39_yY" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/IxbhDM39_yY/hqdefault.jpg" alt="Improving Our Passive House Modeling Tools" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Improving Our Passive House Modeling Tools</div>
-                        <div class="video-card__host">Reimagine Buildings · 2024</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=l0T2UfkgsM8" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/l0T2UfkgsM8/hqdefault.jpg" alt="Maximize the Value of Your Passive House Models" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Maximize the Value of Your Passive House Models</div>
-                        <div class="video-card__host">Reimagine Buildings · 2024</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Tools &amp; Open Source</h2>
-            <p class="video-group-desc">Honeybee-PH, PHX, and the rest of the open-source Passive House Tools stack for parametric PH modeling in standard CAD.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=y1TMH72mW64" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/y1TMH72mW64/hqdefault.jpg" alt="DesignPH | 01_Workflow: Modeling, Required Tools" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">DesignPH | 01_Workflow: Modeling, Required Tools</div>
-                        <div class="video-card__host">New York Passive House · 2020</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=DRD-pGVjzQo" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/DRD-pGVjzQo/hqdefault.jpg" alt="Intro to Honeybee-PH: A Toolkit for Passive House Modeling" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Intro to Honeybee-PH: A Toolkit for Passive House Modeling</div>
-                        <div class="video-card__host">Passive House Accelerator · 2025</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=8lPkArXUUoA" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/8lPkArXUUoA/hqdefault.jpg" alt="Introduction to Honeybee-PH: Software Support for Complex PH Design" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Introduction to Honeybee-PH: Software Support for Complex PH Design</div>
-                        <div class="video-card__host">The Passive House Network · 2022</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=5W-LH97kvKA" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/5W-LH97kvKA/hqdefault.jpg" alt="Construction Tech: Episode 17" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Construction Tech: Episode 17</div>
-                        <div class="video-card__host">Passive House Accelerator · 2021</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=A5zLqwsmrZ0" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/A5zLqwsmrZ0/hqdefault.jpg" alt="PH &#34;Jigs&#34;: Digital Tools to Supercharge Practice" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">PH &#34;Jigs&#34;: Digital Tools to Supercharge Practice</div>
-                        <div class="video-card__host">Passive House Accelerator · 2020</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Retrofit &amp; EnerPHit</h2>
-            <p class="video-group-desc">Deep-energy retrofits, including the NYC townhouse work that is the core of our single-family practice.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=UhuuA9SIWQ4" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/UhuuA9SIWQ4/hqdefault.jpg" alt="Peeling Back the Layers of Passive House Renovation" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Peeling Back the Layers of Passive House Renovation</div>
-                        <div class="video-card__host">Passive House Accelerator · 2025</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=U7V07F-7sUU" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/U7V07F-7sUU/hqdefault.jpg" alt="Brooklyn Heights Passive House Retrofit" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Brooklyn Heights Passive House Retrofit</div>
-                        <div class="video-card__host">Passive House Accelerator · 2021</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=Kj_d3ZxlwFA" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/Kj_d3ZxlwFA/hqdefault.jpg" alt="Architects Focus: Retrofit Solutions &amp; Design Opportunities for the NYC Townhouse" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Architects Focus: Retrofit Solutions &amp; Design Opportunities for the NYC Townhouse</div>
-                        <div class="video-card__host">New York Passive House · 2021</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=8srvOqPH9-o" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/8srvOqPH9-o/hqdefault.jpg" alt="Passive House &#43; Foundation Reuse" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Passive House &#43; Foundation Reuse</div>
-                        <div class="video-card__host">The Passive House Network · 2026</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Fundamentals &amp; Training</h2>
-            <p class="video-group-desc">The building blocks: PHPP, windows, and the real purpose of energy models.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=X38aRx0w8ys" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/X38aRx0w8ys/hqdefault.jpg" alt="10 Easy Ways to Ruin Your Blower Door Score" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">10 Easy Ways to Ruin Your Blower Door Score</div>
-                        <div class="video-card__host">Passive House Accelerator · 2022</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=bvZC6A3Pn8k" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/bvZC6A3Pn8k/hqdefault.jpg" alt="An Introduction to the Passive House Planning Package (IP)" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">An Introduction to the Passive House Planning Package (IP)</div>
-                        <div class="video-card__host">New York Passive House · 2021</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=8WiXv2iHQks" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/8WiXv2iHQks/hqdefault.jpg" alt="Energy Modeling vs. Load Calculations: What&#39;s the Point?" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Energy Modeling vs. Load Calculations: What&#39;s the Point?</div>
-                        <div class="video-card__host">The BS and Beer Show · 2021</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=zAXMadA0cRU" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/zAXMadA0cRU/hqdefault.jpg" alt="Modeling Window Details: Ensuring High Performance Windows Stay High Performance" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Modeling Window Details: Ensuring High Performance Windows Stay High Performance</div>
-                        <div class="video-card__host">Passive House Accelerator · 2022</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=A-JjPXHPp4o" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/A-JjPXHPp4o/hqdefault.jpg" alt="Seeing Clearly: How Quality Windows Drive Comfort, Performance &amp; Design Freedom" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Seeing Clearly: How Quality Windows Drive Comfort, Performance &amp; Design Freedom</div>
-                        <div class="video-card__host">The Passive House Network · 2020</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="video-group">
-            <h2 class="video-group-title">Interviews &amp; Community</h2>
-            <p class="video-group-desc">Conversations on Passive House practice and where the industry is headed.</p>
-            <div class="video-grid">
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=5_5Rk7i7l-8" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/5_5Rk7i7l-8/hqdefault.jpg" alt="Ed May, bldgtyp: IPHC 2023 Interview" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Ed May, bldgtyp: IPHC 2023 Interview</div>
-                        <div class="video-card__host">Passive House Accelerator · 2023</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=crjBgzDJnpI" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/crjBgzDJnpI/hqdefault.jpg" alt="Life in New York, 2050: Passive Houses, Electric Transportation &amp; a Decarbonized Grid" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Life in New York, 2050: Passive Houses, Electric Transportation &amp; a Decarbonized Grid</div>
-                        <div class="video-card__host">Phius Alliance New York · 2021</div>
-                    </div>
-                </a>
-                
-                <a class="video-card" href="https://www.youtube.com/watch?v=SWvFIqVdO5g" target="_blank" rel="noopener">
-                    <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/SWvFIqVdO5g/hqdefault.jpg" alt="Global Passive Happy Hour with Ed May" loading="lazy">
-                    </div>
-                    <div class="video-card__meta">
-                        <div class="video-card__title">Global Passive Happy Hour with Ed May</div>
-                        <div class="video-card__host">Passive House Accelerator · 2020</div>
-                    </div>
-                </a>
-                
-            </div>
-        </div>
-        
-        </div>
-    </div>
-</section>
+        </section>
 
-<section class="page-section page-section--alt">
-    <div class="page-section-inner">
-        
-        <div class="video-group">
-            <h2 class="video-group-title">The Honeybee-PH Course: HBPH to WUFI-Passive</h2>
-            <p class="video-group-desc">A complete 14-part tutorial series: build a Phius model in Rhino/Grasshopper with Honeybee-PH and take it all the way to WUFI-Passive.</p>
-            <ul class="course-list">
-                
-                <li><a href="https://www.youtube.com/watch?v=DvH_Wxf1D8A" target="_blank" rel="noopener"><span class="course-num">01</span>Install Honeybee-PH</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=yi-QTB1Z7v0" target="_blank" rel="noopener"><span class="course-num">02</span>Geometry</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=tTfYKXKG60c" target="_blank" rel="noopener"><span class="course-num">03</span>Window Modeling</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=VQJykG6t8Lc" target="_blank" rel="noopener"><span class="course-num">04</span>Building Segments &amp; Climate</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=xtd7cnjflgU" target="_blank" rel="noopener"><span class="course-num">05</span>Interior Spaces</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=b3aR7ZikHs4" target="_blank" rel="noopener"><span class="course-num">06</span>Ventilation Systems</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=XRWxGDGecvE" target="_blank" rel="noopener"><span class="course-num">07</span>Occupancy and Appliances</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=nHbBFgiwjIw" target="_blank" rel="noopener"><span class="course-num">08</span>Ventilation Schedule and Load</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=uhtxsH_DO38" target="_blank" rel="noopener"><span class="course-num">09</span>Heating and Cooling Systems</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=fw7HF2XF7w4" target="_blank" rel="noopener"><span class="course-num">10</span>Hot Water Systems</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=26JcDljJdNo" target="_blank" rel="noopener"><span class="course-num">11</span>Phius CORE Thresholds</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=TNsuX2cWy8A" target="_blank" rel="noopener"><span class="course-num">12</span>Constructions 1</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=ZgHHpQSZ1_w" target="_blank" rel="noopener"><span class="course-num">13</span>Constructions 2</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=N9B0E54tpLE" target="_blank" rel="noopener"><span class="course-num">14</span>Cooling and Shading</a></li>
-                
-            </ul>
-            <p style="margin-top: 24px;"><a href="https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
-        </div>
-        
-    </div>
-</section>
+        <section class="page-section page-section--alt learn-section" id="course">
+            <div class="page-section-inner"><div class="video-group ph-tools-context graph-paper graph-paper--hex-fine">
+                    <h2 class="video-group-title">The Honeybee-PH Course: HBPH to WUFI-Passive</h2>
+                    <p class="video-group-desc">A complete 14-part tutorial series: build a Phius model in Rhino/Grasshopper with Honeybee-PH and take it all the way to WUFI-Passive.</p>
+                    <ul class="course-list">
+                        <li><a href="https://www.youtube.com/watch?v=DvH_Wxf1D8A" target="_blank" rel="noopener"><span class="course-num">01</span>Install Honeybee-PH</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=yi-QTB1Z7v0" target="_blank" rel="noopener"><span class="course-num">02</span>Geometry</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=tTfYKXKG60c" target="_blank" rel="noopener"><span class="course-num">03</span>Window Modeling</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=VQJykG6t8Lc" target="_blank" rel="noopener"><span class="course-num">04</span>Building Segments &amp; Climate</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=xtd7cnjflgU" target="_blank" rel="noopener"><span class="course-num">05</span>Interior Spaces</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=b3aR7ZikHs4" target="_blank" rel="noopener"><span class="course-num">06</span>Ventilation Systems</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=XRWxGDGecvE" target="_blank" rel="noopener"><span class="course-num">07</span>Occupancy and Appliances</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=nHbBFgiwjIw" target="_blank" rel="noopener"><span class="course-num">08</span>Ventilation Schedule and Load</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=uhtxsH_DO38" target="_blank" rel="noopener"><span class="course-num">09</span>Heating and Cooling Systems</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=fw7HF2XF7w4" target="_blank" rel="noopener"><span class="course-num">10</span>Hot Water Systems</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=26JcDljJdNo" target="_blank" rel="noopener"><span class="course-num">11</span>Phius CORE Thresholds</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=TNsuX2cWy8A" target="_blank" rel="noopener"><span class="course-num">12</span>Constructions 1</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=ZgHHpQSZ1_w" target="_blank" rel="noopener"><span class="course-num">13</span>Constructions 2</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=N9B0E54tpLE" target="_blank" rel="noopener"><span class="course-num">14</span>Cooling and Shading</a></li>
+                    </ul>
+                    <p style="margin-top: 24px;"><a href="https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
+                </div>
+            </div>
+        </section>
 
-<section class="page-section">
-    <div class="page-section-inner">
-        <span class="section-label">DOWNLOADS</span>
-        <div style="margin-top: 48px;">
-        <div class="download-group">
-            <h2 class="video-group-title">AIA-NY / Center for Architecture THERM Class</h2>
-            <p class="video-group-desc">A three-part THERM workshop on setup, psi-value calculation, corners, windows, parapets, slab-on-grade details, fRsi, and interstitial temperature review.</p>
-            <div class="download-grid">
-                <section class="download-card">
-                    <h3 class="download-card__title">Part 1 [Oct 2019]</h3>
-                    <ul class="download-list">
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_1/01_1_Therm_Setup.pdf" download>
-                                <span class="download-list__name">01.1 THERM Setup Part 1</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_1/01_2_Therm_Setup.pdf" download>
-                                <span class="download-list__name">01.2 THERM Setup Part 2</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_1/part_1_THM_files.zip" download>
-                                <span class="download-list__name">THERM files</span>
-                                <span class="download-list__meta">ZIP</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-                <section class="download-card">
-                    <h3 class="download-card__title">Part 2 [Jan 2020]</h3>
-                    <ul class="download-list">
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_2/02_1_Psi-Values.pdf" download>
-                                <span class="download-list__name">02.1 Psi-Values</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_2/02_2_Psi-Values_Outside%20Corners.pdf" download>
-                                <span class="download-list__name">02.2 Psi-Values: Outside Corners</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_2/02_3_Psi-Values_Windows.pdf" download>
-                                <span class="download-list__name">02.3 Psi-Values: Windows</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_2/part_2_THM_files.zip" download>
-                                <span class="download-list__name">THERM files</span>
-                                <span class="download-list__meta">ZIP</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-                <section class="download-card">
-                    <h3 class="download-card__title">Part 3 [Feb 2020]</h3>
-                    <ul class="download-list">
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_3/02_4_Parapets.pdf" download>
-                                <span class="download-list__name">02.4 Psi-Values: Parapets</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_3/02_5_SlabOnGrade.pdf" download>
-                                <span class="download-list__name">02.5 Psi-Values: Slab On Grade</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_3/03_1_fRsi.pdf" download>
-                                <span class="download-list__name">03.1 Moisture: fRsi</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_3/03_2_InterstitalTemp.pdf" download>
-                                <span class="download-list__name">03.2 Moisture: Interstitial Temps</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/thermal_bridging/part_3/part_3_THM_files.zip" download>
-                                <span class="download-list__name">THERM files</span>
-                                <span class="download-list__meta">ZIP</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
+        <section class="page-section learn-section" id="downloads">
+            <div class="page-section-inner">
+                <span class="section-label">DOWNLOADS</span>
+                <div style="margin-top: 48px;">
+                <div class="download-group" id="aia-ny--center-for-architecture-therm-class">
+                    <h2 class="video-group-title">AIA-NY / Center for Architecture THERM Class</h2>
+                    <p class="video-group-desc">A three-part THERM workshop on setup, psi-value calculation, corners, windows, parapets, slab-on-grade details, fRsi, and interstitial temperature review.</p>
+                    <div class="download-grid">
+                        <section class="download-card">
+                            <h3 class="download-card__title">Part 1 [Oct 2019]</h3>
+                            <ul class="download-list">
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_1/01_1_Therm_Setup.pdf" download>
+                                        <span class="download-list__name">01.1 THERM Setup Part 1</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_1/01_2_Therm_Setup.pdf" download>
+                                        <span class="download-list__name">01.2 THERM Setup Part 2</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_1/part_1_THM_files.zip" download>
+                                        <span class="download-list__name">THERM files</span>
+                                        <span class="download-list__meta">ZIP</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="download-card">
+                            <h3 class="download-card__title">Part 2 [Jan 2020]</h3>
+                            <ul class="download-list">
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_2/02_1_Psi-Values.pdf" download>
+                                        <span class="download-list__name">02.1 Psi-Values</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_2/02_2_Psi-Values_Outside%20Corners.pdf" download>
+                                        <span class="download-list__name">02.2 Psi-Values: Outside Corners</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_2/02_3_Psi-Values_Windows.pdf" download>
+                                        <span class="download-list__name">02.3 Psi-Values: Windows</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_2/part_2_THM_files.zip" download>
+                                        <span class="download-list__name">THERM files</span>
+                                        <span class="download-list__meta">ZIP</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="download-card">
+                            <h3 class="download-card__title">Part 3 [Feb 2020]</h3>
+                            <ul class="download-list">
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_3/02_4_Parapets.pdf" download>
+                                        <span class="download-list__name">02.4 Psi-Values: Parapets</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_3/02_5_SlabOnGrade.pdf" download>
+                                        <span class="download-list__name">02.5 Psi-Values: Slab On Grade</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_3/03_1_fRsi.pdf" download>
+                                        <span class="download-list__name">03.1 Moisture: fRsi</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_3/03_2_InterstitalTemp.pdf" download>
+                                        <span class="download-list__name">03.2 Moisture: Interstitial Temps</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/thermal_bridging/part_3/part_3_THM_files.zip" download>
+                                        <span class="download-list__name">THERM files</span>
+                                        <span class="download-list__meta">ZIP</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div class="download-group" id="rpi-workshops">
+                    <h2 class="video-group-title">RPI Workshops</h2>
+                    <p class="video-group-desc">Workshop materials for window thermal comfort, PMV review, THERM setup, and Grasshopper-assisted psi-value calculation.</p>
+                    <div class="download-grid">
+                        <section class="download-card">
+                            <h3 class="download-card__title">Window Thermal Comfort Workshop</h3>
+                            <ul class="download-list">
+                                <li>
+                                    <a href="/assets/downloads/rpi/200206%20-%20Intro%20to%20Thermal%20Comfort.pdf" download>
+                                        <span class="download-list__name">A brief introduction to windows and thermal comfort</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/rpi/ThermalComfort_GH_Internalized.gh" download>
+                                        <span class="download-list__name">Windows and PMV sample Grasshopper file</span>
+                                        <span class="download-list__meta">GH</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="download-card">
+                            <h3 class="download-card__title">THERM &#43; Grasshopper Workshop</h3>
+                            <ul class="download-list">
+                                <li>
+                                    <a href="/assets/downloads/rpi/RPI%20Thermal%20Bridge%20Modeling%20using%20GH.pdf" download>
+                                        <span class="download-list__name">THERM setup and simple psi-value calculations</span>
+                                        <span class="download-list__meta">PDF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/assets/downloads/rpi/Psi_Calc_Example_191114%2B%5BInternalized%5D.gh" download>
+                                        <span class="download-list__name">Grasshopper psi-calculation sample file</span>
+                                        <span class="download-list__meta">GH</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://discourse.ladybug.tools/t/using-honeybee-therm-to-calculate-psi-values/3328/19?u=edpmay" target="_blank" rel="noopener">
+                                        <span class="download-list__name">Two-element psi-calculation example</span>
+                                        <span class="download-list__meta">LINK</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                </div>
             </div>
-        </div>
-        <div class="download-group">
-            <h2 class="video-group-title">RPI Workshops</h2>
-            <p class="video-group-desc">Workshop materials for window thermal comfort, PMV review, THERM setup, and Grasshopper-assisted psi-value calculation.</p>
-            <div class="download-grid">
-                <section class="download-card">
-                    <h3 class="download-card__title">Window Thermal Comfort Workshop</h3>
-                    <ul class="download-list">
-                        <li>
-                            <a href="/assets/downloads/rpi/200206%20-%20Intro%20to%20Thermal%20Comfort.pdf" download>
-                                <span class="download-list__name">A brief introduction to windows and thermal comfort</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/rpi/ThermalComfort_GH_Internalized.gh" download>
-                                <span class="download-list__name">Windows and PMV sample Grasshopper file</span>
-                                <span class="download-list__meta">GH</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-                <section class="download-card">
-                    <h3 class="download-card__title">THERM &#43; Grasshopper Workshop</h3>
-                    <ul class="download-list">
-                        <li>
-                            <a href="/assets/downloads/rpi/RPI%20Thermal%20Bridge%20Modeling%20using%20GH.pdf" download>
-                                <span class="download-list__name">THERM setup and simple psi-value calculations</span>
-                                <span class="download-list__meta">PDF</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/assets/downloads/rpi/Psi_Calc_Example_191114%2B%5BInternalized%5D.gh" download>
-                                <span class="download-list__name">Grasshopper psi-calculation sample file</span>
-                                <span class="download-list__meta">GH</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://discourse.ladybug.tools/t/using-honeybee-therm-to-calculate-psi-values/3328/19?u=edpmay" target="_blank" rel="noopener">
-                                <span class="download-list__name">Two-element psi-calculation example</span>
-                                <span class="download-list__meta">LINK</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </div>
+        </section>
         </div>
     </div>
-</section>
+
+    <aside class="learn-toc" aria-labelledby="learn-toc-title">
+        <nav aria-label="On this page">
+            <h2 id="learn-toc-title" class="learn-toc__title">On this page</h2>
+            <ol class="learn-toc__list">
+                <li>
+                    <a href="#recorded-talks">Recorded talks</a>
+                    <ol>
+                        <li><a href="#thermal-bridging">Thermal Bridging</a></li>
+                        <li><a href="#multifamily--case-studies">Multifamily &amp; Case Studies</a></li>
+                        <li><a href="#ai-for-passive-house">AI for Passive House</a></li>
+                        <li><a href="#modeling-strategy--value">Modeling Strategy &amp; Value</a></li>
+                        <li><a href="#tools--open-source">Tools &amp; Open Source</a></li>
+                        <li><a href="#retrofit--enerphit">Retrofit &amp; EnerPHit</a></li>
+                        <li><a href="#fundamentals--training">Fundamentals &amp; Training</a></li>
+                        <li><a href="#interviews--community">Interviews &amp; Community</a></li>
+                    </ol>
+                </li>
+                <li><a href="#course">The Honeybee-PH Course: HBPH to WUFI-Passive</a></li>
+                <li>
+                    <a href="#downloads">Downloads</a>
+                    <ol>
+                        <li><a href="#aia-ny--center-for-architecture-therm-class">AIA-NY / Center for Architecture THERM Class</a></li>
+                        <li><a href="#rpi-workshops">RPI Workshops</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+    </aside>
+</div>
 
 
 <section class="page-cta">
@@ -2629,16 +2861,22 @@ footer p {
 </section>
 
     </main>
-    <footer>
-    <nav class="footer-links" aria-label="Footer services">
-        <a href="/passive-house-consulting/">Passive House Consulting</a>
-        <a href="/passive-house-certification/">Certification</a>
-        <a href="/thermal-bridge-modeling/">Thermal Bridges</a>
-        <a href="/energy-modeling/">Energy Modeling</a>
-        <a href="/appendix-g-modeling/">Appendix G</a>
-        <a href="/mass-save-passive-house/">Mass Save</a>
-    </nav>
-    <p>NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com" class="link">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
+    <footer class="site-footer">
+    <div class="site-footer__inner">
+        <div class="site-footer__brand">
+            <a href="/" class="site-footer__mark">BLDGTYP</a>
+            <p>Passive House consulting, certification, energy modeling, and thermal-bridge simulation.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer services">
+            <a href="/passive-house-consulting/">Passive House Consulting</a>
+            <a href="/passive-house-certification/">Certification</a>
+            <a href="/thermal-bridge-modeling/">Thermal Bridges</a>
+            <a href="/energy-modeling/">Energy Modeling</a>
+            <a href="/appendix-g-modeling/">Appendix G</a>
+            <a href="/mass-save-passive-house/">Mass Save</a>
+        </nav>
+        <p class="site-footer__meta">NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
+    </div>
 </footer>
 
     <script>

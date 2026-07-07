@@ -250,7 +250,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     </div>
 </section>
 
-<section class="resources" id="resources">
+<section class="resources graph-paper graph-paper--hex" id="resources">
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
         <h2 class="ma-heading">The same rigor we put into our software goes into every building.</h2>
