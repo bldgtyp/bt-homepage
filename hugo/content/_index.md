@@ -76,18 +76,18 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
         <span class="section-label">WHAT DO WE DO?</span>
 
         <div class="services-grid">
-                        <div class="service-card">
-                <h3 class="service-card__title">PERFORMANCE MODELING</h3>
+            <div class="service-card">
+                <h3 class="service-card__title">PASSIVE HOUSE CONSULTING</h3>
                 <h4 class="service-card__subtitle">Design with real numbers</h4>
-                <p class="service-card__body">We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to Passive House, code, or incentive targets before construction locks in.</p>
-                <div class="ma-card__cite"><a href="/energy-modeling/">Passive House energy modeling &rarr;</a></div>
+                <p class="service-card__body">We help teams set the performance target early, then coordinate the envelope, glazing, ventilation, thermal bridges, and mechanical assumptions around it. The work includes Passive House energy modeling, right-sized HVAC, and clear design moves before construction locks in.</p>
+                <div class="ma-card__cite"><a href="/passive-house-consulting/">Passive House consulting &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
             </div>
 
-                        <div class="service-card">
-                <h3 class="service-card__title">THERMAL BRIDGES</h3>
+            <div class="service-card">
+                <h3 class="service-card__title">THERMAL BRIDGE MODELING</h3>
                 <h4 class="service-card__subtitle">Find the hidden losses</h4>
                 <p class="service-card__body">2D and 3D finite-element modeling finds envelope heat loss, condensation risk, and mold-risk conditions before construction. Every junction is verified against a buildable detail. <strong>Filing in NYC?</strong> The <a href="/nyc-thermal-bridging/" class="link">2025 energy code now requires psi-value calculations</a>, a service we've delivered for over a decade.</p>
                 <div class="ma-card__cite"><a href="/thermal-bridge-modeling/">Thermal bridge modeling &rarr;</a></div>
@@ -96,18 +96,18 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 </div>
             </div>
 
-                        <div class="service-card">
-                <h3 class="service-card__title">CERTIFICATION</h3>
+            <div class="service-card">
+                <h3 class="service-card__title">PASSIVE HOUSE CERTIFICATION</h3>
                 <h4 class="service-card__subtitle">De-risk the whole build</h4>
                 <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification works as durability insurance. It catches costly envelope defects a code inspection can miss. We run the model, prepare the documentation, and manage the review. <strong>Want the performance without the plaque?</strong> We'll hit the targets either way.</p>
-                <div class="ma-card__cite"><a href="/passive-house-certification/">Certification support &rarr;</a></div>
+                <div class="ma-card__cite"><a href="/passive-house-certification/">Passive House certification &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/certification.png" alt="" aria-hidden="true">
                 </div>
             </div>
 
-                        <div class="service-card">
-                <h3 class="service-card__title">CODE &amp; INCENTIVE MODELING</h3>
+            <div class="service-card">
+                <h3 class="service-card__title">APPENDIX G MODELING</h3>
                 <h4 class="service-card__subtitle">Appendix G without the program-management headache</h4>
                 <p class="service-card__body">We can build <strong>ASHRAE 90.1 Appendix G</strong> baseline and proposed models for commercial, mixed-use, and substantial-renovation projects. For New York projects, we can pair the model with <strong>NYSERDA FlexTech</strong> and <strong>New Construction Commercial</strong> coordination, from enrollment through comment responses and incentive closeout.</p>
                 <div class="ma-card__cite"><a href="/appendix-g-modeling/">Appendix G modeling &rarr;</a></div>

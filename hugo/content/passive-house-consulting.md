@@ -25,7 +25,7 @@ url: "/passive-house-consulting/"
                 <span class="type-mono-label ma-card__tag">01 · EARLY DESIGN</span>
                 <h3 class="ma-card__title">Set the target before the details lock in</h3>
                 <p class="ma-card__body">We model envelope options, window performance, thermal bridges, and mechanical loads while the design still has room to move.</p>
-                <div class="ma-card__cite"><a href="/energy-modeling/">Energy modeling →</a></div>
+                <div class="ma-card__cite"><a href="/energy-modeling/">Passive House energy modeling →</a></div>
             </div>
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">02 · ENVELOPE</span>

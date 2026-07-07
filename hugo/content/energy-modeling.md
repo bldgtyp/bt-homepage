@@ -25,7 +25,7 @@ url: "/energy-modeling/"
                 <span class="type-mono-label ma-card__tag">01 · DESIGN ANALYSIS</span>
                 <h3 class="ma-card__title">Options before commitments</h3>
                 <p class="ma-card__body">Compare assemblies, window packages, shading, airtightness targets, and HVAC options against annual demand and peak load.</p>
-                <div class="ma-card__cite">EARLY DESIGN</div>
+                <div class="ma-card__cite"><a href="/passive-house-consulting/">Passive House consulting →</a></div>
             </div>
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">02 · CERTIFICATION</span>
@@ -57,8 +57,8 @@ url: "/energy-modeling/"
 
 <section class="page-cta">
     <div class="page-cta-inner">
-        <h2>Need a performance model?</h2>
+        <h2>Need Passive House energy modeling?</h2>
         <p class="page-cta-subtitle">Send the drawings and the decisions the model needs to inform.</p>
-        <a class="btn-primary" href="mailto:info@buildingtype.com">Start modeling &rarr; info@buildingtype.com</a>
+        <a class="btn-primary" href="mailto:info@buildingtype.com">Ask about Passive House consulting &rarr; info@buildingtype.com</a>
     </div>
 </section>
