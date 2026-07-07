@@ -58,6 +58,10 @@ groups:
   - title: "Tools & Open Source"
     desc: "Honeybee-PH, PHX, and the rest of the open-source Passive House Tools stack for parametric PH modeling in standard CAD."
     videos:
+      - id: y1TMH72mW64
+        title: "DesignPH | 01_Workflow: Modeling, Required Tools"
+        host: "New York Passive House"
+        year: 2020
       - id: DRD-pGVjzQo
         title: "Intro to Honeybee-PH: A Toolkit for Passive House Modeling"
         host: "Passive House Accelerator"
