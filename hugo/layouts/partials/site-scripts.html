@@ -1,5 +1,4 @@
 <script>
-    // Theme toggle (matches homepage behavior)
     function applyThemeIcons(theme) {
         const btn = document.getElementById('themeToggleBtn');
         if (!btn) return;
@@ -27,5 +26,50 @@
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         applyThemeIcons(savedTheme);
+        updateActiveNavLink();
+    });
+
+    function normalizePath(path) {
+        if (path === '') return '/';
+        return path.endsWith('/') ? path : `${path}/`;
+    }
+
+    function updateActiveNavLink() {
+        const currentPath = normalizePath(window.location.pathname);
+        const currentHash = window.location.hash;
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkPath = normalizePath(link.dataset.navPath || new URL(link.href, window.location.href).pathname);
+            const linkHash = link.dataset.navHash || '';
+            const isActive = currentPath === linkPath && (!linkHash || currentHash === linkHash);
+
+            link.classList.toggle('is-active', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', linkHash ? 'location' : 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    window.addEventListener('hashchange', updateActiveNavLink);
+
+    function handleCTA() {
+        window.location.href = 'mailto:info@buildingtype.com';
+    }
+
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const url = new URL(this.getAttribute('href'), window.location.href);
+            if (url.pathname !== window.location.pathname || !url.hash) return;
+
+            const target = document.querySelector(url.hash);
+            if (!target) return;
+
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', url.hash);
+            updateActiveNavLink();
+        });
     });
 </script>

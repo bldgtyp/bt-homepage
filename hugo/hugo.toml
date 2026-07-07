@@ -1,16 +1,15 @@
-# BLDGTYP content pages — Hugo config.
-# Builds INTO ../site/ alongside the hand-rolled index.html.
-# "home" output is disabled so Hugo never overwrites site/index.html.
-# Build:  cd hugo && hugo   →   site/learn/, site/about/, site/ma/, site/nyc-thermal-bridging/
+# BLDGTYP static site — Hugo config.
+# Builds INTO ../site/. Hugo is the source of truth; site/ is deploy output.
+# Build:  cd hugo && hugo
+# Dev:    cd hugo && hugo server --bind 127.0.0.1 --baseURL http://127.0.0.1:1313/
 
 baseURL = "https://www.bldgtyp.com/"
 languageCode = "en-us"
 title = "BLDGTYP"
 publishDir = "../site"
 
-# Never generate a root index.html (the homepage is hand-authored),
-# and skip the machinery this small static subtree doesn't need.
-disableKinds = ["home", "taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+# Skip the machinery this small static site doesn't need.
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
 
 [markup.goldmark.renderer]
   unsafe = true # allow inline HTML in markdown content
