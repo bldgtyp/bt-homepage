@@ -11,7 +11,7 @@ url: "/about/"
         <p class="page-hero-intro type-body-lg">
             BLDGTYP is a small, hands-on Passive House consultancy by design. When you hire us, the people
             doing your energy model, resolving your thermal bridges, and answering your certifier are the same
-            partners whose names are on the door. We met in the M.Arch program at <a herf="https://www.newschool.edu/parsons/" target="_blank" rel="noopener" class="link">Parsons</a> and built our first
+            partners whose names are on the door. We met in the M.Arch program at <a href="https://www.newschool.edu/parsons/" target="_blank" rel="noopener" class="link">Parsons</a> and built our first
             high-performance buildings together for the <a href="https://www.newschool.edu/pressroom/pressreleases/2011/solardecathloncompetition.htm"  target="_blank" rel="noopener" class="link">U.S. DOE Solar Decathlon in 2009</a>. Since then, our work has
             stayed laser focused on buildings that perform the way the model says they will.
         </p>
@@ -42,8 +42,8 @@ url: "/about/"
                     <li><strong>M.Arch</strong>: Parsons School of Design, 2009</li>
                     <li><strong>Teaching</strong>: Passive House Academy · Passive House Canada · Passive House Network · Stevens Institute (Industry Professor) · Parsons (Adjunct Faculty) · Reimagine Buildings Collective (Expert in Residence)</li>
                     <li><strong>Solar Decathlon:</strong>
-                        <p>- 2015 Stevens Inst. | Faculty Lead and Project Manager<p>
-                        <p>- 2011 Parsons NewSchool | Construction Manager</p>
+                        2015 Stevens Inst. | Faculty Lead and Project Manager;
+                        2011 Parsons NewSchool | Construction Manager
                     </li>
                 </ul>
             </div>
@@ -67,9 +67,7 @@ url: "/about/"
                     <li><strong>Living Future Accredited Professional (LFA)</strong>: ILFI, 2021</li>
                     <li><strong>M.Arch</strong>: Parsons School of Design, 2009</li>
                     <li><strong>Teaching</strong>: Passive House Network (2014-present) · Parsons (Adjunct Faculty)</li>
-                    <li><strong>Solar Decathlon</strong>:
-                        <p>- 2011 Parsons NewSchool | Construction Manager</p>
-                    </li>
+                    <li><strong>Solar Decathlon</strong>: 2011 Parsons NewSchool | Construction Manager</li>
                 </ul>
             </div>
         </div>
@@ -117,7 +115,7 @@ url: "/about/"
     <div class="page-cta-inner">
         <h2>Want us on your team?</h2>
         <p class="page-cta-subtitle">
-            <span>Send us your drawings at any stage.</span></br>
+            <span>Send us your drawings at any stage.</span><br>
             <span>Earlier involvement gives us more room to de-risk your project.</span>
         </p>
         <a class="btn-primary" href="mailto:info@buildingtype.com">Send us your drawings &rarr; info@buildingtype.com</a>

@@ -1,4 +1,36 @@
 {{ define "main" }}
+{{- $videos := slice -}}
+{{- range .Site.Data.videos.groups -}}
+    {{- range .videos -}}
+        {{- $videos = $videos | append (dict
+            "@type" "VideoObject"
+            "name" .title
+            "description" (printf "%s. Hosted by %s." .title .host)
+            "thumbnailUrl" (slice (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .id))
+            "uploadDate" (printf "%v" .year)
+            "contentUrl" (printf "https://www.youtube.com/watch?v=%s" .id)
+            "embedUrl" (printf "https://www.youtube.com/embed/%s" .id)
+            "publisher" (dict "@id" (printf "%s#organization" site.BaseURL))
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- with .Site.Data.videos.course -}}
+    {{- range .units -}}
+        {{- $videos = $videos | append (dict
+            "@type" "VideoObject"
+            "name" .title
+            "description" (printf "%s from %s." .title $.Site.Data.videos.course.title)
+            "thumbnailUrl" (slice (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .id))
+            "contentUrl" (printf "https://www.youtube.com/watch?v=%s" .id)
+            "embedUrl" (printf "https://www.youtube.com/embed/%s" .id)
+            "publisher" (dict "@id" (printf "%s#organization" site.BaseURL))
+        ) -}}
+    {{- end -}}
+{{- end }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" $videos | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">LEARN</span>

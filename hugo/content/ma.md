@@ -7,7 +7,7 @@ url: "/ma/"
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">MASSACHUSETTS</span>
-        <h1>Passive House consulting for Massachusetts Teams.</h1>
+        <h1>Passive House consulting for Massachusetts teams.</h1>
         <p class="page-hero-intro type-body-lg">
             Massachusetts has become one of the most active Passive House markets in the country: the
             opt-in <strong>Specialized Stretch Energy Code</strong> names Phius and PHI certification as a
@@ -21,14 +21,7 @@ url: "/ma/"
 <section class="page-section page-section--alt">
     <div class="page-section-inner">
         <span class="section-label">THE MA LANDSCAPE</span>
-        <h2 class="page-heading">
-            <p>
-                Your code requires Passive House certification.
-            </p>
-            <p>
-                We help you deliver.
-            </p>
-        </h2>
+        <h2 class="page-heading">Your code requires Passive House certification. We help you deliver.</h2>
 
         <div class="ma-grid">
             <div class="ma-card">
@@ -58,7 +51,7 @@ url: "/ma/"
                 </p>
                 <div class="ma-card__cite">
                     SOURCE
-                    <a href="https://www.masssave.com/residential/rebates-and-incentives/passive-house-incentives" target="_blank" rel="noopener">Passive House Incentives →</a>
+                    <a href="/mass-save-passive-house/">Mass Save Passive House consulting →</a>
                 </div>
             </div>
 
@@ -92,7 +85,7 @@ url: "/ma/"
         <span class="section-label">HOW A MASS SAVE PROJECT RUNS</span>
         <h2 class="page-heading">From feasibility through certification, we carry the full sequence.</h2>
         <p class="page-intro type-body-lg">
-            The <a href="https://www.masssave.com/" class="link" target="_blank" rel="noopener">Mass Save</a> Passive House pathway funds consulting in stages, which keeps the developer's
+            The <a href="/mass-save-passive-house/" class="link">Mass Save Passive House</a> pathway funds consulting in stages, which keeps the developer's
             risk lower at each gate. A funded <strong>feasibility study</strong> answers "can this building
             hit the target, and what does it cost?" before design commits. Funded
             <strong>pre-construction modeling</strong> carries the design to a certifiable model.

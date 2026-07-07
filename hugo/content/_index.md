@@ -9,7 +9,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="hero-content">
         <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
         <p class="hero-sub">
-            // Building performance modeling, thermal-bridge analysis, and Passive House certification for design, development, and construction teams.<br>
+            // <a href="/passive-house-consulting/" class="link">Passive House consulting</a>, building performance modeling, thermal-bridge analysis, and certification for design, development, and construction teams.<br>
         </p>
         <button class="btn-primary" onclick="handleCTA()">Get in touch &rarr; info@buildingtype.com</button>
     </div>
@@ -80,6 +80,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">PERFORMANCE MODELING</h3>
                 <h4 class="service-card__subtitle">Design with real numbers</h4>
                 <p class="service-card__body">We model the whole building from envelope to mechanicals. Design decisions rest on real data instead of assumptions, with right-sized HVAC and a clear path to Passive House, code, or incentive targets before construction locks in.</p>
+                <div class="ma-card__cite"><a href="/energy-modeling/">Passive House energy modeling &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
@@ -89,6 +90,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">THERMAL BRIDGES</h3>
                 <h4 class="service-card__subtitle">Find the hidden losses</h4>
                 <p class="service-card__body">2D and 3D finite-element modeling finds envelope heat loss, condensation risk, and mold-risk conditions before construction. Every junction is verified against a buildable detail. <strong>Filing in NYC?</strong> The <a href="/nyc-thermal-bridging/" class="link">2025 energy code now requires psi-value calculations</a>, a service we've delivered for over a decade.</p>
+                <div class="ma-card__cite"><a href="/thermal-bridge-modeling/">Thermal bridge modeling &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/thermal-bridge.png" alt="" aria-hidden="true">
                 </div>
@@ -98,6 +100,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">CERTIFICATION</h3>
                 <h4 class="service-card__subtitle">De-risk the whole build</h4>
                 <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification works as durability insurance. It catches costly envelope defects a code inspection can miss. We run the model, prepare the documentation, and manage the review. <strong>Want the performance without the plaque?</strong> We'll hit the targets either way.</p>
+                <div class="ma-card__cite"><a href="/passive-house-certification/">Certification support &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/certification.png" alt="" aria-hidden="true">
                 </div>
@@ -107,6 +110,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">CODE &amp; INCENTIVE MODELING</h3>
                 <h4 class="service-card__subtitle">Appendix G without the program-management headache</h4>
                 <p class="service-card__body">We can build <strong>ASHRAE 90.1 Appendix G</strong> baseline and proposed models for commercial, mixed-use, and substantial-renovation projects. For New York projects, we can pair the model with <strong>NYSERDA FlexTech</strong> and <strong>New Construction Commercial</strong> coordination, from enrollment through comment responses and incentive closeout.</p>
+                <div class="ma-card__cite"><a href="/appendix-g-modeling/">Appendix G modeling &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
@@ -264,7 +268,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
         <span class="section-label">WORKING IN MASSACHUSETTS?</span>
         <h2 class="ma-heading">Code-driven Passive House consulting specifically for MA multifamily.</h2>
         <p class="ma-intro type-body-lg">
-            Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <a href="https://www.masssave.com" class="link">Mass Save</a> Passive House Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
+            Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <a href="/mass-save-passive-house/" class="link">Mass Save Passive House</a> Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
         </p>
 
         <div class="ma-grid">
