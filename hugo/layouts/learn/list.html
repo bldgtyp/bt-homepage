@@ -73,11 +73,11 @@
             </div>
         </section>
 
-        <section class="page-section page-section--alt learn-section" id="course">
+        <section class="page-section learn-section graph-paper graph-paper--hex" id="course">
             <div class="page-section-inner">
                 {{- with .Site.Data.videos.course }}
                 {{- $isPhToolsCourse := or (in .title "Honeybee-PH") (in .desc "Honeybee-PH") -}}
-                <div class="video-group{{ if $isPhToolsCourse }} ph-tools-context graph-paper graph-paper--hex-fine{{ end }}">
+                <div class="video-group{{ if $isPhToolsCourse }} ph-tools-context{{ end }}">
                     <h2 class="video-group-title">{{ .title }}</h2>
                     <p class="video-group-desc">{{ .desc }}</p>
                     <ul class="course-list">
