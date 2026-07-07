@@ -2,6 +2,8 @@
 title: "Massachusetts Passive House Consulting"
 description: "Passive House consulting for Massachusetts: Specialized Stretch Code compliance and the Mass Save Passive House incentive program, from feasibility through certification."
 url: "/ma/"
+aliases:
+  - "/mass-save-passive-house/"
 ---
 
 <section class="page-hero">
@@ -39,7 +41,7 @@ url: "/ma/"
                 </div>
             </div>
 
-            <div class="ma-card">
+            <div class="ma-card" id="mass-save">
                 <span class="type-mono-label ma-card__tag">02 · INCENTIVES</span>
                 <h3 class="ma-card__title">Mass Save Passive House Program</h3>
                 <p class="ma-card__body">
@@ -51,7 +53,7 @@ url: "/ma/"
                 </p>
                 <div class="ma-card__cite">
                     SOURCE
-                    <a href="/mass-save-passive-house/">Mass Save Passive House consulting →</a>
+                    <a href="https://phmass.org/masssave/" target="_blank" rel="noopener">PH-Mass overview →</a>
                 </div>
             </div>
 
@@ -67,7 +69,7 @@ url: "/ma/"
                 </p>
                 <div class="ma-card__cite">
                     REFERENCE
-                    <a href="https://phmass.org/masssave/" target="_blank" rel="noopener">PH-Mass overview →</a>
+                    <a href="/passive-house-certification/">Certification support →</a>
                 </div>
             </div>
         </div>
@@ -85,7 +87,7 @@ url: "/ma/"
         <span class="section-label">HOW A MASS SAVE PROJECT RUNS</span>
         <h2 class="page-heading">From feasibility through certification, we carry the full sequence.</h2>
         <p class="page-intro type-body-lg">
-            The <a href="/mass-save-passive-house/" class="link">Mass Save Passive House</a> pathway funds consulting in stages, which keeps the developer's
+            The <a href="#mass-save" class="link">Mass Save Passive House</a> pathway funds consulting in stages, which keeps the developer's
             risk lower at each gate. A funded <strong>feasibility study</strong> answers "can this building
             hit the target, and what does it cost?" before design commits. Funded
             <strong>pre-construction modeling</strong> carries the design to a certifiable model.

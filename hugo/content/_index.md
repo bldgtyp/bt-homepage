@@ -268,7 +268,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
         <span class="section-label">WORKING IN MASSACHUSETTS?</span>
         <h2 class="ma-heading">Code-driven Passive House consulting specifically for MA multifamily.</h2>
         <p class="ma-intro type-body-lg">
-            Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <a href="/mass-save-passive-house/" class="link">Mass Save Passive House</a> Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
+            Massachusetts has become one of the most active Passive House markets in the country. The state's opt-in <strong>Specialized Stretch Energy Code</strong> recognizes Phius and PHI certification as a compliance pathway for new construction. The <a href="/ma/#mass-save" class="link">Mass Save Passive House</a> Incentive Program funds the work from feasibility study through certification. We support MA architects and developers across both phases from our new Massachusetts office.
         </p>
 
         <div class="ma-grid">
