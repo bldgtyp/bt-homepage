@@ -1062,6 +1062,11 @@ nav {
         background-position: center 46%;
     }
 
+    .case-hero--hillandale {
+        background-image: url("/assets/case-studies/hillandale-gateway/hero.jpg");
+        background-position: center 48%;
+    }
+
     .case-hero__overlay {
         position: absolute;
         inset: 0;
@@ -1191,6 +1196,46 @@ nav {
         border: 1px solid rgba(150, 0, 0, 0.22);
     }
 
+    .case-logo-panel--phius-2024 {
+        align-self: stretch;
+        align-content: center;
+        justify-items: center;
+        gap: 26px;
+        padding: 36px 28px;
+        text-align: center;
+    }
+
+    .case-logo-panel__phius {
+        max-width: 260px;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .case-cert-status {
+        width: 100%;
+        padding-top: 22px;
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .case-cert-status strong {
+        display: block;
+        margin: 8px 0 6px;
+        color: var(--text-primary);
+        font-family: var(--font-primary);
+        font-size: clamp(1.5rem, 2.4vw, 2rem);
+        font-weight: 600;
+        line-height: 1.15;
+    }
+
+    .case-cert-status span:last-child {
+        display: block;
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 11px;
+        line-height: 1.6;
+        letter-spacing: 0.04em;
+    }
+
     .case-feature {
         display: grid;
         grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
@@ -1228,6 +1273,32 @@ nav {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 32px;
         margin-top: 32px;
+    }
+
+    .case-placeholder {
+        min-height: 280px;
+        display: flex;
+        align-items: center;
+        padding: 28px;
+        border: 1px dashed var(--border-strong);
+        border-radius: var(--radius-sm);
+        background-color: color-mix(in oklab, var(--bg-card) 72%, transparent);
+    }
+
+    .case-placeholder h3 {
+        margin: 10px 0 8px;
+        color: var(--text-primary);
+        font-family: var(--font-primary);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .case-placeholder p {
+        color: var(--text-secondary);
+        font-family: var(--font-primary);
+        font-size: 15px;
+        line-height: 1.6;
     }
 
     .case-video-grid {
@@ -2398,7 +2469,7 @@ nav {
     <div class="ma-inner">
         <span class="section-label">SELECTED WORK</span>
         <h2 class="ma-heading">Case studies where the performance work is visible.</h2>
-        <p class="ma-intro type-body-lg">Start with two public case studies: Candela Lofts, a dense urban multifamily project in Hoboken, and Engine 16, a historic Manhattan firehouse converted into a PHI EnerPHit mixed-use multifamily retrofit.</p>
+        <p class="ma-intro type-body-lg">Start with three public case studies: Candela Lofts in Hoboken, Engine 16 in Manhattan, and Hillandale Gateway, a large Phius multifamily project now under construction in Maryland.</p>
 
         <div class="ma-grid">
             <div class="ma-card">
@@ -2416,9 +2487,16 @@ nav {
             </div>
 
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">03 · PRESENTATIONS</span>
+                <span class="type-mono-label ma-card__tag">03 · PHIUS MULTIFAMILY</span>
+                <h3 class="ma-card__title">Hillandale Gateway</h3>
+                <p class="ma-card__body">Large Silver Spring mixed-use community with two 11-story buildings. The NAR building is Design Certified under Phius CORE 2024, with BLDGTYP supporting WUFI Passive modeling, thermal bridges, multifamily calculator coordination, and Phius review responses.</p>
+                <div class="ma-card__cite"><a href="/hillandale-gateway/">Read the case study &rarr;</a></div>
+            </div>
+
+            <div class="ma-card">
+                <span class="type-mono-label ma-card__tag">04 · PRESENTATIONS</span>
                 <h3 class="ma-card__title">Project talks</h3>
-                <p class="ma-card__body">Public presentations walk through both projects in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
+                <p class="ma-card__body">Public presentations walk through Candela Lofts and Engine 16 in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
                 <div class="ma-card__cite"><a href="/learn/#multifamily-case-studies">Watch the presentations &rarr;</a></div>
             </div>
         </div>
@@ -2428,7 +2506,7 @@ nav {
 <section class="resources graph-paper graph-paper--hex" id="resources">
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
-        <h2 class="ma-heading">The same rigor we put into our software goes into every building.</h2>
+        <h2 class="ma-heading">The same rigor we put into every building goes into our tools.</h2>
         <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the <a href="/learn/" class="link">Learn page</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. Through the <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="link">Reimagine Buildings Collective</a>, Ed also supports deeper PHPP and Honeybee-PH training as an advisor, presenter, and Expert in Residence. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
         <div class="resources-links">
             <a href="/learn/" class="btn-ghost">Browse the talks and tutorials &rarr;</a>
@@ -2550,6 +2628,7 @@ nav {
                 <p class="footer-link-heading">Work</p>
                 <a href="/candela-lofts/">Candela Lofts</a>
                 <a href="/engine-16/">Engine 16</a>
+                <a href="/hillandale-gateway/">Hillandale</a>
                 <a href="/engine-16/#video-presentations">Videos</a>
                 <a href="/learn/#multifamily-case-studies">Case Studies</a>
             </nav>

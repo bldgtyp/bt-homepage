@@ -223,7 +223,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="ma-inner">
         <span class="section-label">SELECTED WORK</span>
         <h2 class="ma-heading">Case studies where the performance work is visible.</h2>
-        <p class="ma-intro type-body-lg">Start with two public case studies: Candela Lofts, a dense urban multifamily project in Hoboken, and Engine 16, a historic Manhattan firehouse converted into a PHI EnerPHit mixed-use multifamily retrofit.</p>
+        <p class="ma-intro type-body-lg">Start with three public case studies: Candela Lofts in Hoboken, Engine 16 in Manhattan, and Hillandale Gateway, a large Phius multifamily project now under construction in Maryland.</p>
 
         <div class="ma-grid">
             <div class="ma-card">
@@ -241,9 +241,16 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
             </div>
 
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">03 · PRESENTATIONS</span>
+                <span class="type-mono-label ma-card__tag">03 · PHIUS MULTIFAMILY</span>
+                <h3 class="ma-card__title">Hillandale Gateway</h3>
+                <p class="ma-card__body">Large Silver Spring mixed-use community with two 11-story buildings. The NAR building is Design Certified under Phius CORE 2024, with BLDGTYP supporting WUFI Passive modeling, thermal bridges, multifamily calculator coordination, and Phius review responses.</p>
+                <div class="ma-card__cite"><a href="/hillandale-gateway/">Read the case study &rarr;</a></div>
+            </div>
+
+            <div class="ma-card">
+                <span class="type-mono-label ma-card__tag">04 · PRESENTATIONS</span>
                 <h3 class="ma-card__title">Project talks</h3>
-                <p class="ma-card__body">Public presentations walk through both projects in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
+                <p class="ma-card__body">Public presentations walk through Candela Lofts and Engine 16 in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
                 <div class="ma-card__cite"><a href="/learn/#multifamily-case-studies">Watch the presentations &rarr;</a></div>
             </div>
         </div>
@@ -253,7 +260,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
 <section class="resources graph-paper graph-paper--hex" id="resources">
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
-        <h2 class="ma-heading">The same rigor we put into our software goes into every building.</h2>
+        <h2 class="ma-heading">The same rigor we put into every building goes into our tools.</h2>
         <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the <a href="/learn/" class="link">Learn page</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. Through the <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="link">Reimagine Buildings Collective</a>, Ed also supports deeper PHPP and Honeybee-PH training as an advisor, presenter, and Expert in Residence. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
         <div class="resources-links">
             <a href="/learn/" class="btn-ghost">Browse the talks and tutorials &rarr;</a>

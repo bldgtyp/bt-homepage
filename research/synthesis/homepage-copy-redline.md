@@ -140,7 +140,7 @@ The single most important addition. The corpus ranks **measured-vs-modeled perfo
 Today this differentiator is one grey line. Expand into a real section — it's the proof we're *a knowledge company that consults*, not a vendor [aaron-waldt-475-high-performance-building-supply].
 
 > `section-label:` **WE BUILD THE TOOLS, TOO**
-> ## The same rigor we put into our software goes into every building.
+> ## The same rigor we put into every building goes into our tools. 
 > **BLDGTYP** builds and maintains [Passive House Tools](https://www.passivehousetools.com/) — the open-source toolkit used by Passive House practitioners worldwide — and Ed publishes modeling walkthroughs on [YouTube]. When your project needs an answer the textbook doesn't have, we're the team that wrote the tool.
 > [Explore the open-source tools →] [Watch on YouTube →]
 

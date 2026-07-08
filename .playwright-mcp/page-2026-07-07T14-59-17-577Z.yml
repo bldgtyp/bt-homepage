@@ -173,7 +173,7 @@
             - text: DETAILED ENOUGH FOR AN ENGINEER.
     - generic [ref=e168]:
       - generic [ref=e169]: WE BUILD THE TOOLS, TOO
-      - heading "The same rigor we put into our software goes into every building." [level=2] [ref=e170]
+      - heading "The same rigor we put into every building goes into our tools." [level=2] [ref=e170]
       - paragraph [ref=e171]:
         - strong [ref=e172]: BLDGTYP
         - text: builds and maintains

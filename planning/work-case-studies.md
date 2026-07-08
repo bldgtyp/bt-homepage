@@ -2,15 +2,17 @@
 
 ## Status
 
-Candela Lofts and Engine 16 are now published as the first case-study entries.
-The homepage `#work` section is visible again, with cleared case-study content
-and links to the case-study pages and related video presentations.
+Candela Lofts, Engine 16, and Hillandale Gateway are now published as the first
+case-study entries. The homepage `#work` section is visible again, with cleared
+case-study content and links to the case-study pages and related video
+presentations.
 
 ## Current Site State
 
 - `hugo/content/_index.md` contains the visible `#work` section.
 - The Hugo shared nav links to `/#work`.
-- The footer includes a Work group with direct links to Candela Lofts, Engine 16, Engine 16 video presentations, and the Learn case-study section.
+- Hillandale Gateway is a draft under-construction case study. It includes placeholders for final team credits, construction photos, final blower-door results, commissioning status, and final certification.
+- The footer includes a Work group with direct links to Candela Lofts, Engine 16, Hillandale Gateway, Engine 16 video presentations, and the Learn case-study section.
 - The About page "THE WORK" card links to the homepage Selected Work section.
 
 ## Why It Is Hidden
@@ -21,7 +23,7 @@ cost-premium, or client-quote claims until the data and permissions are cleared.
 ## References
 
 - Homepage source: `hugo/content/_index.md`, `section.proof#work`
-- Case-study sources: `hugo/content/candela-lofts.md`, `hugo/content/engine-16.md`
+- Case-study sources: `hugo/content/candela-lofts.md`, `hugo/content/engine-16.md`, `hugo/content/hillandale-gateway.md`
 - Hugo nav source: `hugo/layouts/partials/nav.html`
 - Hugo footer source: `hugo/layouts/partials/footer.html`
 - About page source: `hugo/content/about.md`
