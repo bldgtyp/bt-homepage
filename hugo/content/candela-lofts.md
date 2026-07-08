@@ -73,10 +73,10 @@ image: "/assets/case-studies/candela/exterior-render.jpg"
             <h2 class="page-heading">Certified through PHI's Low Energy Building pathway.</h2>
             <p class="type-body-lg case-lede">
                 The <a href="https://passivehouse.com/en/home/building-certification/" target="_blank" rel="noopener" class="link">PHI Low Energy Building</a>
-                standard is used for projects that pursue Passive House-level performance but miss a core
-                certification threshold such as airtightness. For Candela, the low-energy pathway fit the
-                reality of a dense, phased-occupancy multifamily building while preserving independent PHI
-                review of the model, envelope, ventilation, and construction evidence.
+                standard recognizes projects that reach Passive House-level performance but fall just short of
+                one core threshold, such as airtightness. For Candela, it fit the reality of a dense,
+                phased-occupancy multifamily building while keeping the model, envelope, ventilation, and
+                construction evidence under independent PHI review.
             </p>
         </div>
         <div class="case-logo-panel" aria-label="Passive House Institute certification logos">
@@ -144,9 +144,9 @@ image: "/assets/case-studies/candela/exterior-render.jpg"
             <p class="type-body-lg case-lede">
                 BLDGTYP's thermal-bridge catalog tracked the recurring junctions that mattered: outside and
                 inside corners, balcony-to-wall transitions, garage floor edges, parapets, window returns,
-                party-wall conditions, and shaft details. Even after optimization, the NAPHN Live presentation
-                reported roughly 5,800 kWh/year of thermal-bridge heat loss, about a 10% addition to opaque
-                transmission losses.
+                party-wall conditions, and shaft details. Even after optimization, thermal bridges still added
+                roughly 5,800 kWh/year, about a 10% addition to opaque transmission losses. On a project this
+                dense, that is a number worth quantifying rather than guessing.
             </p>
         </div>
     </div>
@@ -155,7 +155,7 @@ image: "/assets/case-studies/candela/exterior-render.jpg"
 <section class="page-section page-section--alt">
     <div class="page-section-inner">
         <span class="section-label">DETAILS THAT MATTERED</span>
-        <h2 class="page-heading">The case study is useful because the hard parts are ordinary in urban multifamily work.</h2>
+        <h2 class="page-heading">The junctions that decide comfort and durability recur on almost every urban multifamily building.</h2>
         <div class="case-detail-grid">
             <figure class="case-detail">
                 <img src="/assets/case-studies/candela/window-thermal-bridge.jpg" alt="Window thermal bridge simulation from the Candela Lofts Passive House analysis">
@@ -213,10 +213,9 @@ image: "/assets/case-studies/candela/exterior-render.jpg"
         <span class="section-label">VIDEO PRESENTATIONS</span>
         <h2 class="page-heading">Two public talks walk through the project in detail.</h2>
         <p class="page-intro type-body-lg">
-            These are the same Candela Lofts presentations listed in the
-            <a href="/learn/#multifamily-case-studies" class="link">Learn library's Multifamily & Case Studies section</a>.
-            Start with the NAPHN Live recording for the full project overview, then use the Passive House
-            Accelerator presentation for the shorter case-study version.
+            Start with the NAPHN Live recording for the full project overview, then the Passive House
+            Accelerator talk for a shorter case-study version. Both are also in our
+            <a href="/learn/#multifamily-case-studies" class="link">Learn library</a>.
         </p>
         <div class="video-grid case-video-grid">
             <a class="video-card" href="https://www.youtube.com/watch?v=OfE2vyRs1HA" target="_blank" rel="noopener">
@@ -256,7 +255,7 @@ image: "/assets/case-studies/candela/exterior-render.jpg"
             compliance file and starts becoming a construction tool.
         </p>
         <div class="case-source-note">
-            Source material: BLDGTYP project reports and the
+            Project details from BLDGTYP's Candela Lofts analysis and the
             <a href="https://www.youtube.com/watch?v=OfE2vyRs1HA" target="_blank" rel="noopener">2020 NAPHN Live Candela Lofts presentation</a>.
         </div>
     </div>

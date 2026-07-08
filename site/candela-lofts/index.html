@@ -344,9 +344,15 @@ nav {
     max-width: none;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background-color var(--transition-base);
 }
 .service-card:hover {
     transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--accent) 72%, var(--border-subtle));
 }
 
 .service-icon {
@@ -365,16 +371,18 @@ nav {
 
 
 .service-card__img-strip {
-    height: 80px;
-    margin: auto -32px -40px -32px;
+    height: 104px;
+    margin: auto -32px -40px;
     overflow: hidden;
-
+    background-color: var(--bg-section-alt);
+    border-top: 1px solid var(--border-subtle);
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .service-card__img-strip img {
-    width: 120%;
-    height: 120%;
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center 50%;
 }
@@ -787,6 +795,19 @@ nav {
     margin-top: 36px;
 }
 
+.resources-subsection {
+    margin-top: 72px;
+    padding-top: 64px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 768px) {
+    .resources-subsection {
+        margin-top: 48px;
+        padding-top: 44px;
+    }
+}
+
 
 .cost {
     padding: 120px 40px;
@@ -834,8 +855,13 @@ nav {
     gap: 28px;
 }
 
+.ma-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 @media (max-width: 900px) {
-    .ma-grid { grid-template-columns: 1fr; gap: 20px; }
+    .ma-grid,
+    .ma-grid--2col { grid-template-columns: 1fr; gap: 20px; }
 }
 
 .ma-card {
@@ -845,11 +871,72 @@ nav {
     padding: 28px;
     display: flex;
     flex-direction: column;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background-color var(--transition-base);
+}
+
+.ma-card--case {
+    overflow: hidden;
+}
+
+.ma-card--case:hover,
+.ma-card.ph-tools-context:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--accent) 72%, var(--border-subtle));
+}
+
+.ma-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 46px;
+    margin-bottom: 12px;
 }
 
 .ma-card__tag {
     color: var(--accent);
     margin-bottom: 16px;
+}
+
+.ma-card__head .ma-card__tag {
+    margin-bottom: 0;
+    padding-top: 4px;
+}
+
+.ma-card__cert {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 8px;
+    background: #fff;
+    border: 1px solid color-mix(in oklab, var(--border-subtle) 60%, #fff);
+    border-radius: calc(var(--radius-sm) - 2px);
+}
+
+.ma-card__cert img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ma-card__cert--phi {
+    flex-basis: 46px;
+    width: 46px;
+    padding: 4px 8px;
+}
+
+.ma-card__cert--phi img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .ma-card__title {
@@ -887,10 +974,94 @@ nav {
     color: var(--text-muted);
     margin-top: 4px;
     word-break: break-word;
+    text-decoration: none;
 }
 
 .ma-card__cite a:hover {
     color: var(--accent);
+}
+
+.ma-card__action {
+    border-top: 0;
+    padding-top: 0;
+    margin-top: 4px;
+}
+
+.ma-card__action a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 0;
+    padding: 11px 14px 10px;
+    color: var(--bg-page);
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: calc(var(--radius-sm) - 2px);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition:
+        background-color var(--transition-base),
+        border-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.service-card .ma-card__action {
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+.service-card .ma-card__action a {
+    width: auto;
+}
+
+.ma-card--case .ma-card__action {
+    margin-top: 8px;
+}
+
+.ma-card--case .ma-card__action + .ma-card__img-strip {
+    margin-top: 24px;
+}
+
+.ma-card__action a:hover,
+.ma-card__action a:focus-visible {
+    color: var(--bg-page);
+    background-color: color-mix(in oklab, var(--accent) 84%, #000);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+[data-theme="dark"] .ma-card__action a,
+[data-theme="dark"] .ma-card__action a:hover,
+[data-theme="dark"] .ma-card__action a:focus-visible {
+    color: #071114;
+}
+
+.ma-card__img-strip {
+    height: 86px;
+    margin: 20px -28px -28px;
+    overflow: hidden;
+    background-color: var(--bg-section-alt);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.ma-card__img-strip img {
+    display: block;
+    width: 100%;
+    height: 118%;
+    object-fit: cover;
+    object-position: center 52%;
+    filter: grayscale(35%) saturate(0.85) contrast(0.95);
+    opacity: 0.72;
+}
+
+[data-theme="dark"] .ma-card__img-strip img {
+    filter: grayscale(45%) saturate(0.75) contrast(0.9) brightness(0.78);
+    opacity: 0.62;
 }
 
 .ma-disclaimer {
@@ -1274,32 +1445,6 @@ nav {
         margin-top: 32px;
     }
 
-    .case-placeholder {
-        min-height: 280px;
-        display: flex;
-        align-items: center;
-        padding: 28px;
-        border: 1px dashed var(--border-strong);
-        border-radius: var(--radius-sm);
-        background-color: color-mix(in oklab, var(--bg-card) 72%, transparent);
-    }
-
-    .case-placeholder h3 {
-        margin: 10px 0 8px;
-        color: var(--text-primary);
-        font-family: var(--font-primary);
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 1.3;
-    }
-
-    .case-placeholder p {
-        color: var(--text-secondary);
-        font-family: var(--font-primary);
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
     .case-video-grid {
         margin-top: 8px;
     }
@@ -1460,77 +1605,6 @@ nav {
             display: none;
         }
     }
-
-    .ma-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-    }
-    .ma-grid--2col { grid-template-columns: repeat(2, 1fr); }
-
-    @media (max-width: 900px) {
-        .ma-grid, .ma-grid--2col { grid-template-columns: 1fr; gap: 20px; }
-    }
-
-    .ma-card {
-        background-color: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        border-radius: var(--radius-sm);
-        padding: 28px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .ma-card__tag { color: var(--accent); margin-bottom: 16px; }
-
-    .ma-card__title {
-        font-family: var(--font-primary);
-        font-weight: 600;
-        font-size: 18px;
-        letter-spacing: 0.02em;
-        color: var(--text-primary);
-        margin-bottom: 12px;
-    }
-
-    .ma-card__body {
-        font-family: var(--font-primary);
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 1.7;
-        color: var(--text-secondary);
-        margin-bottom: 20px;
-        flex-grow: 1;
-    }
-
-    .ma-card__cite {
-        font-family: var(--font-mono);
-        font-weight: 300;
-        font-size: 11px;
-        letter-spacing: 0.05em;
-        color: var(--text-muted);
-        border-top: 1px solid var(--border-subtle);
-        padding-top: 14px;
-        margin-top: auto;
-    }
-
-    .ma-card__cite a {
-        display: block;
-        color: var(--text-muted);
-        margin-top: 4px;
-        word-break: break-word;
-    }
-    .ma-card__cite a:hover { color: var(--accent); }
-
-    .ma-disclaimer {
-        margin-top: 32px;
-        font-family: var(--font-mono);
-        font-weight: 300;
-        font-size: 11px;
-        letter-spacing: 0.05em;
-        color: var(--text-muted);
-        max-width: 760px;
-    }
-
 
     .video-group { margin-bottom: 72px; }
     .video-group:last-child { margin-bottom: 0; }
@@ -2316,10 +2390,10 @@ nav {
             <h2 class="page-heading">Certified through PHI's Low Energy Building pathway.</h2>
             <p class="type-body-lg case-lede">
                 The <a href="https://passivehouse.com/en/home/building-certification/" target="_blank" rel="noopener" class="link">PHI Low Energy Building</a>
-                standard is used for projects that pursue Passive House-level performance but miss a core
-                certification threshold such as airtightness. For Candela, the low-energy pathway fit the
-                reality of a dense, phased-occupancy multifamily building while preserving independent PHI
-                review of the model, envelope, ventilation, and construction evidence.
+                standard recognizes projects that reach Passive House-level performance but fall just short of
+                one core threshold, such as airtightness. For Candela, it fit the reality of a dense,
+                phased-occupancy multifamily building while keeping the model, envelope, ventilation, and
+                construction evidence under independent PHI review.
             </p>
         </div>
         <div class="case-logo-panel" aria-label="Passive House Institute certification logos">
@@ -2387,9 +2461,9 @@ nav {
             <p class="type-body-lg case-lede">
                 BLDGTYP's thermal-bridge catalog tracked the recurring junctions that mattered: outside and
                 inside corners, balcony-to-wall transitions, garage floor edges, parapets, window returns,
-                party-wall conditions, and shaft details. Even after optimization, the NAPHN Live presentation
-                reported roughly 5,800 kWh/year of thermal-bridge heat loss, about a 10% addition to opaque
-                transmission losses.
+                party-wall conditions, and shaft details. Even after optimization, thermal bridges still added
+                roughly 5,800 kWh/year, about a 10% addition to opaque transmission losses. On a project this
+                dense, that is a number worth quantifying rather than guessing.
             </p>
         </div>
     </div>
@@ -2398,7 +2472,7 @@ nav {
 <section class="page-section page-section--alt">
     <div class="page-section-inner">
         <span class="section-label">DETAILS THAT MATTERED</span>
-        <h2 class="page-heading">The case study is useful because the hard parts are ordinary in urban multifamily work.</h2>
+        <h2 class="page-heading">The junctions that decide comfort and durability recur on almost every urban multifamily building.</h2>
         <div class="case-detail-grid">
             <figure class="case-detail">
                 <img src="/assets/case-studies/candela/window-thermal-bridge.jpg" alt="Window thermal bridge simulation from the Candela Lofts Passive House analysis">
@@ -2456,10 +2530,9 @@ nav {
         <span class="section-label">VIDEO PRESENTATIONS</span>
         <h2 class="page-heading">Two public talks walk through the project in detail.</h2>
         <p class="page-intro type-body-lg">
-            These are the same Candela Lofts presentations listed in the
-            <a href="/learn/#multifamily-case-studies" class="link">Learn library's Multifamily & Case Studies section</a>.
-            Start with the NAPHN Live recording for the full project overview, then use the Passive House
-            Accelerator presentation for the shorter case-study version.
+            Start with the NAPHN Live recording for the full project overview, then the Passive House
+            Accelerator talk for a shorter case-study version. Both are also in our
+            <a href="/learn/#multifamily-case-studies" class="link">Learn library</a>.
         </p>
         <div class="video-grid case-video-grid">
             <a class="video-card" href="https://www.youtube.com/watch?v=OfE2vyRs1HA" target="_blank" rel="noopener">
@@ -2499,7 +2572,7 @@ nav {
             compliance file and starts becoming a construction tool.
         </p>
         <div class="case-source-note">
-            Source material: BLDGTYP project reports and the
+            Project details from BLDGTYP's Candela Lofts analysis and the
             <a href="https://www.youtube.com/watch?v=OfE2vyRs1HA" target="_blank" rel="noopener">2020 NAPHN Live Candela Lofts presentation</a>.
         </div>
     </div>
@@ -2536,8 +2609,7 @@ nav {
                 <a href="/candela-lofts/">Candela Lofts</a>
                 <a href="/engine-16/">Engine 16</a>
                 <a href="/hillandale-gateway/">Hillandale</a>
-                <a href="/engine-16/#video-presentations">Videos</a>
-                <a href="/learn/#multifamily-case-studies">Case Studies</a>
+                <a href="/learn/#multifamily-case-studies">Videos</a>
             </nav>
             <nav class="footer-link-group footer-link-group--services" aria-label="Footer service navigation">
                 <p class="footer-link-heading">Services</p>

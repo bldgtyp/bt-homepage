@@ -1,6 +1,6 @@
 ---
 title: "Hillandale Gateway"
-description: "Case study draft: Hillandale Gateway NAR in Silver Spring, Maryland, a large multifamily Phius CORE 2024 Design Certified project with Passive House consulting by BLDGTYP."
+description: "Hillandale Gateway in Silver Spring, Maryland: a 463-unit mixed-use Passive House community, with the first building Design Certified under Phius CORE 2024. Certification consulting by BLDGTYP."
 url: "/hillandale-gateway/"
 image: "/assets/case-studies/hillandale-gateway/hero.jpg"
 ---
@@ -11,8 +11,8 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
         <span class="section-label">CASE STUDY · SILVER SPRING, MD</span>
         <h1>Hillandale Gateway</h1>
         <p class="case-hero__intro type-body-lg">
-            A large mixed-use Passive House community under construction in Maryland, with the NAR building
-            Design Certified under Phius CORE 2024.
+            A 463-unit mixed-use Passive House community in Maryland. BLDGTYP carried the first building
+            to Phius CORE 2024 Design Certification.
         </p>
         <div class="case-hero__meta type-mono-label">
             Phius CORE 2024 Design Certified · Torti Gallas & Partners · CBG · PS Ventures · BLDGTYP
@@ -26,18 +26,17 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
             <span class="section-label">THE PROJECT</span>
             <h2 class="page-heading">Passive House certification at the scale of a whole mixed-use community.</h2>
             <p class="type-body-lg case-lede">
-                <a href="https://www.cbgbuildingcompany.com/projects/hillandale-gateway/" class="link" target="_blank" rel="noopener">Hillandale Gateway</a> is a two-building, 463-unit mixed-use development in Silver Spring, Maryland.
-                The public project description identifies two 11-story concrete residential buildings, an
-                eight-story parking garage, future retail pads, and site amenities. The first building, the
-                Non-Age Restricted building, contains 308 units and is the focus of this initial BLDGTYP case
-                study draft.
+                <a href="https://www.cbgbuildingcompany.com/projects/hillandale-gateway/" class="link" target="_blank" rel="noopener">Hillandale Gateway</a> is a two-building, 463-unit mixed-use development in Silver Spring, Maryland:
+                two 11-story concrete residential buildings, an eight-story parking structure, ground-floor
+                retail, and shared amenities. The first building, the 308-unit Non-Age-Restricted (NAR)
+                building, is the subject of this case study.
             </p>
             <p class="type-body-lg case-lede">
-                BLDGTYP's scope centered on <a href="/passive-house-certification/" class="link">Phius certification consulting</a>,
-                WUFI Passive modeling, Phius multifamily calculator coordination,
-                <a href="/thermal-bridge-modeling/" class="link">thermal-bridge documentation</a>, and technical
-                responses through the Phius certification review process. The NAR building received its Phius
-                CORE 2024 Design Certification letter on April 15, 2026.
+                BLDGTYP served as the <a href="/passive-house-certification/" class="link">Phius certification consultant</a>,
+                carrying the building through review: WUFI Passive energy modeling, Phius multifamily calculator
+                coordination, <a href="/thermal-bridge-modeling/" class="link">thermal-bridge documentation</a>, and
+                the technical responses each review round demanded. The NAR building earned its Phius CORE 2024
+                Design Certification on April 15, 2026.
             </p>
         </div>
         <dl class="case-facts">
@@ -77,9 +76,8 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
                 documentation, commissioning, field verification, and certification closeout.
             </p>
             <p class="type-body-lg case-lede">
-                For Hillandale Gateway NAR, the design criteria are based on Maryland / Andrews AFB climate
-                data in ASHRAE 169 climate zone 4A. The criteria screenshot records a 259,180 ft² envelope
-                area and 391,430 ft² iCFA for the NAR model.
+                The NAR model accounts for 391,430 ft² of interior conditioned floor area across 259,180 ft²
+                of envelope, evaluated against Andrews AFB climate data for ASHRAE climate zone 4A.
             </p>
         </div>
         <div class="case-logo-panel case-logo-panel--phius-2024" aria-label="Phius CORE 2024 design certification">
@@ -137,7 +135,7 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
         </figure>
         <div>
             <span class="section-label">MODELING SCOPE</span>
-            <h2 class="page-heading">The model was a project-management tool, not just an energy file.</h2>
+            <h2 class="page-heading">Every certification input traceable to a source the certifier could check.</h2>
             <p class="type-body-lg case-lede">
                 BLDGTYP's workflow combined WUFI Passive, the Phius multifamily calculator, drawing-based
                 envelope takeoffs, and Flixo thermal-bridge models. The goal was to keep the certification
@@ -160,10 +158,10 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
         <span class="section-label">THERMAL BRIDGES</span>
         <h2 class="page-heading">Fourteen Flixo models tracked the recurring high-impact junctions.</h2>
         <p class="page-intro type-body-lg">
-            The current NAR thermal-bridge set includes typical wall-to-floor, foundation slab edge, parapet,
-            balcony, canopy, pool section, amenity overhang, fall-protection anchor, and solar-uplift anchor
-            conditions. The images below are BLDGTYP Flixo outputs rather than architect detail drawings,
-            so the public page shows the analysis work without publishing the construction details.
+            The set covers the junctions that repeat across a concrete high-rise and add up fastest:
+            wall-to-floor, foundation slab edge, parapet, balcony, canopy, pool section, amenity overhang,
+            and fall-protection and solar-uplift anchors. Each was modeled to quantify its heat loss and to
+            confirm interior surfaces stay warm enough to avoid condensation and mold.
         </p>
         <div class="case-detail-grid">
             <figure class="case-detail">
@@ -178,13 +176,6 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
                 <img src="/assets/case-studies/hillandale-gateway/balcony-transfer-psi.png" alt="Hillandale Gateway balcony at transfer slab psi-value thermal bridge analysis">
                 <figcaption>Psi-value output for the balcony at transfer slab condition, used to account for repeated structural heat-flow paths.</figcaption>
             </figure>
-            <figure class="case-detail case-placeholder">
-                <div>
-                    <span class="type-mono-label">PLACEHOLDER</span>
-                    <h3>Construction photo or approved rendering</h3>
-                    <p>Add field photo, approved marketing rendering, or final database image once available.</p>
-                </div>
-            </figure>
         </div>
     </div>
 </section>
@@ -192,28 +183,28 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
 <section class="page-section">
     <div class="page-section-inner">
         <span class="section-label">PUBLIC PROJECT CONTEXT</span>
-        <h2 class="page-heading">The public-facing story is a Passive House community at Maryland scale.</h2>
+        <h2 class="page-heading">A Passive House community at true neighborhood scale.</h2>
         <p class="page-intro type-body-lg">
-            CBG describes Hillandale Gateway as a 463-unit P3 Passive House community across two 11-story
-            towers, located at 10110 New Hampshire Avenue in Silver Spring, with projected completion in
-            November 2026. Public materials also describe the project as targeting LEED Platinum and meeting
-            criteria for EnergyStar, Enterprise Green Communities, and Passive House.
+            Hillandale Gateway is a 463-unit public-private Passive House community rising across two 11-story
+            towers at 10110 New Hampshire Avenue in Silver Spring, with completion expected in November 2026.
+            Passive House anchors a stacked sustainability program that also targets LEED Platinum, ENERGY STAR,
+            and Enterprise Green Communities.
         </p>
         <div class="ma-grid ma-grid--2col">
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">NEED TO CONFIRM</span>
-                <h3 class="ma-card__title">Final team credit line</h3>
+                <span class="type-mono-label ma-card__tag">PROOF AT SCALE</span>
+                <h3 class="ma-card__title">Passive House that pencils for large mixed-use development</h3>
                 <p class="ma-card__body">
-                    Confirm exact public crediting for owner/developer, CBG, <a href="https://www.psvdev.com/about-us" target="_blank" rel="noopener" class="link">PS Ventures</a>, HOC, Duffie
-                    Companies, architect, MEP, verifier/rater, and BLDGTYP role.
+                    Hitting Phius targets across 463 homes and ground-floor retail shows the standard works
+                    for large public-private housing, not just custom single-family projects.
                 </p>
             </div>
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">NEED TO ADD</span>
-                <h3 class="ma-card__title">Construction and final-certification updates</h3>
+                <span class="type-mono-label ma-card__tag">WHAT COMES NEXT</span>
+                <h3 class="ma-card__title">From design certification to a verified building</h3>
                 <p class="ma-card__body">
-                    Add final blower-door result, verifier photos, commissioning status, completed Phius
-                    certification date, and final project photography when those are available.
+                    As construction wraps, the design-stage model becomes the benchmark for field
+                    verification, blower-door testing, and final Phius certification.
                 </p>
             </div>
         </div>
@@ -225,15 +216,14 @@ image: "/assets/case-studies/hillandale-gateway/hero.jpg"
         <span class="section-label">LESSON</span>
         <h2 class="page-heading">Large multifamily Passive House work succeeds or fails on coordination discipline.</h2>
         <p class="page-intro type-body-lg">
-            Hillandale Gateway is the kind of work BLDGTYP wants more of: large, complex, team-based Passive
-            House delivery where energy modeling, thermal bridges, ventilation assumptions, documentation,
-            and certification review all have to move together. The page will get stronger as the project
-            moves from design certification into construction verification and final certification.
+            On a project this size, the physics is rarely the hard part. Coordination is. Keeping the energy
+            model, thermal-bridge set, ventilation assumptions, documentation, and certifier responses moving
+            together is what carries a 463-unit building through Phius review on schedule. That discipline is
+            what BLDGTYP brings to large, team-based Passive House delivery.
         </p>
         <div class="case-source-note">
-            Source material: <a href="https://www.cbgbuildingcompany.com/projects/hillandale-gateway/" target="_blank" rel="noopener">CBG Hillandale Gateway project page</a>,
-            Hillandale Gateway NAR Phius Design Certification letter dated April 15, 2026, WUFI Passive criteria screenshot,
-            and BLDGTYP Flixo thermal-bridge documentation.
+            Project details from the <a href="https://www.cbgbuildingcompany.com/projects/hillandale-gateway/" target="_blank" rel="noopener">CBG Hillandale Gateway project page</a>
+            and the NAR building's Phius CORE 2024 Design Certification, issued April 15, 2026.
         </div>
     </div>
 </section>

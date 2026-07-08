@@ -80,7 +80,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">PASSIVE HOUSE CONSULTING</h3>
                 <h4 class="service-card__subtitle">Design with real numbers</h4>
                 <p class="service-card__body">We help teams set the performance target early, then coordinate the envelope, glazing, ventilation, thermal bridges, and mechanical assumptions around it. The work includes Passive House energy modeling, right-sized HVAC, and clear design moves before construction locks in.</p>
-                <div class="ma-card__cite"><a href="/passive-house-consulting/">Passive House consulting &rarr;</a></div>
+                <div class="ma-card__cite ma-card__action"><a href="/passive-house-consulting/">Passive House consulting &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
@@ -90,7 +90,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">THERMAL BRIDGE MODELING</h3>
                 <h4 class="service-card__subtitle">Find the hidden losses</h4>
                 <p class="service-card__body">2D and 3D finite-element modeling finds envelope heat loss, condensation risk, and mold-risk conditions before construction. Every junction is verified against a buildable detail. <strong>Filing in NYC?</strong> The <a href="/nyc-thermal-bridging/" class="link">2025 energy code now requires psi-value calculations</a>, a service we've delivered for over a decade.</p>
-                <div class="ma-card__cite"><a href="/thermal-bridge-modeling/">Thermal bridge modeling &rarr;</a></div>
+                <div class="ma-card__cite ma-card__action"><a href="/thermal-bridge-modeling/">Thermal bridge modeling &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/thermal-bridge.png" alt="" aria-hidden="true">
                 </div>
@@ -100,7 +100,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">PASSIVE HOUSE CERTIFICATION</h3>
                 <h4 class="service-card__subtitle">De-risk the whole build</h4>
                 <p class="service-card__body"><a href="https://www.phius.org/" target="_blank" rel="noopener noreferrer" class="link">PHIUS</a> and <a href="https://passivehouse.com/" target="_blank" rel="noopener noreferrer" class="link">PHI</a> certification works as durability insurance. It catches costly envelope defects a code inspection can miss. We run the model, prepare the documentation, and manage the review. <strong>Want the performance without the plaque?</strong> We'll hit the targets either way.</p>
-                <div class="ma-card__cite"><a href="/passive-house-certification/">Passive House certification &rarr;</a></div>
+                <div class="ma-card__cite ma-card__action"><a href="/passive-house-certification/">Passive House certification &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/certification.png" alt="" aria-hidden="true">
                 </div>
@@ -110,7 +110,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                 <h3 class="service-card__title">APPENDIX G MODELING</h3>
                 <h4 class="service-card__subtitle">Appendix G without the program-management headache</h4>
                 <p class="service-card__body">We can build <strong>ASHRAE 90.1 Appendix G</strong> baseline and proposed models for commercial, mixed-use, and substantial-renovation projects. For New York projects, we can pair the model with <strong>NYSERDA FlexTech</strong> and <strong>New Construction Commercial</strong> coordination, from enrollment through comment responses and incentive closeout.</p>
-                <div class="ma-card__cite"><a href="/appendix-g-modeling/">Appendix G modeling &rarr;</a></div>
+                <div class="ma-card__cite ma-card__action"><a href="/appendix-g-modeling/">Appendix G modeling &rarr;</a></div>
                 <div class="service-card__img-strip">
                     <img src="/assets/energy-model.png" alt="" aria-hidden="true">
                 </div>
@@ -226,32 +226,59 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
         <p class="ma-intro type-body-lg">Start with three public case studies: Candela Lofts in Hoboken, Engine 16 in Manhattan, and Hillandale Gateway, a large Phius multifamily project now under construction in Maryland.</p>
 
         <div class="ma-grid">
-            <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">01 · MULTIFAMILY</span>
+            <div class="ma-card ma-card--case">
+                <div class="ma-card__head">
+                    <span class="type-mono-label ma-card__tag">01 · MULTIFAMILY</span>
+                    <span class="ma-card__cert ma-card__cert--phi" aria-label="Certified through PHI">
+                        <img src="/assets/case-studies/candela/phi-mark.png" alt="PHI">
+                    </span>
+                </div>
                 <h3 class="ma-card__title">Candela Lofts</h3>
-                <p class="ma-card__body">Seven-story, nine-unit Hoboken condominium certified through PHI's Low Energy Building pathway. BLDGTYP supported the project with energy modeling, thermal-bridge simulation, envelope analysis, airtightness strategy, ventilation review, and certification coordination.</p>
-                <div class="ma-card__cite"><a href="/candela-lofts/">Read the case study &rarr;</a></div>
+                <p class="ma-card__body">A seven-story Hoboken condominium that shows Passive House comfort and durability hold up in dense concrete-and-steel construction. Certified through PHI's Low Energy Building pathway, with BLDGTYP handling the envelope modeling, the balcony and facade thermal bridges, and an airtightness plan the contractor could actually build.</p>
+                <div class="ma-card__cite ma-card__action"><a href="/candela-lofts/">Read the case study &rarr;</a></div>
+                <div class="ma-card__img-strip">
+                    <img src="/assets/case-studies/candela/exterior-render.jpg" alt="" aria-hidden="true" loading="lazy">
+                </div>
             </div>
 
-            <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">02 · ENERPHIT</span>
+            <div class="ma-card ma-card--case">
+                <div class="ma-card__head">
+                    <span class="type-mono-label ma-card__tag">02 · ENERPHIT</span>
+                    <span class="ma-card__cert ma-card__cert--phi" aria-label="Certified through PHI">
+                        <img src="/assets/case-studies/candela/phi-mark.png" alt="PHI">
+                    </span>
+                </div>
                 <h3 class="ma-card__title">Engine 16</h3>
-                <p class="ma-card__body">Historic Kips Bay firehouse converted into a fully electric, mixed-use multifamily building certified by PHI through the EnerPHit retrofit pathway. The work centered on preserved masonry, interior insulation, airtightness sequencing, thermal bridges, and mixed-use PHPP modeling.</p>
-                <div class="ma-card__cite"><a href="/engine-16/">Read the case study &rarr;</a></div>
+                <p class="ma-card__body">An 1880s Kips Bay firehouse reborn as a fully electric, mixed-use home, certified by PHI through the EnerPHit retrofit pathway. BLDGTYP helped the team reach a 0.64 ACH50 blower-door result while preserving the historic masonry facade, insulating from the inside, and sequencing the air barrier around real site conditions.</p>
+                <div class="ma-card__cite ma-card__action"><a href="/engine-16/">Read the case study &rarr;</a></div>
+                <div class="ma-card__img-strip">
+                    <img src="/assets/case-studies/engine-16/hero.jpg" alt="" aria-hidden="true" loading="lazy">
+                </div>
             </div>
 
-            <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">03 · PHIUS MULTIFAMILY</span>
+            <div class="ma-card ma-card--case">
+                <div class="ma-card__head">
+                    <span class="type-mono-label ma-card__tag">03 · PHIUS MULTIFAMILY</span>
+                    <span class="ma-card__cert" aria-label="Design Certified through Phius">
+                        <img src="/assets/case-studies/hillandale-gateway/phius-logo.png" alt="Phius">
+                    </span>
+                </div>
                 <h3 class="ma-card__title">Hillandale Gateway</h3>
-                <p class="ma-card__body">Large Silver Spring mixed-use community with two 11-story buildings. The NAR building is Design Certified under Phius CORE 2024, with BLDGTYP supporting WUFI Passive modeling, thermal bridges, multifamily calculator coordination, and Phius review responses.</p>
-                <div class="ma-card__cite"><a href="/hillandale-gateway/">Read the case study &rarr;</a></div>
+                <p class="ma-card__body">A 463-unit mixed-use community in Silver Spring, Maryland, and proof that Passive House pencils at true neighborhood scale. BLDGTYP carried the first building to Phius CORE 2024 Design Certification, keeping the energy model, thermal bridges, and certifier responses coordinated across hundreds of apartments.</p>
+                <div class="ma-card__cite ma-card__action"><a href="/hillandale-gateway/">Read the case study &rarr;</a></div>
+                <div class="ma-card__img-strip">
+                    <img src="/assets/case-studies/hillandale-gateway/hero.jpg" alt="" aria-hidden="true" loading="lazy">
+                </div>
             </div>
 
-            <div class="ma-card">
+            <div class="ma-card ma-card--case">
                 <span class="type-mono-label ma-card__tag">04 · PRESENTATIONS</span>
                 <h3 class="ma-card__title">Project talks</h3>
                 <p class="ma-card__body">Public presentations walk through Candela Lofts and Engine 16 in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
-                <div class="ma-card__cite"><a href="/learn/#multifamily-case-studies">Watch the presentations &rarr;</a></div>
+                <div class="ma-card__cite ma-card__action"><a href="/learn/#multifamily-case-studies">Watch the presentations &rarr;</a></div>
+                <div class="ma-card__img-strip">
+                    <img src="/assets/case-studies/engine-16/interior-stair.jpg" alt="" aria-hidden="true" loading="lazy">
+                </div>
             </div>
         </div>
     </div>
@@ -261,12 +288,20 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
         <h2 class="ma-heading">The same rigor we put into every building goes into our tools.</h2>
-        <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the <a href="/learn/" class="link">Learn page</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. Through the <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="link">Reimagine Buildings Collective</a>, Ed also supports deeper PHPP and Honeybee-PH training as an advisor, presenter, and Expert in Residence. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
+        <p class="ma-intro type-body-lg">Most Passive House consultants are fluent in the modeling software. <strong>BLDGTYP</strong> writes it. We build and maintain <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit practitioners around the world use to move building data between Rhino, PHPP, and WUFI-Passive. Our libraries extend Ladybug Tools with a full Passive House data model, our converters read and write both PHPP and WUFI-Passive, and we build the web apps and interactive 3D viewers that turn a dense energy model into something a whole team can navigate. It is the same engineering discipline we bring to every building, and when a project needs an answer the textbook doesn't have, we are often the team that wrote the tool.</p>
         <div class="resources-links">
-            <a href="/learn/" class="btn-ghost">Browse the talks and tutorials &rarr;</a>
             <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="btn-ghost">Explore the open-source tools &rarr;</a>
-            <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="btn-ghost">Learn with Reimagine Buildings &rarr;</a>
-            <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="btn-ghost">Watch on YouTube &rarr;</a>
+        </div>
+
+        <div class="resources-subsection">
+            <span class="section-label">OPEN TOOLS, OPEN KNOWLEDGE</span>
+            <h3 class="ma-heading">Building the tools is only half of it. We teach them, too.</h3>
+            <p class="ma-intro type-body-lg">Our free 14-part <a href="https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE" target="_blank" rel="noopener" class="link">Honeybee-PH short course</a> takes you from installing the toolkit to a complete Phius model in Rhino and Grasshopper, ready for WUFI-Passive. It sits alongside fifteen years of our talks and tutorials, on thermal bridging, windows, retrofits, and AI for Passive House, all free on the <a href="/learn/" class="link">Learn page</a>. For teams that want to go deeper, Ed teaches PHPP and Honeybee-PH through the <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="link">Reimagine Buildings Collective</a> as an advisor, presenter, and Expert in Residence.</p>
+            <div class="resources-links">
+                <a href="/learn/" class="btn-ghost">Browse the talks and tutorials &rarr;</a>
+                <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="btn-ghost">Learn with Reimagine Buildings &rarr;</a>
+                <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="btn-ghost">Watch on YouTube &rarr;</a>
+            </div>
         </div>
     </div>
 </section>

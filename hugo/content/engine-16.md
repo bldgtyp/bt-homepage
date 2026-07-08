@@ -237,9 +237,9 @@ image: "/assets/case-studies/engine-16/hero.jpg"
         <span class="section-label">VIDEO PRESENTATIONS</span>
         <h2 class="page-heading">Three public presentations show the project from different angles.</h2>
         <p class="page-intro type-body-lg">
-            These Engine 16 talks are also represented in the
-            <a href="/learn/#multifamily-case-studies" class="link">Learn library</a>. Start with the iPHA
-            Project Spotlight for the full architecture, consulting, and certification story.
+            Start with the iPHA Project Spotlight for the full architecture, consulting, and certification
+            story. All three talks are also in our
+            <a href="/learn/#multifamily-case-studies" class="link">Learn library</a>.
         </p>
         <div class="video-grid case-video-grid">
             <a class="video-card" href="https://player.vimeo.com/video/1147345841?h=75148afd12" target="_blank" rel="noopener">
@@ -287,10 +287,10 @@ image: "/assets/case-studies/engine-16/hero.jpg"
             reduce, sequence, and document the details that decide comfort, condensation risk, and certification.
         </p>
         <div class="case-source-note">
-            Source material: Passive House Database ID 7861, BLDGTYP/iPHA presentation materials,
-            <a href="https://www.inguiarchitecture.com/projects/engine-16" target="_blank" rel="noopener">Ingui Architecture project page</a>,
-            <a href="https://www.rockwool.com/north-america/advice-and-inspiration/case-studies/engine-16-case-study/" target="_blank" rel="noopener">ROCKWOOL case study</a>, and
-            <a href="https://passivehouseaccelerator.com/events/from-firehouse-to-passive-house-engine-16-new-york-city" target="_blank" rel="noopener">iPHA Project Spotlight listing</a>.
+            Project details from <a href="https://passivehouse-database.org/index.php?lang=en#d_7861" target="_blank" rel="noopener">Passive House Database ID 7861</a>, the
+            <a href="https://www.inguiarchitecture.com/projects/engine-16" target="_blank" rel="noopener">Ingui Architecture project page</a>, the
+            <a href="https://www.rockwool.com/north-america/advice-and-inspiration/case-studies/engine-16-case-study/" target="_blank" rel="noopener">ROCKWOOL case study</a>, and the
+            <a href="https://passivehouseaccelerator.com/events/from-firehouse-to-passive-house-engine-16-new-york-city" target="_blank" rel="noopener">iPHA Project Spotlight</a>.
         </div>
     </div>
 </section>

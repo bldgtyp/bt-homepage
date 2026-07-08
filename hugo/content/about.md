@@ -92,7 +92,7 @@ url: "/about/"
                 <span class="type-mono-label ma-card__tag">01 · THE TOOLS</span>
                 <h3 class="ma-card__title">Open-source, by design</h3>
                 <p class="ma-card__body">We develop and maintain the Passive House Tools stack: Honeybee-PH, PHX, and related libraries that connect standard CAD/BIM platforms to WUFI-Passive and PHPP. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool.</p>
-                <div class="ma-card__cite"><a href="https://www.passivehousetools.com/" target="_blank" rel="noopener">passivehousetools.com →</a></div>
+                <div class="ma-card__cite ma-card__action"><a href="https://www.passivehousetools.com/" target="_blank" rel="noopener">passivehousetools.com →</a></div>
             </div>
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">02 · THE TEACHING</span>
