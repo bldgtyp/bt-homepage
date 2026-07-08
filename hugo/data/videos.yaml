@@ -26,6 +26,14 @@ groups:
         title: "International Passive House Days with Virtual Tour of Engine 16"
         host: "Passive House Accelerator"
         year: 2021
+      - id: 1147345841
+        provider: "vimeo"
+        title: "Project Spotlight: From Firehouse to Passive House - Engine 16, New York City"
+        host: "International Passive House Association"
+        year: 2025
+        url: "https://player.vimeo.com/video/1147345841?h=75148afd12"
+        embed_url: "https://player.vimeo.com/video/1147345841?h=75148afd12"
+        thumbnail: "https://i.vimeocdn.com/video/2097096096-ea7529f12854f1736c774401bb73160584dd51623260d7c3a4e2f1f8abdfb8d4-d_295x166?region=us"
 
   - title: "AI for Passive House"
     desc: "Using AI and agentic tools for the tedious parts of Passive House delivery, from data extraction to model QA/QC for certification paperwork."

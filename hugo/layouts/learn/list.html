@@ -2,14 +2,23 @@
 {{- $videos := slice -}}
 {{- range .Site.Data.videos.groups -}}
     {{- range .videos -}}
+        {{- $provider := default "youtube" .provider -}}
+        {{- $contentUrl := printf "https://www.youtube.com/watch?v=%s" .id -}}
+        {{- $embedUrl := printf "https://www.youtube.com/embed/%s" .id -}}
+        {{- $thumbnailUrl := printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .id -}}
+        {{- if eq $provider "vimeo" -}}
+            {{- $contentUrl = .url -}}
+            {{- $embedUrl = default .url .embed_url -}}
+            {{- $thumbnailUrl = .thumbnail -}}
+        {{- end -}}
         {{- $videos = $videos | append (dict
             "@type" "VideoObject"
             "name" .title
             "description" (printf "%s. Hosted by %s." .title .host)
-            "thumbnailUrl" (slice (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .id))
+            "thumbnailUrl" (slice $thumbnailUrl)
             "uploadDate" (printf "%v" .year)
-            "contentUrl" (printf "https://www.youtube.com/watch?v=%s" .id)
-            "embedUrl" (printf "https://www.youtube.com/embed/%s" .id)
+            "contentUrl" $contentUrl
+            "embedUrl" $embedUrl
             "publisher" (dict "@id" (printf "%s#organization" site.BaseURL))
         ) -}}
     {{- end -}}
@@ -56,9 +65,16 @@
                     <p class="video-group-desc">{{ .desc }}</p>
                     <div class="video-grid">
                         {{- range .videos }}
-                        <a class="video-card" href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">
+                        {{- $provider := default "youtube" .provider -}}
+                        {{- $href := printf "https://www.youtube.com/watch?v=%s" .id -}}
+                        {{- $thumbnail := printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .id -}}
+                        {{- if eq $provider "vimeo" -}}
+                            {{- $href = .url -}}
+                            {{- $thumbnail = .thumbnail -}}
+                        {{- end }}
+                        <a class="video-card" href="{{ $href | safeURL }}" target="_blank" rel="noopener">
                             <div class="video-card__thumb">
-                                <img src="https://i.ytimg.com/vi/{{ .id }}/hqdefault.jpg" alt="{{ .title }}" loading="lazy">
+                                <img src="{{ $thumbnail | safeURL }}" alt="{{ .title }}" loading="lazy">
                             </div>
                             <div class="video-card__meta">
                                 <div class="video-card__title">{{ .title }}</div>
