@@ -9,9 +9,10 @@ url: "/passive-house-certification/"
         <span class="section-label">PASSIVE HOUSE CERTIFICATION</span>
         <h1>Phius and PHI certification support, from model to review comments.</h1>
         <p class="page-hero-intro type-body-lg">
-            Certification is a documentation project as much as a modeling project. We build and maintain the
-            PHPP or WUFI-Passive model, coordinate the evidence behind each input, and help the team respond
-            cleanly through certifier review.
+            Third-party certification is durability insurance: it catches the costly envelope defects a code
+            inspector never will. We build and maintain the PHPP or WUFI-Passive model, coordinate the evidence
+            behind every input, and carry the team cleanly through certifier review. Want the performance
+            targets without the plaque? We'll hit those too.
         </p>
     </div>
 </section>

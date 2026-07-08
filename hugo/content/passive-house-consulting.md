@@ -7,11 +7,12 @@ url: "/passive-house-consulting/"
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">PASSIVE HOUSE CONSULTING</span>
-        <h1>Performance support for teams that need the building to work.</h1>
+        <h1>The building has to perform. That part's on us.</h1>
         <p class="page-hero-intro type-body-lg">
-            BLDGTYP supports architects, developers, builders, and certification teams from early design
-            analysis through Passive House certification. We translate project goals into envelope,
-            mechanical, and documentation decisions the whole team can use.
+            BLDGTYP is the performance layer inside your design team, from early design analysis through
+            Passive House certification. We turn project goals into envelope, mechanical, and documentation
+            decisions the whole team can build from, and carry the risk of hitting the numbers so you don't
+            have to.
         </p>
     </div>
 </section>
@@ -19,7 +20,7 @@ url: "/passive-house-consulting/"
 <section class="page-section page-section--alt">
     <div class="page-section-inner">
         <span class="section-label">WHERE WE FIT</span>
-        <h2 class="page-heading">We are the performance layer inside the design team.</h2>
+        <h2 class="page-heading">We plug in wherever the performance risk lives.</h2>
         <div class="ma-grid">
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">01 · EARLY DESIGN</span>
