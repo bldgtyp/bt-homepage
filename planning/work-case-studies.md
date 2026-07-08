@@ -2,32 +2,36 @@
 
 ## Status
 
-Hidden from the public homepage until cleared case-study content is ready.
+Candela Lofts is now published as the first case-study entry. The homepage
+`#work` section is visible again, with only cleared Candela content and links to
+the case-study page and related video presentations.
 
 ## Current Site State
 
-- `site/index.html` still contains the `#work` section markup, but the section is hidden with the `hidden` attribute.
-- The homepage nav no longer links to `#work`.
-- The Hugo shared nav no longer links to `/#work`.
-- The About page "THE WORK" card now says `case studies forthcoming` instead of linking to the hidden section.
+- `hugo/content/_index.md` contains the visible `#work` section.
+- The Hugo shared nav links to `/#work`.
+- The footer includes a Work group with direct links to Candela Lofts, the Candela video presentations, and the Learn case-study section.
+- The About page "THE WORK" card links to the Candela Lofts case study.
 
 ## Why It Is Hidden
 
-The current section still uses bracketed placeholders for project names, modeled-vs-measured results, cost premium, and client quote text. Publishing those placeholders weakens the site and implies proof we have not yet cleared for public use.
+The original placeholder proof cards were removed. Do not reintroduce modeled-vs-measured,
+cost-premium, or client-quote claims until the data and permissions are cleared.
 
 ## References
 
-- Homepage section: `site/index.html`, `section.proof#work`
+- Homepage source: `hugo/content/_index.md`, `section.proof#work`
+- Case-study source: `hugo/content/candela-lofts.md`
 - Hugo nav source: `hugo/layouts/partials/nav.html`
-- About page source: `hugo/layouts/_default/about.html`
-- Generated About page: `site/about/index.html`
+- Hugo footer source: `hugo/layouts/partials/footer.html`
+- About page source: `hugo/content/about.md`
 - Research blocker: `research/synthesis/positioning-decisions.md`, D4 "Publishable proof"
 - Original copy plan: `research/synthesis/homepage-copy-redline.md`, section 8 "Proof / Selected Work"
 
-## Turn Back On When
+## Add More Case Studies When
 
 - Project names or anonymized descriptions are approved.
 - Modeled-vs-measured figures are available and checked.
 - Any cost-premium claim is sourced or removed.
 - Client quote text is approved, or the quote slot is removed.
-- The homepage nav and About-page link can point to the section without sending visitors to placeholder content.
+- The homepage Work section can be expanded without sending visitors to placeholder content.

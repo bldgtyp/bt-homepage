@@ -219,32 +219,25 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     </div>
 </section>
 
-<section class="proof" id="work" hidden>
+<section class="proof" id="work">
     <div class="ma-inner">
-        <span class="section-label">DOES IT ACTUALLY WORK?</span>
-        <h2 class="ma-heading">We don't model performance and hope. We measure it.</h2>
-        <p class="ma-intro type-body-lg">The real test of an energy model is the utility bill after move-in. On our certified projects we track modeled-versus-measured performance and show the receipts.</p>
+        <span class="section-label">SELECTED WORK</span>
+        <h2 class="ma-heading">Case studies where the performance work is visible.</h2>
+        <p class="ma-intro type-body-lg">Start with Candela Lofts: a dense urban multifamily project where the Passive House work had to coordinate energy modeling, facade attachments, airtightness, ventilation, and thermal-bridge detailing in one buildable envelope strategy.</p>
 
-                <div class="ma-grid">
+        <div class="ma-grid ma-grid--2col">
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">01 · SINGLE-FAMILY</span>
-                <h3 class="ma-card__title">[Project name: Brooklyn EnerPHit]</h3>
-                <p class="ma-card__body">Modeled heating demand [X kWh/m²a], measured [Y]. Result: within [±Z%] of the model. "[Short, visceral client quote, e.g. I don't wear a sweater in my own house anymore.]"</p>
-                <div class="ma-card__cite">RESULT · modeled vs. measured</div>
+                <span class="type-mono-label ma-card__tag">01 · MULTIFAMILY</span>
+                <h3 class="ma-card__title">Candela Lofts</h3>
+                <p class="ma-card__body">Seven-story, nine-unit Hoboken condominium certified through PHI's Low Energy Building pathway. BLDGTYP supported the project with energy modeling, thermal-bridge simulation, envelope analysis, airtightness strategy, ventilation review, and certification coordination.</p>
+                <div class="ma-card__cite"><a href="/candela-lofts/">Read the case study &rarr;</a></div>
             </div>
 
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">02 · MULTIFAMILY</span>
-                <h3 class="ma-card__title">[Project name: MA affordable, NN units]</h3>
-                <p class="ma-card__body">Certified Phius. Roughly [2-3%] construction premium, with projected operating costs around [40%] of a code-built equivalent.</p>
-                <div class="ma-card__cite">RESULT · Phius certified</div>
-            </div>
-
-            <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">03 · ENVELOPE</span>
-                <h3 class="ma-card__title">[Project name: retrofit / thermal bridge]</h3>
-                <p class="ma-card__body">[One-line result, e.g. resolved thermal bridges brought the worst junctions back above the condensation threshold and cut peak heat loss.]</p>
-                <div class="ma-card__cite">RESULT · case study</div>
+                <span class="type-mono-label ma-card__tag">02 · PRESENTATIONS</span>
+                <h3 class="ma-card__title">Candela project talks</h3>
+                <p class="ma-card__body">Two public presentations walk through the same project: the full NAPHN Live recording and a shorter Passive House Accelerator case-study talk. They are also listed in the Learn library under Multifamily & Case Studies.</p>
+                <div class="ma-card__cite"><a href="/candela-lofts/#video-presentations">Watch the presentations &rarr;</a></div>
             </div>
         </div>
     </div>

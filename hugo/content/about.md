@@ -104,8 +104,7 @@ url: "/about/"
                 <span class="type-mono-label ma-card__tag">03 · THE WORK</span>
                 <h3 class="ma-card__title">Firsts, on purpose</h3>
                 <p class="ma-card__body">First PHI-certified multifamily building in New Jersey. Among the first EnerPHit retrofits in the US and the first Phius homes in Maine. We take on projects where the details have not been worked out yet. Then we publish what we learned.</p>
-                <!-- TODO: Once we have CASE-STUDIES, link them here -->
-                <!-- <div class="ma-card__cite">SELECT PROJECTS · case studies forthcoming</div> -->
+                <div class="ma-card__cite"><a href="/candela-lofts/">Candela Lofts case study &rarr;</a></div>
             </div>
         </div>
     </div>

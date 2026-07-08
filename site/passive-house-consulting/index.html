@@ -1012,6 +1012,7 @@ nav {
     .page-section {
         padding: 80px 40px;
     }
+    .page-section--compact { padding-top: 56px; padding-bottom: 56px; }
     .page-section--alt { background-color: var(--bg-section-alt); }
 
     .page-section-inner {
@@ -1036,6 +1037,219 @@ nav {
         max-width: 760px;
         margin-bottom: 48px;
         color: var(--text-secondary);
+    }
+
+    .case-hero {
+        min-height: 78vh;
+        padding: 160px 40px 72px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        background-color: var(--bg-page);
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+
+    .case-hero--candela {
+        background-image: url("/assets/case-studies/candela/exterior-render.jpg");
+    }
+
+    .case-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28) 58%, rgba(0, 0, 0, 0.08));
+    }
+
+    .case-hero__inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .case-hero .section-label,
+    .case-hero__meta {
+        color: rgba(255, 255, 255, 0.78);
+    }
+
+    .case-hero h1 {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: clamp(3rem, 8vw, 6.5rem);
+        line-height: 0.95;
+        margin: 18px 0 24px;
+        color: #fff;
+    }
+
+    .case-hero__intro {
+        max-width: 680px;
+        color: rgba(255, 255, 255, 0.86);
+        margin-bottom: 28px;
+    }
+
+    .case-overview {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 56px;
+        align-items: start;
+    }
+
+    .case-lede {
+        max-width: 760px;
+        color: var(--text-secondary);
+        margin-bottom: 22px;
+    }
+
+    .case-facts {
+        margin: 0;
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .case-facts div {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .case-facts dt {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .case-facts dd {
+        margin: 0;
+        font-family: var(--font-primary);
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text-primary);
+    }
+
+    .case-facts a,
+    .case-detail figcaption a,
+    .case-source-note a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+        text-underline-offset: 0.22em;
+        transition: color var(--transition-base);
+    }
+
+    .case-facts a:hover,
+    .case-facts a:focus,
+    .case-detail figcaption a:hover,
+    .case-detail figcaption a:focus,
+    .case-source-note a:hover,
+    .case-source-note a:focus {
+        color: var(--accent);
+    }
+
+    .case-certification {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 56px;
+        align-items: center;
+    }
+
+    .case-logo-panel {
+        display: grid;
+        gap: 18px;
+        padding: 24px;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        background-color: var(--bg-card);
+    }
+
+    .case-logo-panel a {
+        display: block;
+    }
+
+    .case-logo-panel img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+    }
+
+    .case-logo-panel__phi {
+        padding: 18px;
+    }
+
+    .case-logo-panel__seal {
+        border: 1px solid rgba(150, 0, 0, 0.22);
+    }
+
+    .case-feature {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+        gap: 56px;
+        align-items: center;
+    }
+
+    .case-figure,
+    .case-detail {
+        margin: 0;
+    }
+
+    .case-figure img,
+    .case-detail img {
+        width: 100%;
+        display: block;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-subtle);
+        background-color: var(--bg-card);
+    }
+
+    .case-figure figcaption,
+    .case-detail figcaption,
+    .case-source-note {
+        margin-top: 12px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        line-height: 1.6;
+        letter-spacing: 0.03em;
+        color: var(--text-muted);
+    }
+
+    .case-detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+        margin-top: 32px;
+    }
+
+    .case-video-grid {
+        margin-top: 8px;
+    }
+
+    .case-video-link {
+        margin-top: 28px;
+    }
+
+    @media (max-width: 900px) {
+        .case-hero {
+            min-height: 70vh;
+            padding: 128px 24px 56px;
+            background-position: 58% center;
+        }
+
+        .case-hero__overlay {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.18));
+        }
+
+        .case-overview,
+        .case-certification,
+        .case-feature,
+        .case-detail-grid {
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
     }
 
     .learn-layout {
@@ -1521,7 +1735,7 @@ nav {
 .site-footer {
     position: relative;
     overflow: hidden;
-    padding: 56px 40px;
+    padding: 52px 40px 40px;
     background:
         linear-gradient(135deg, rgba(14, 18, 20, 0.98), rgba(28, 34, 34, 0.96)),
         var(--text-primary);
@@ -1545,23 +1759,24 @@ nav {
 .site-footer__inner {
     position: relative;
     z-index: 1;
+    width: 100%;
     max-width: 1180px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(220px, 0.72fr) minmax(320px, 1fr);
-    gap: 28px 56px;
-    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .site-footer__brand {
     text-align: left;
+    min-width: 0;
 }
 
 .site-footer__mark {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: #f8f9f6;
     font-family: var(--font-primary);
     font-size: 15px;
@@ -1585,7 +1800,6 @@ nav {
 
 .site-footer p {
     margin: 0;
-    max-width: 420px;
     font-family: var(--font-mono);
     font-weight: 300;
     font-size: 11px;
@@ -1594,31 +1808,48 @@ nav {
     color: rgba(248, 249, 246, 0.62);
 }
 
+.site-footer__brand p {
+    max-width: 520px;
+}
+
 .footer-nav {
     position: static;
     display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 28px 48px;
-    justify-self: end;
+    grid-template-columns: minmax(160px, 0.74fr) minmax(180px, 0.76fr) minmax(420px, 1.5fr);
+    gap: 40px;
+    width: 100%;
+    align-items: start;
     height: auto;
-    padding: 0;
+    padding: 0 0 42px;
     background: transparent;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 0;
     z-index: auto;
+}
+
+.site-footer__bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(248, 249, 246, 0.14);
 }
 
 .footer-link-group {
     position: static;
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 10px 16px;
+    grid-template-columns: 1fr;
+    gap: 0;
     align-content: start;
     justify-content: start;
     align-items: start;
     height: auto;
-    padding: 0;
+    min-width: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(248, 249, 246, 0.26);
     background: transparent;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -1626,9 +1857,24 @@ nav {
     z-index: auto;
 }
 
+.footer-link-group--site {
+    grid-template-columns: repeat(2, minmax(70px, max-content));
+    gap: 0 22px;
+}
+
+.footer-link-group--work {
+    grid-template-columns: repeat(2, max-content);
+    gap: 0 22px;
+}
+
+.footer-link-group--services {
+    grid-template-columns: repeat(2, max-content);
+    gap: 0 30px;
+}
+
 .footer-link-heading {
     grid-column: 1 / -1;
-    margin: 0 0 2px;
+    margin: 0 0 14px;
     max-width: none;
     font-family: var(--font-mono);
     font-size: 10px;
@@ -1642,8 +1888,8 @@ nav {
 .footer-link-group a {
     display: inline-flex;
     align-items: center;
-    min-height: 30px;
-    padding-bottom: 2px;
+    min-height: 34px;
+    padding: 0 0 2px;
     border-bottom: 1px solid rgba(248, 249, 246, 0.18);
     font-family: var(--font-mono);
     font-size: 11px;
@@ -1663,11 +1909,10 @@ nav {
 }
 
 .site-footer .site-footer__meta {
-    grid-column: 1 / -1;
-    padding-top: 22px;
-    border-top: 1px solid rgba(248, 249, 246, 0.14);
     max-width: none;
     text-align: right;
+    flex: 0 1 auto;
+    white-space: nowrap;
 }
 
 .site-footer__meta a {
@@ -1679,6 +1924,27 @@ nav {
 
 .site-footer__meta a:hover {
     color: var(--accent);
+}
+
+@media (max-width: 980px) {
+    .footer-nav {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-link-group--services {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer__bottom {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .site-footer .site-footer__meta {
+        text-align: left;
+        white-space: normal;
+    }
 }
 
 
@@ -1771,9 +2037,6 @@ nav {
     }
 
     .site-footer__inner {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
         gap: 24px;
     }
 
@@ -1787,6 +2050,18 @@ nav {
     .footer-link-group {
         width: 100%;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__bottom {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .site-footer__brand p {
+        max-width: 100%;
     }
 
     .site-footer .site-footer__meta {
@@ -1827,6 +2102,7 @@ nav {
         <div class="nav-links">
             <div class="nav-link-group" aria-label="Homepage sections">
                 <a href="/#services" class="type-mono-nav nav-link" data-nav-path="/" data-nav-hash="#services">Services</a>
+                <a href="/#work" class="type-mono-nav nav-link" data-nav-path="/" data-nav-hash="#work">Work</a>
                 <a href="/#contact" class="type-mono-nav nav-link" data-nav-path="/" data-nav-hash="#contact">Contact</a>
             </div>
             <div class="nav-link-group" aria-label="Site pages">
@@ -1925,24 +2201,24 @@ nav {
     </main>
     <footer class="site-footer">
     <div class="site-footer__inner">
-        <div class="site-footer__brand">
-            <a href="/" class="site-footer__mark">
-                <img class="site-footer__mark-icon" src="/assets/bldgtyp-icon.svg" width="34" height="34" alt="" aria-hidden="true">
-                <span>BLDGTYP</span>
-            </a>
-            <p>Passive House consulting, thermal-bridge simulation, certification, and Appendix G modeling.</p>
-        </div>
         <div class="footer-nav">
-            <nav class="footer-link-group" aria-label="Footer site navigation">
+            <nav class="footer-link-group footer-link-group--site" aria-label="Footer site navigation">
                 <p class="footer-link-heading">Site</p>
                 <a href="/#services">Services</a>
+                <a href="/#work">Work</a>
                 <a href="/#contact">Contact</a>
                 <a href="/learn/">Learn</a>
                 <a href="/about/">About</a>
                 <a href="/ma/">MA</a>
                 <a href="/nyc-thermal-bridging/">NYC</a>
             </nav>
-            <nav class="footer-link-group" aria-label="Footer service navigation">
+            <nav class="footer-link-group footer-link-group--work" aria-label="Footer work navigation">
+                <p class="footer-link-heading">Work</p>
+                <a href="/candela-lofts/">Candela Lofts</a>
+                <a href="/candela-lofts/#video-presentations">Videos</a>
+                <a href="/learn/#multifamily-case-studies">Case Studies</a>
+            </nav>
+            <nav class="footer-link-group footer-link-group--services" aria-label="Footer service navigation">
                 <p class="footer-link-heading">Services</p>
                 <a href="/passive-house-consulting/">Passive House Consulting</a>
                 <a href="/thermal-bridge-modeling/">Thermal Bridge Modeling</a>
@@ -1950,7 +2226,16 @@ nav {
                 <a href="/appendix-g-modeling/">Appendix G Modeling</a>
             </nav>
         </div>
-        <p class="site-footer__meta">NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
+        <div class="site-footer__bottom">
+            <div class="site-footer__brand">
+                <a href="/" class="site-footer__mark">
+                    <img class="site-footer__mark-icon" src="/assets/bldgtyp-icon.svg" width="34" height="34" alt="" aria-hidden="true">
+                    <span>BLDGTYP</span>
+                </a>
+                <p>Passive House consulting, thermal-bridge simulation, certification, and Appendix G modeling.</p>
+            </div>
+            <p class="site-footer__meta">NEW YORK · MASSACHUSETTS · <a href="mailto:info@buildingtype.com">info@buildingtype.com</a> · © 2026 Building-Type LLC</p>
+        </div>
     </div>
 </footer>
 
