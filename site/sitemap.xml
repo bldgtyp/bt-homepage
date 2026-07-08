@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.bldgtyp.com/about/</loc>
+    <loc>http://127.0.0.1:1313/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/appendix-g-modeling/</loc>
+    <loc>http://127.0.0.1:1313/appendix-g-modeling/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/</loc>
+    <loc>http://127.0.0.1:1313/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/candela-lofts/</loc>
+    <loc>http://127.0.0.1:1313/candela-lofts/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/engine-16/</loc>
+    <loc>http://127.0.0.1:1313/engine-16/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/hillandale-gateway/</loc>
+    <loc>http://127.0.0.1:1313/hillandale-gateway/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/learn/</loc>
+    <loc>http://127.0.0.1:1313/learn/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/ma/</loc>
+    <loc>http://127.0.0.1:1313/ma/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/nyc-thermal-bridging/</loc>
+    <loc>http://127.0.0.1:1313/nyc-thermal-bridging/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/passive-house-certification/</loc>
+    <loc>http://127.0.0.1:1313/passive-house-certification/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/passive-house-consulting/</loc>
+    <loc>http://127.0.0.1:1313/passive-house-consulting/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/energy-modeling/</loc>
+    <loc>http://127.0.0.1:1313/energy-modeling/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.bldgtyp.com/thermal-bridge-modeling/</loc>
+    <loc>http://127.0.0.1:1313/thermal-bridge-modeling/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

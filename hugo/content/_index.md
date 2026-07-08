@@ -9,7 +9,9 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="hero-content">
         <h1 class="hero-title">Your Passive House questions.<br><em>Answered.</em></h1>
         <p class="hero-sub">
-            // <a href="/passive-house-consulting/" class="link">Passive House consulting</a>, energy modeling, and certification for architects, developers, and builders. We de-risk the building science so your project hits its targets, and the finished building stays comfortable, quiet, and built to last.
+            // <a href="/passive-house-consulting/" class="link">Passive House consulting</a>, energy modeling, and certification.  
+            <br>
+            // We de-risk the building science for architects, developers, and builders so your project hits its targets, and the finished building stays comfortable, quiet, and built to last.
         </p>
         <button class="btn-primary" onclick="handleCTA()">Send us your drawings &rarr; info@buildingtype.com</button>
     </div>
@@ -362,6 +364,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     </div>
 </section>
 
+<!-- HIDDEN pending real measured-vs-modeled data (see positioning decision D4). Restore when numbers are confirmed.
 <section class="stats" id="stats">
     <div class="stats-inner">
         <span class="section-label">WHY IT'S WORTH IT</span>
@@ -389,6 +392,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
         </div>
     </div>
 </section>
+-->
 
 <section class="final-cta" id="contact">
     <div class="final-cta-inner">

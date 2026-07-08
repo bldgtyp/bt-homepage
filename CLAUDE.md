@@ -56,40 +56,44 @@ Important boundaries:
   see "Marketing Research & Copy Guidelines" below.
 - `.DS_Store`, `hugo/.hugo_build.lock`, and `hugo/resources/` are ignored.
 
-## Commands
+## Dev Workflow
 
-Run the Hugo hot-reload dev server:
+There is exactly ONE way to preview this site locally. Do not invent another,
+and do not use any other method:
 
 ```bash
-hugo server
+./dev.sh
 ```
 
-Open:
+`./dev.sh` serves a hot-reloading preview at **`http://127.0.0.1:1313/`** and
+nothing else. It pins port 1313 (killing any stray server first, so the URL
+never drifts to 1314/1315) and forces a full rebuild on every save, so
+hot-reload ALWAYS works. Agents: run it in the background, then drive/inspect
+`http://127.0.0.1:1313/`.
 
-```text
-http://127.0.0.1:1313/
-```
+This is enforced. A `PreToolUse` hook
+(`.claude/hooks/block-adhoc-preview.sh`, wired in `.claude/settings.json`)
+BLOCKS any other preview method — a bare `hugo server`, `python3 -m
+http.server`, `npx serve`, `php -S`, or opening `site/*.html` in a browser — and
+points you back to `./dev.sh`.
 
-Build generated deploy output:
+Build the deployable static output in `site/` (this does NOT preview — it just
+regenerates the files the deploy uploads):
 
 ```bash
 hugo
 ```
 
-Serve generated deploy output for exact static-output review:
+Rule of thumb: **editing and previewing → `./dev.sh`**; **producing deploy
+output → `hugo`**. Never `cd site` and serve it by hand; `./dev.sh` already
+shows the real rendered site.
 
-```bash
-cd site
-python3 -m http.server 8000 --bind 127.0.0.1
-```
+If the environment cannot reach VM localhost from the user's browser, do not
+switch to another server — ask the user to open/refresh
+`http://127.0.0.1:1313/` and share a screenshot, or use `curl` against that same
+URL to check status codes and markup.
 
-Open:
-
-```text
-http://127.0.0.1:8000/
-```
-
-Expected Hugo version in current local environment:
+Expected Hugo version in the current local environment:
 
 ```text
 hugo v0.124.1+extended darwin/arm64
@@ -97,18 +101,6 @@ hugo v0.124.1+extended darwin/arm64
 
 There is no package manager or JS build step for the current site. Do not add
 Node/Vite/React tooling unless the user explicitly asks for a larger rebuild.
-
-## Local Preview Notes
-
-In the current Codex desktop environment, `hugo server` on
-`127.0.0.1:1313` is the normal editing preview path. Serving generated `site/`
-on `127.0.0.1:8000` is useful when verifying exact deploy output.
-
-Other sandboxed Claude/Cowork environments may not expose VM localhost to the
-user's Chrome browser. If a browser cannot reach the local server, fall back to
-opening `site/index.html` directly or ask the user to open/refresh the page and
-share a screenshot. `curl` is still useful for checking response codes and
-asset paths.
 
 ## Deployment
 
@@ -185,7 +177,8 @@ modifier classes alone are not enough.
 When changing pages:
 
 - Edit Hugo source files, not generated HTML in `site/`.
-- Use `hugo server` for hot-reload development.
+- Use `./dev.sh` for hot-reload development (the only sanctioned preview; see
+  Dev Workflow).
 - Rebuild with `hugo` before final verification.
 - Preserve the external branding token contract where possible.
 - Keep typography, colors, radii, and component behavior aligned with the
@@ -272,17 +265,15 @@ Style:
 
 For content-only or template edits:
 
-```bash
-hugo
-```
-
-Then check the affected route with `hugo server`, browser inspection, or
-`curl -I` against generated `site/` output.
+- Preview with `./dev.sh` at `http://127.0.0.1:1313/` (the only sanctioned
+  preview; see Dev Workflow) and check the affected route, or `curl -I` that
+  same URL.
+- Run `hugo` before committing so the deployable `site/` output is regenerated.
 
 For visual/static asset edits:
 
-- Use `hugo server` while editing.
-- Rebuild generated `site/`.
+- Preview with `./dev.sh` while editing.
+- Run `hugo` to regenerate `site/` before committing.
 - Check `/`, changed anchors, and changed assets.
 - Use browser inspection or screenshots for layout-sensitive work.
 

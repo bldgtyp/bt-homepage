@@ -85,14 +85,27 @@ This means you can safely keep all your existing report directories and download
 
 ## Local development
 
-Use Hugo's dev server for hot reload:
+There is one command for previewing the site locally:
 
 ```bash
-hugo server
-# Open http://127.0.0.1:1313/
+./dev.sh
+# Open http://127.0.0.1:1313/  (hot-reloads on every save, Ctrl-C to stop)
 ```
 
-To review the generated deploy output exactly as Dreamhost will receive it, run `hugo`, then serve `site/`.
+`./dev.sh` pins port 1313 and forces a full rebuild on each change, so the
+preview URL never moves and hot-reload always works. Do not start `hugo server`,
+a `python3 -m http.server`, or serve `site/` by hand — a repo hook blocks those
+and points back to `./dev.sh`.
+
+To regenerate the deployable static output in `site/` (a build, not a preview):
+
+```bash
+hugo
+```
+
+`./dev.sh` already renders the real site, so there is no separate step for
+"reviewing deploy output" — edit, watch it at `http://127.0.0.1:1313/`, then run
+`hugo` before you commit.
 
 ## Design system
 
