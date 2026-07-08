@@ -2,16 +2,16 @@
 
 ## Status
 
-Candela Lofts is now published as the first case-study entry. The homepage
-`#work` section is visible again, with only cleared Candela content and links to
-the case-study page and related video presentations.
+Candela Lofts and Engine 16 are now published as the first case-study entries.
+The homepage `#work` section is visible again, with cleared case-study content
+and links to the case-study pages and related video presentations.
 
 ## Current Site State
 
 - `hugo/content/_index.md` contains the visible `#work` section.
 - The Hugo shared nav links to `/#work`.
-- The footer includes a Work group with direct links to Candela Lofts, the Candela video presentations, and the Learn case-study section.
-- The About page "THE WORK" card links to the Candela Lofts case study.
+- The footer includes a Work group with direct links to Candela Lofts, Engine 16, Engine 16 video presentations, and the Learn case-study section.
+- The About page "THE WORK" card links to the homepage Selected Work section.
 
 ## Why It Is Hidden
 
@@ -21,7 +21,7 @@ cost-premium, or client-quote claims until the data and permissions are cleared.
 ## References
 
 - Homepage source: `hugo/content/_index.md`, `section.proof#work`
-- Case-study source: `hugo/content/candela-lofts.md`
+- Case-study sources: `hugo/content/candela-lofts.md`, `hugo/content/engine-16.md`
 - Hugo nav source: `hugo/layouts/partials/nav.html`
 - Hugo footer source: `hugo/layouts/partials/footer.html`
 - About page source: `hugo/content/about.md`

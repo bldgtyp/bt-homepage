@@ -96,12 +96,26 @@
                 <div class="video-group{{ if $isPhToolsCourse }} ph-tools-context{{ end }}">
                     <h2 class="video-group-title">{{ .title }}</h2>
                     <p class="video-group-desc">{{ .desc }}</p>
+                    <aside class="learn-callout learn-callout--rbc" aria-label="Reimagine Buildings Collective course link">
+                        <span class="type-mono-label">FULL RBC MEMBERS COURSE</span>
+                        <h3>Go deeper with the full Honeybee-PH course.</h3>
+                        <p>
+                            The outline below is the free short course on YouTube. Ed May also teaches a longer,
+                            members-only Honeybee-PH course through the
+                            <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="link">Reimagine Buildings Collective</a>,
+                            where he works as an advisor, organizer, presenter, and Expert in Residence.
+                        </p>
+                        <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="btn-ghost">Join RBC to watch the full course &rarr;</a>
+                    </aside>
                     <ul class="course-list">
                         {{- range .units }}
                         <li><a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener"><span class="course-num">{{ .num }}</span>{{ .title }}</a></li>
                         {{- end }}
                     </ul>
-                    <p style="margin-top: 24px;"><a href="{{ .playlist }}" target="_blank" rel="noopener" class="btn-ghost">Watch the full course on YouTube &rarr;</a></p>
+                    <div class="course-actions">
+                        <a href="{{ .playlist }}" target="_blank" rel="noopener" class="btn-ghost">Watch the free short course on YouTube &rarr;</a>
+                        <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="btn-ghost">Join RBC for the full course &rarr;</a>
+                    </div>
                 </div>
                 {{- end }}
             </div>

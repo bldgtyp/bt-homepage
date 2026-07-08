@@ -1056,6 +1056,11 @@ nav {
         background-image: url("/assets/case-studies/candela/exterior-render.jpg");
     }
 
+    .case-hero--engine-16 {
+        background-image: url("/assets/case-studies/engine-16/hero.jpg");
+        background-position: center 46%;
+    }
+
     .case-hero__overlay {
         position: absolute;
         inset: 0;
@@ -1584,6 +1589,41 @@ nav {
         font-size: 11px;
         color: var(--accent);
         min-width: 22px;
+    }
+
+    .learn-callout {
+        max-width: 900px;
+        margin: 0 0 32px;
+        padding: 24px;
+        background-color: color-mix(in oklab, var(--bg-page) 82%, transparent);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+    }
+
+    .learn-callout h3 {
+        margin: 10px 0 10px;
+        color: var(--text-primary);
+        font-family: var(--font-primary);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+
+    .learn-callout p {
+        max-width: 760px;
+        margin: 0 0 20px;
+        color: var(--text-secondary);
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+
+    .course-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 24px;
     }
 
     .download-group { margin-bottom: 72px; }
@@ -2214,7 +2254,8 @@ nav {
             <nav class="footer-link-group footer-link-group--work" aria-label="Footer work navigation">
                 <p class="footer-link-heading">Work</p>
                 <a href="/candela-lofts/">Candela Lofts</a>
-                <a href="/candela-lofts/#video-presentations">Videos</a>
+                <a href="/engine-16/">Engine 16</a>
+                <a href="/engine-16/#video-presentations">Videos</a>
                 <a href="/learn/#multifamily-case-studies">Case Studies</a>
             </nav>
             <nav class="footer-link-group footer-link-group--services" aria-label="Footer service navigation">

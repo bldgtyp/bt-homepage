@@ -148,8 +148,8 @@ groups:
         year: 2020
 
 course:
-  title: "The Honeybee-PH Course: HBPH to WUFI-Passive"
-  desc: "A complete 14-part tutorial series: build a Phius model in Rhino/Grasshopper with Honeybee-PH and take it all the way to WUFI-Passive."
+  title: "Honeybee-PH Short Course: HBPH to WUFI-Passive"
+  desc: "A free 14-part YouTube tutorial series: build a compact Phius model in Rhino/Grasshopper with Honeybee-PH and take it to WUFI-Passive."
   playlist: "https://www.youtube.com/playlist?list=PLi6KNBJLE8H9i0O_Y7NYoZuu4ZYOEd0RE"
   units:
     - { num: "01", id: DvH_Wxf1D8A, title: "Install Honeybee-PH" }

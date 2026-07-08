@@ -223,9 +223,9 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="ma-inner">
         <span class="section-label">SELECTED WORK</span>
         <h2 class="ma-heading">Case studies where the performance work is visible.</h2>
-        <p class="ma-intro type-body-lg">Start with Candela Lofts: a dense urban multifamily project where the Passive House work had to coordinate energy modeling, facade attachments, airtightness, ventilation, and thermal-bridge detailing in one buildable envelope strategy.</p>
+        <p class="ma-intro type-body-lg">Start with two public case studies: Candela Lofts, a dense urban multifamily project in Hoboken, and Engine 16, a historic Manhattan firehouse converted into a PHI EnerPHit mixed-use multifamily retrofit.</p>
 
-        <div class="ma-grid ma-grid--2col">
+        <div class="ma-grid">
             <div class="ma-card">
                 <span class="type-mono-label ma-card__tag">01 · MULTIFAMILY</span>
                 <h3 class="ma-card__title">Candela Lofts</h3>
@@ -234,10 +234,17 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
             </div>
 
             <div class="ma-card">
-                <span class="type-mono-label ma-card__tag">02 · PRESENTATIONS</span>
-                <h3 class="ma-card__title">Candela project talks</h3>
-                <p class="ma-card__body">Two public presentations walk through the same project: the full NAPHN Live recording and a shorter Passive House Accelerator case-study talk. They are also listed in the Learn library under Multifamily & Case Studies.</p>
-                <div class="ma-card__cite"><a href="/candela-lofts/#video-presentations">Watch the presentations &rarr;</a></div>
+                <span class="type-mono-label ma-card__tag">02 · ENERPHIT</span>
+                <h3 class="ma-card__title">Engine 16</h3>
+                <p class="ma-card__body">Historic Kips Bay firehouse converted into a fully electric, mixed-use multifamily building certified by PHI through the EnerPHit retrofit pathway. The work centered on preserved masonry, interior insulation, airtightness sequencing, thermal bridges, and mixed-use PHPP modeling.</p>
+                <div class="ma-card__cite"><a href="/engine-16/">Read the case study &rarr;</a></div>
+            </div>
+
+            <div class="ma-card">
+                <span class="type-mono-label ma-card__tag">03 · PRESENTATIONS</span>
+                <h3 class="ma-card__title">Project talks</h3>
+                <p class="ma-card__body">Public presentations walk through both projects in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
+                <div class="ma-card__cite"><a href="/learn/#multifamily-case-studies">Watch the presentations &rarr;</a></div>
             </div>
         </div>
     </div>
@@ -247,10 +254,11 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
         <h2 class="ma-heading">The same rigor we put into our software goes into every building.</h2>
-        <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the <a href="/learn/" class="link">Learn page</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
+        <p class="ma-intro type-body-lg"><strong>BLDGTYP</strong> builds and maintains <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit used by Passive House practitioners worldwide. Fifteen years of our talks and tutorials are free on the <a href="/learn/" class="link">Learn page</a>, including thermal bridging, multifamily case studies, Honeybee-PH, AI for Passive House, and a complete 14-part modeling course. Through the <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="link">Reimagine Buildings Collective</a>, Ed also supports deeper PHPP and Honeybee-PH training as an advisor, presenter, and Expert in Residence. When your project needs an answer the textbook doesn't have, we're often the team that wrote the tool or taught the class.</p>
         <div class="resources-links">
             <a href="/learn/" class="btn-ghost">Browse the talks and tutorials &rarr;</a>
             <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="btn-ghost">Explore the open-source tools &rarr;</a>
+            <a href="https://collective.reimaginebuildings.com/" target="_blank" rel="noopener" class="btn-ghost">Learn with Reimagine Buildings &rarr;</a>
             <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="btn-ghost">Watch on YouTube &rarr;</a>
         </div>
     </div>
