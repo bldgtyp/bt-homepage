@@ -4,15 +4,16 @@ description: "Passive House consulting for architects, developers, builders, and
 url: "/passive-house-consulting/"
 ---
 
-<section class="page-hero">
-    <div class="page-hero-inner">
+<section class="hero" id="hero">
+    <img src="/assets/phc-hero-radiation.jpg" alt="" class="hero-bg-img" aria-hidden="true">
+
+    <div class="hero-content">
         <span class="section-label">PASSIVE HOUSE CONSULTING</span>
-        <h1>The building has to perform. That part's on us.</h1>
-        <p class="page-hero-intro type-body-lg">
-            BLDGTYP is the performance layer inside your design team, from early design analysis through
-            Passive House certification. We turn project goals into envelope, mechanical, and documentation
-            decisions the whole team can build from, and carry the risk of hitting the numbers so you don't
-            have to.
+        <h1 class="hero-title">The building has to perform.<br><em>That part's on us.</em></h1>
+        <p class="hero-sub">
+            // BLDGTYP is the performance layer inside your design team, from early design analysis through Passive House certification.
+            <br>
+            // We turn project goals into envelope, mechanical, and documentation decisions the whole team can build from, and carry the risk of hitting the numbers so you don't have to.
         </p>
     </div>
 </section>

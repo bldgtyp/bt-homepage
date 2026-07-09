@@ -7,14 +7,14 @@ url: "/nyc-thermal-bridging/"
 <section class="page-hero">
     <div class="page-hero-inner">
         <span class="section-label">NEW YORK CITY · 2025 ENERGY CODE</span>
-        <h1>NYC's energy code now requires thermal-bridge calculations. We run thousands a year.</h1>
+        <h1>NYC's energy code now requires thermal-bridge calculations. Let us help you comply.</h1>
         <p class="page-hero-intro type-body-lg">
             As of <strong>March 30, 2026</strong>, projects filed with the NYC Department of Buildings fall
             under the <strong>2025 NYC Energy Conservation Code</strong>. For the first time, it
             requires thermal bridges to be identified, documented, and accounted for with
             <strong>psi- and chi-factors</strong> in the envelope calculations. If parapets, balconies,
             shelf angles, and window installs weren't part of your compliance workflow before, they are now.
-            Thermal-bridge simulation has been a core BLDGTYP service for over a decade.
+            Thermal-bridge simulation has been a core BLDGTYP service for over a decade and we can help your team comply with these important new requirements.
         </p>
     </div>
 </section>
@@ -110,6 +110,28 @@ url: "/nyc-thermal-bridging/"
                 <h3 class="ma-card__title">Filing-ready package</h3>
                 <p class="ma-card__body">Psi/chi-factor schedules, detail drawings, and calculation documentation are organized for your compliance path, ready for your energy modeler, code consultant, and the DOB.</p>
                 <div class="ma-card__cite">DEFINED SCOPE · FIXED FEE</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section page-section--alt">
+    <div class="page-section-inner">
+        <div class="case-feature">
+            <figure class="case-figure">
+                <img src="/assets/thermal-guide/hero-detail.jpg" alt="Finite-element thermal simulation of a floor-to-wall junction, with the interior temperature gradient running from warm to cold across the assembly">
+                <figcaption>A floor-to-wall junction simulation. The gradient maps interior surface temperatures behind every psi-value we report.</figcaption>
+            </figure>
+            <div>
+                <span class="section-label">FOR DESIGN TEAMS</span>
+                <h2 class="page-heading">Preparing your details for thermal analysis.</h2>
+                <p class="page-intro type-body-lg">
+                    The cleaner your detail set, the faster we can turn it into filing-ready psi-values. Our
+                    designer's guide covers which junctions to draw, how much of each assembly to include, and
+                    how to format the CAD base-files our simulations need &mdash; so the modeling scope is
+                    clear before you file.
+                </p>
+                <a class="btn-ghost" href="/preparing-details-for-thermal-analysis/">Read the designer's guide &rarr;</a>
             </div>
         </div>
     </div>

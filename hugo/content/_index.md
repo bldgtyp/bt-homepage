@@ -224,19 +224,19 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
 <section class="proof" id="work">
     <div class="ma-inner">
         <span class="section-label">SELECTED WORK</span>
-        <h2 class="ma-heading">Case studies where the performance work is visible.</h2>
-        <p class="ma-intro type-body-lg">Start with three public case studies: Candela Lofts in Hoboken, Engine 16 in Manhattan, and Hillandale Gateway, a large Phius multifamily project now under construction in Maryland.</p>
+        <h2 class="ma-heading">See what our work can deliver.</h2>
+        <p class="ma-intro type-body-lg">Curious to see examples of the types of projects we work on? For a small slice, take a look at the Candela Lofts in Hoboken, Engine 16 in Manhattan, and Hillandale Gateway projects below.</p>
 
         <div class="ma-grid">
             <div class="ma-card ma-card--case">
                 <div class="ma-card__head">
-                    <span class="type-mono-label ma-card__tag">01 · MULTIFAMILY</span>
+                    <span class="type-mono-label ma-card__tag">01 · PHI MULTIFAMILY</span>
                     <span class="ma-card__cert ma-card__cert--phi" aria-label="Certified through PHI">
                         <img src="/assets/case-studies/candela/phi-mark.png" alt="PHI">
                     </span>
                 </div>
                 <h3 class="ma-card__title">Candela Lofts</h3>
-                <p class="ma-card__body">A seven-story Hoboken condominium that shows Passive House comfort and durability hold up in dense concrete-and-steel construction. Certified through PHI's Low Energy Building pathway, with BLDGTYP handling the envelope modeling, the balcony and facade thermal bridges, and an airtightness plan the contractor could actually build.</p>
+                <p class="ma-card__body">A seven-story Hoboken condominium that shows Passive House comfort and durability can succeed even in dense, urban, concrete-and-steel construction. Certified through PHI's "Low-Energy-Building" pathway, with <strong>BLDGTYP</strong> handling the envelope modeling, the balcony and facade thermal bridges, and an airtightness plan the contractor could actually build.</p>
                 <div class="ma-card__cite ma-card__action"><a href="/candela-lofts/">Read the case study &rarr;</a></div>
                 <div class="ma-card__img-strip">
                     <img src="/assets/case-studies/candela/exterior-render.jpg" alt="" aria-hidden="true" loading="lazy">
@@ -245,13 +245,13 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
 
             <div class="ma-card ma-card--case">
                 <div class="ma-card__head">
-                    <span class="type-mono-label ma-card__tag">02 · ENERPHIT</span>
+                    <span class="type-mono-label ma-card__tag">02 · PHI ENERPHIT RETROFIT</span>
                     <span class="ma-card__cert ma-card__cert--phi" aria-label="Certified through PHI">
                         <img src="/assets/case-studies/candela/phi-mark.png" alt="PHI">
                     </span>
                 </div>
                 <h3 class="ma-card__title">Engine 16</h3>
-                <p class="ma-card__body">An 1880s Kips Bay firehouse reborn as a fully electric, mixed-use home, certified by PHI through the EnerPHit retrofit pathway. BLDGTYP helped the team reach a 0.64 ACH50 blower-door result while preserving the historic masonry facade, insulating from the inside, and sequencing the air barrier around real site conditions.</p>
+                <p class="ma-card__body">An 1880s Kips Bay firehouse reborn as a fully electric, mixed-use home, certified by PHI through the "EnerPHit" (Energy Retrofit) pathway. <strong>BLDGTYP</strong> helped the team reach a 0.64 ACH50 blower-door result while preserving the historic masonry facade, insulating from the inside, and sequencing the air barrier around real site conditions.</p>
                 <div class="ma-card__cite ma-card__action"><a href="/engine-16/">Read the case study &rarr;</a></div>
                 <div class="ma-card__img-strip">
                     <img src="/assets/case-studies/engine-16/hero.jpg" alt="" aria-hidden="true" loading="lazy">
@@ -266,7 +266,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
                     </span>
                 </div>
                 <h3 class="ma-card__title">Hillandale Gateway</h3>
-                <p class="ma-card__body">A 463-unit mixed-use community in Silver Spring, Maryland, and proof that Passive House pencils at true neighborhood scale. BLDGTYP carried the first building to Phius CORE 2024 Design Certification, keeping the energy model, thermal bridges, and certifier responses coordinated across hundreds of apartments.</p>
+                <p class="ma-card__body">A two building, 463-unit, mixed-use community in Silver Spring, Maryland, and proof that Passive House pencils at true neighborhood scale. <strong>BLDGTYP</strong> successfully shepherded the project to Phius ZERO 2024 Design Certification, keeping the energy models, thermal bridges, and certifier responses coordinated across hundreds of apartments.</p>
                 <div class="ma-card__cite ma-card__action"><a href="/hillandale-gateway/">Read the case study &rarr;</a></div>
                 <div class="ma-card__img-strip">
                     <img src="/assets/case-studies/hillandale-gateway/hero.jpg" alt="" aria-hidden="true" loading="lazy">
@@ -275,9 +275,9 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
 
             <div class="ma-card ma-card--case">
                 <span class="type-mono-label ma-card__tag">04 · PRESENTATIONS</span>
-                <h3 class="ma-card__title">Project talks</h3>
-                <p class="ma-card__body">Public presentations walk through Candela Lofts and Engine 16 in detail, including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
-                <div class="ma-card__cite ma-card__action"><a href="/learn/#multifamily-case-studies">Watch the presentations &rarr;</a></div>
+                <h3 class="ma-card__title">Watch more</h3>
+                <p class="ma-card__body">Public presentations walk through Candela Lofts and Engine 16, and more. Including NAPHN Live, Passive House Accelerator, and the iPHA Engine 16 Project Spotlight.</p>
+                <div class="ma-card__cite ma-card__action"><a href="/learn/#multifamily-case-studies">Watch the talks here &rarr;</a></div>
                 <div class="ma-card__img-strip">
                     <img src="/assets/case-studies/engine-16/interior-stair.jpg" alt="" aria-hidden="true" loading="lazy">
                 </div>
@@ -290,7 +290,7 @@ description: "Passive House consulting, ASHRAE 90.1 Appendix G modeling, and des
     <div class="ma-inner">
         <span class="section-label">WE BUILD THE TOOLS, TOO</span>
         <h2 class="ma-heading">The same rigor we put into every building goes into our tools.</h2>
-        <p class="ma-intro type-body-lg">Most Passive House consultants are fluent in the modeling software. <strong>BLDGTYP</strong> writes it. We build and maintain <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit practitioners around the world use to move building data between Rhino, PHPP, and WUFI-Passive. Our libraries extend Ladybug Tools with a full Passive House data model, our converters read and write both PHPP and WUFI-Passive, and we build the web apps and interactive 3D viewers that turn a dense energy model into something a whole team can navigate. It is the same engineering discipline we bring to every building, and when a project needs an answer the textbook doesn't have, we are often the team that wrote the tool.</p>
+        <p class="ma-intro type-body-lg">Most Passive House consultants are fluent in the modeling software. <strong>BLDGTYP</strong> creates it. We build and maintain <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="link">Passive House Tools</a>, the open-source toolkit practitioners around the world use to manage building data and connect design software like Rhino3d to the Passive House calculators. Our libraries extend <a href="https://www.ladybug.tools" class="link" target="_blank" rel="noopener" >Ladybug-Tools<a/> with a full Passive House data model, our converters read and write both PHPP and WUFI-Passive, and we build the web apps and interactive 3D viewers that turn a dense energy model into something a whole team can navigate. It is the same engineering discipline we bring to every building, and when a project needs an answer the textbook doesn't have, we are often the team that wrote the tool.</p>
         <div class="resources-links">
             <a href="https://www.passivehousetools.com/" target="_blank" rel="noopener" class="btn-ghost">Explore the open-source tools &rarr;</a>
         </div>

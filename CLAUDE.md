@@ -71,6 +71,12 @@ never drifts to 1314/1315) and forces a full rebuild on every save, so
 hot-reload ALWAYS works. Agents: run it in the background, then drive/inspect
 `http://127.0.0.1:1313/`.
 
+**Do not close a dev server you did not start.** If a preview server is ALREADY
+running on port 1313 when you begin work, leave it running — reuse it, do not
+kill or restart it. Only start `./dev.sh` yourself if no server is already up,
+and only stop the one you personally started. This protects a server the user
+(or another session) has open.
+
 This is enforced. A `PreToolUse` hook
 (`.claude/hooks/block-adhoc-preview.sh`, wired in `.claude/settings.json`)
 BLOCKS any other preview method — a bare `hugo server`, `python3 -m
